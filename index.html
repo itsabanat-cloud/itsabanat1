@@ -302,7 +302,6 @@
             cursor: pointer;
             font-family: 'Tajawal', sans-serif;
             font-size: 0.9rem;
-            margin-bottom: 20px;
             display: inline-flex;
             align-items: center;
             gap: 8px;
@@ -312,6 +311,13 @@
 
         .back-home-btn:hover {
             background-color: #e94560;
+        }
+
+        .back-home-bottom {
+            margin-top: 30px;
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
         }
 
         .editable-section {
@@ -788,6 +794,11 @@
                 <div class="main-title" contenteditable="true">${mainTitle}</div>
                 <div class="sub-title" contenteditable="true">${subTitle}</div>
                 <div class="text-content" contenteditable="true">${textContent}</div>
+                <div class="back-home-bottom">
+                    <button class="back-home-btn" onclick="showMainPage()">
+                        <i class="fas fa-home"></i> العودة للرئيسية
+                    </button>
+                </div>
             </div>
         `;
     }
@@ -831,6 +842,11 @@
                         <i class="fas fa-external-link-alt"></i> فتح الموقع في خرائط جوجل
                     </a>
                 </div>
+                <div class="back-home-bottom">
+                    <button class="back-home-btn" onclick="showMainPage()">
+                        <i class="fas fa-home"></i> العودة للرئيسية
+                    </button>
+                </div>
             </div>
         `;
     }
@@ -862,6 +878,11 @@
                         <div class="sub-title" contenteditable="true">KG1 - KG2</div>
                         <div class="text-content" contenteditable="true">نوفر بيئة تعليمية آمنة وممتعة للأطفال في مرحلة رياض الأطفال، حيث نركز على تنمية المهارات الاجتماعية والحركية والإبداعية.\n\n🎨 أنشطة رياض الأطفال:\n• الألعاب التعليمية\n• الأنشطة الفنية والحرفية\n• القصص والأناشيد\n• تنمية المهارات الحركية</div>
                     </div>
+                </div>
+                <div class="back-home-bottom">
+                    <button class="back-home-btn" onclick="showMainPage()">
+                        <i class="fas fa-home"></i> العودة للرئيسية
+                    </button>
                 </div>
             </div>
         `;
