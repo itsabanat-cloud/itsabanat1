@@ -74,55 +74,79 @@ to { transform: rotate(360deg); }
 }
 /* ==================== شريط الأخبار المحسن ==================== */
 .news-ticker {
-background: linear-gradient(135deg, #0f3460, #1e3a5f);
-color: white;
-padding: 10px 20px;
-position: relative;
-overflow: hidden;
-white-space: nowrap;
-box-sizing: border-box;
-border-bottom: 3px solid #e94560;
-font-weight: 600;
-direction: rtl;
+  background: linear-gradient(135deg, #0f3460, #1e3a5f);
+  color: white;
+  padding: 10px 20px;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  border-bottom: 3px solid #e94560;
+  font-weight: 600;
+  direction: ltr; /* تغيير الاتجاه من اليمين لليسار إلى اليسار لليمين */
 }
+
 .ticker-wrapper {
-display: flex;
-align-items: center;
-gap: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
+
 .ticker-label {
-background: linear-gradient(135deg, #e94560, #c72a48);
-color: white;
-padding: 4px 16px;
-border-radius: 20px;
-font-size: 0.9rem;
-font-weight: 800;
-flex-shrink: 0;
-box-shadow: 0 2px 10px rgba(233, 69, 96, 0.5);
-animation: glowPulse 2s infinite;
-z-index: 10;
+  background: linear-gradient(135deg, #e94560, #c72a48);
+  color: white;
+  padding: 4px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  flex-shrink: 0;
+  box-shadow: 0 2px 10px rgba(233, 69, 96, 0.5);
+  animation: glowPulse 2s infinite;
+  z-index: 10;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
 }
+
 .ticker-content {
-display: inline-block;
-animation: tickerMove 30s linear infinite;
-font-weight: 500;
-direction: rtl;
-color: #ffffff;
-text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  display: flex;
+  width: max-content;
+  animation: tickerMove 30s linear infinite;
+  font-weight: 500;
+  direction: ltr; /* تغيير اتجاه النص */
+  color: #ffffff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  white-space: nowrap;
+  gap: var(--item-gap, 50px);
+  --item-gap: 50px;
 }
+
 .ticker-content span {
-margin-left: 50px;
-display: inline-block;
+  display: inline-block;
+  /* تمت إزالة الهوامش لتفادي الفراغ */
 }
+
 .ticker-content i {
-margin-left: 8px;
-color: #ffd966;
+  margin-right: 8px; /* تعديل للاتجاه الجديد */
+  color: #ffd966;
 }
+
 @keyframes tickerMove {
-0% { transform: translateX(-100%); }
-100% { transform: translateX(100%); }
+  0% {
+    transform: translateX(-50%); /* البدء من منتصف المسافة */
+  }
+  100% {
+    transform: translateX(0); /* الانتهاء عند البداية (حركة من اليسار إلى اليمين) */
+  }
 }
-/* ==================== زر العودة للأعلى ==================== */
+
+@keyframes glowPulse {
+  0% { box-shadow: 0 2px 10px rgba(233, 69, 96, 0.5); }
+  50% { box-shadow: 0 2px 20px rgba(233, 69, 96, 0.9); }
+  100% { box-shadow: 0 2px 10px rgba(233, 69, 96, 0.5); }
+}
+}/* ==================== زر العودة للأعلى ==================== */
 .back-to-top {
 position: fixed;
 bottom: 100px;
@@ -1322,6 +1346,8 @@ nav ul { justify-content: center; }
 <span><i class="fas fa-chalkboard-teacher"></i> اجتماع أولياء الأمور: الخميس القادم الساعة 10 صباحاً</span>
 <span><i class="fas fa-trophy"></i> تدريب الحاسب الالي للتلاميذ تم تاجيله ليكون الخميس القادم 2 ابريل </span>
 <span><i class="fas fa-bell"></i> إجازة نصف العام: من 26 يناير حتى 6 فبراير</span>
+<span><i class="fas fa-bell"></i> إننوه على عد الغياب نهائيا الا بعذر طبي مقبول </span>
+<span><i class="fas fa-bell"></i>اخبار عاجلة مدرسة الشهيد عيد عطية </span>
 </div>
 </div>
 </div>
