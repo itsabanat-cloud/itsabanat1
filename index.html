@@ -2,808 +2,712 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
 <meta name="google-site-verification" content="UueR8PnUJn6ting7KV-JRlquL0TF0jSMOL3y55D-Mx0" />
+<meta name="description" content="مدرسة الشهيد عيد عطية - مؤسسة تعليمية تهدف إلى إعداد جيل متميز ومبدع">
+<meta name="theme-color" content="#0f3460">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <title>مدرسة الشهيد عيد عطية (إطسا بنات سابقاً)</title>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="manifest" href="manifest.json">
 <style>
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{font-family:'Tajawal',sans-serif;background:#f0f2f5;color:#1e293b;line-height:1.5;overflow-x:hidden;font-size:16px}
+a{text-decoration:none;color:inherit;touch-action:manipulation}
+button,input,select,textarea{touch-action:manipulation;font-size:16px}
+
+/* Animations */
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes tickerMove{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
+@keyframes glowPulse{0%{box-shadow:0 0 0 0 rgba(233,69,96,.4)}70%{box-shadow:0 0 0 15px rgba(233,69,96,0)}100%{box-shadow:0 0 0 0 rgba(233,69,96,0)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes blinkActive{0%{background:#0f3460;color:#fff;box-shadow:0 0 0 0 rgba(15,52,96,.7)}50%{background:#e94560;color:#fff;box-shadow:0 0 0 8px rgba(233,69,96,.3)}100%{background:#0f3460;color:#fff;box-shadow:0 0 0 0 rgba(15,52,96,.7)}}
+
+/* News Ticker - Mobile Optimized */
+.news-ticker{background:linear-gradient(135deg,#0f3460,#1e3a5f);color:#fff;padding:8px 15px;position:relative;overflow:hidden;white-space:nowrap;border-bottom:3px solid #e94560;font-weight:600;direction:ltr}
+.ticker-wrapper{display:flex;align-items:center;gap:10px}
+.ticker-label{background:linear-gradient(135deg,#e94560,#c72a48);color:#fff;padding:4px 12px;border-radius:20px;font-size:.85rem;font-weight:800;flex-shrink:0;box-shadow:0 2px 10px rgba(233,69,96,.5);animation:glowPulse 10s infinite;position:absolute;right:15px;top:50%;transform:translateY(-50%);z-index:10}
+.ticker-content{display:flex;width:max-content;animation:15s linear infinite tickerMove;font-weight:500;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.3);white-space:nowrap;gap:40px;padding-left:80px}
+.ticker-content span{display:inline-block}
+.ticker-content i{margin-right:6px;color:#ffd966}
+
+/* Back to Top - Touch Friendly */
+.back-to-top{position:fixed;bottom:80px;right:15px;background:linear-gradient(135deg,#e94560,#c72a48);color:#fff;width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s;z-index:999;box-shadow:0 4px 15px rgba(233,69,96,.4);font-size:1.2rem;animation:glowPulse 10s infinite;min-width:44px;min-height:44px}
+.back-to-top.show{opacity:1;visibility:visible}
+.back-to-top:hover{background:linear-gradient(135deg,#c72a48,#a01e3a);transform:translateY(-5px) scale(1.1)}
+
+/* Float Buttons - Mobile Optimized */
+.float-buttons{position:fixed;bottom:15px;left:15px;display:flex;flex-direction:column;gap:10px;z-index:999}
+.float-btn{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.3rem;transition:all .3s;box-shadow:0 4px 12px rgba(0,0,0,.2);cursor:pointer;text-decoration:none;animation:2s ease-in-out infinite float;min-width:44px;min-height:44px}
+.float-btn:hover{transform:scale(1.1);animation:none}
+.btn-whatsapp{background:#25d366}.btn-whatsapp:hover{background:#128C7E}
+.btn-facebook{background:#1877f2;animation-delay:.10s}.btn-facebook:hover{background:#0c5bd1}
+.btn-call{background:#e94560;animation-delay:.10s}.btn-call:hover{background:#c72a48}
+.btn-youtube{background:#ff0000;animation-delay:.6s}.btn-youtube:hover{background:#cc0000}
+
+/* Header - Mobile Navigation */
+header{background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.08);position:sticky;top:0;z-index:1000}
+.top-bar{display:flex;justify-content:space-between;align-items:center;padding:8px 4%;border-bottom:1px solid #e0e0e0;flex-wrap:wrap;gap:10px}
+.logo-container{display:flex;align-items:center;gap:8px}
+.logo-img{width:45px;height:45px;background:linear-gradient(135deg,#0f3460,#1e3a5f);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px;transition:transform .3s;animation:glowPulse 2s infinite;flex-shrink:0}
+.logo-img:hover{transform:rotate(10deg) scale(1.05)}
+.school-name h1{color:#0f3460;font-size:1.1rem;font-weight:800;margin-bottom:2px;line-height:1.3}
+.school-name span{font-size:.7rem;color:#c2410c;font-weight:600}
+
+/* Mobile Menu Button */
+.mobile-menu-btn{display:none;background:none;border:none;font-size:1.4rem;color:#0f3460;cursor:pointer;padding:8px;min-width:44px;min-height:44px;z-index:1001}
+
+/* Navigation - Desktop & Mobile */
+nav ul{display:flex;list-style:none;gap:6px;flex-wrap:wrap;align-items:center}
+nav ul li a{font-weight:800;color:#0f3460;font-size:.9rem;padding:6px 12px;border-radius:30px;transition:all .3s;cursor:pointer;display:inline-block;position:relative;min-height:44px;display:flex;align-items:center}
+nav ul li a:hover{background:#0f3460;color:#fff;transform:translateY(-2px)}
+nav ul li a.active{background:#0f3460;color:#fff;animation:blinkActive 1.5s infinite ease-in-out;box-shadow:0 0 12px rgba(233,69,96,.5)}
+.home-nav-btn{background:linear-gradient(135deg,#e94560,#c72a48);color:#fff!important;padding:6px 12px!important;border-radius:20px!important;box-shadow:0 3px 10px rgba(233,69,96,.3);margin-left:6px}
+.home-nav-btn:hover{background:linear-gradient(135deg,#c72a48,#a01e3a)!important}
+
+/* Hero Section - Mobile Optimized */
+.hero-section{position:relative;width:100%;height:350px;overflow:hidden}
+.hero-section img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.hero-section:hover img{transform:scale(1.05)}
+
+/* Cards Container - Responsive Grid */
+.cards-container{display:flex;justify-content:center;gap:15px;margin-top:-40px;padding:0 4%;position:relative;z-index:10;flex-wrap:wrap}
+.card{background:#fff;flex:1;min-width:150px;max-width:200px;padding:15px 10px;border-radius:12px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,.1);transition:all .3s;cursor:pointer;border:1px solid #e8eef2;position:relative;overflow:hidden;min-height:140px}
+.card:hover{transform:translateY(-8px);box-shadow:0 12px 24px rgba(0,0,0,.15)}
+.card-icon{font-size:1.8rem;color:#0f3460;margin-bottom:6px;transition:transform .3s}
+.card:hover .card-icon{transform:scale(1.1) rotate(5deg);color:#e94560}
+.card h3{color:#0f3460;font-size:.9rem;margin-bottom:4px;font-weight:800;line-height:1.3}
+.card p{color:#334155;font-size:.7rem;line-height:1.3}
+
+/* Sections - Mobile Padding */
+.vision-mission-section,.gallery-section,.stats-section{padding:30px 4%;background:#fff;margin-top:25px}
+.section-title{text-align:center;color:#0f3460;font-size:1.5rem;margin-bottom:20px;font-weight:800;position:relative}
+.section-title::after{content:'';display:block;width:60px;height:3px;background:linear-gradient(90deg,#0f3460,#e94560);margin:8px auto 0;border-radius:2px}
+
+/* Vision & Mission - Responsive */
+.vision-mission-container{display:flex;gap:20px;flex-wrap:wrap;max-width:1200px;margin:0 auto}
+.vision-box,.mission-box{flex:1;min-width:240px;background:linear-gradient(135deg,#f8fafc,#fff);padding:20px;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.05);border:1px solid #e2e8f0;transition:all .3s}
+.vision-box:hover,.mission-box:hover{transform:translateY(-5px);box-shadow:0 8px 20px rgba(0,0,0,.1)}
+.vision-box h2,.mission-box h2{color:#0f3460;font-size:1.2rem;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.vision-box p,.mission-box p{color:#0f172a;font-size:.85rem;line-height:1.5;text-align:justify;font-weight:500}
+.mission-box ul{list-style:none;padding-right:0}
+.mission-box ul li{padding:4px 0;padding-right:20px;position:relative;font-size:.8rem;line-height:1.4;color:#0f172a;font-weight:500}
+.mission-box ul li::before{content:'✓';position:absolute;right:0;color:#e94560;font-weight:bold}
+
+/* Gallery - Mobile Optimized */
+.gallery-container{position:relative;max-width:1100px;margin:0 auto;overflow:hidden;border-radius:20px;box-shadow:0 25px 60px rgba(15,52,96,.25);background:#0f3460;aspect-ratio:16/9;max-height:500px;border:3px solid rgba(255,255,255,.05)}
+.gallery-slider{position:relative;width:100%;height:100%}
+.gallery-slide{position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;transform:scale(1.08);transition:opacity 1.2s cubic-bezier(.4,0,.2,1),transform 1.5s cubic-bezier(.4,0,.2,1);z-index:1}
+.gallery-slide.active{opacity:1;transform:scale(1);z-index:2}
+.gallery-slide img{width:100%;height:100%;object-fit:cover}
+.gallery-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(0,0,0,.85),rgba(0,0,0,.4),transparent);color:#fff;padding:50px 20px 20px;text-align:center;font-size:1.1rem;font-weight:600;transform:translateY(100%);transition:transform .7s cubic-bezier(.4,0,.2,1);z-index:3}
+.gallery-slide.active .gallery-caption{transform:translateY(0)}
+.gallery-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.15);backdrop-filter:blur(12px);color:#fff;border:1px solid rgba(255,255,255,.3);width:45px;height:45px;border-radius:50%;cursor:pointer;transition:all .3s;z-index:10;font-size:1.2rem;display:flex;align-items:center;justify-content:center;min-width:44px;min-height:44px}
+.gallery-btn:hover{background:#e94560;transform:translateY(-50%) scale(1.15)}
+.gallery-btn.prev{right:15px}.gallery-btn.next{left:15px}
+.gallery-dots{position:absolute;bottom:15px;left:50%;transform:translateX(-50%);display:flex;gap:10px;z-index:5}
+.dot{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.4);cursor:pointer;transition:all .3s;border:2px solid transparent;min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center}
+.dot.active{background:#e94560;width:28px;border-radius:20px;transform:scale(1.1)}
+.progress-bar{position:absolute;bottom:0;left:0;height:3px;background:linear-gradient(90deg,#e94560,#ff8c42,#e94560);width:0%;z-index:15;transition:width .05s linear}
+.slide-counter{position:absolute;top:15px;right:15px;background:rgba(0,0,0,.6);backdrop-filter:blur(10px);color:#fff;padding:6px 12px;border-radius:20px;font-size:.8rem;font-weight:700;z-index:5}
+
+/* Stats - Responsive Cards */
+.stats-container{display:flex;justify-content:center;flex-wrap:wrap;gap:20px;max-width:1200px;margin:0 auto}
+.stat-card{background:#fff;border-radius:16px;padding:20px 15px;text-align:center;flex:1;min-width:140px;box-shadow:0 10px 25px rgba(0,0,0,.05);transition:all .3s;border:1px solid #eef2ff}
+.stat-card:hover{transform:translateY(-8px)}
+.stat-icon{font-size:2rem;color:#e94560;margin-bottom:10px}
+.stat-number{font-size:2.2rem;font-weight:800;color:#0f3460;line-height:1;margin-bottom:6px}
+.stat-label{font-size:.9rem;color:#4b5563;font-weight:600}
+
+/* Footer - Mobile Optimized */
+footer{background:linear-gradient(135deg,#0f2b3d,#0a1e2c);color:#fff;padding:25px 4% 15px;margin-top:40px}
+.footer-content{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:15px;padding-bottom:15px;border-bottom:1px solid rgba(255,255,255,.15);max-width:1200px;margin:0 auto}
+.footer-section{flex:1;min-width:180px}
+.footer-section h3{color:#fff;font-size:.95rem;margin-bottom:10px;font-weight:700;position:relative;display:inline-block}
+.footer-section h3::after{content:'';position:absolute;bottom:-4px;right:0;width:35px;height:2px;background:#e94560}
+.contact-info p{margin:6px 0;font-size:.8rem;display:flex;align-items:center;gap:6px;color:#e2e8f0}
+.contact-info i{color:#e94560;font-size:.85rem;width:20px}
+.contact-info a{color:#e2e8f0;text-decoration:none}
+.contact-info a:hover{color:#fff;text-decoration:underline}
+.social-icons{display:flex;gap:10px;margin-top:12px}
+.social-icons a{width:32px;height:32px;background:rgba(255,255,255,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.9rem;transition:all .3s;min-width:44px;min-height:44px}
+.social-icons a:hover{background:linear-gradient(135deg,#e94560,#c72a48);transform:translateY(-3px) scale(1.1)}
+.copyright{text-align:center;padding-top:15px;display:flex;align-items:center;justify-content:center;gap:6px;font-size:.7rem;color:#cbd5e1;flex-wrap:wrap}
+
+/* ============================================
+   📱 MEDIA QUERIES - Mobile & Tablet Responsive
+   ============================================ */
+
+/* Tablet (768px and below) */
+@media (max-width: 768px) {
+  /* Mobile Menu Toggle */
+  .mobile-menu-btn { display: block; }
+  
+  /* Hide desktop nav, show mobile nav */
+  nav ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    padding: 15px 4%;
+    box-shadow: 0 5px 15px rgba(0,0,0,.1);
+    z-index: 999;
+    gap: 5px;
+  }
+  nav ul.active { display: flex; }
+  nav ul li { width: 100%; text-align: center; }
+  nav ul li a {
+    width: 100%;
+    justify-content: center;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 1rem;
+  }
+  
+  /* Hero Section */
+  .hero-section { height: 280px; }
+  
+  /* Cards */
+  .cards-container { margin-top: -30px; gap: 12px; }
+  .card { min-width: 140px; max-width: 180px; padding: 12px 8px; }
+  .card-icon { font-size: 1.6rem; }
+  .card h3 { font-size: .85rem; }
+  .card p { font-size: .65rem; }
+  
+  /* Gallery */
+  .gallery-container { aspect-ratio: 4/3; max-height: 400px; border-radius: 16px; }
+  .gallery-caption { font-size: 1rem; padding: 40px 15px 15px; }
+  .gallery-btn { width: 40px; height: 40px; font-size: 1rem; }
+  
+  /* Stats */
+  .stats-container { gap: 15px; }
+  .stat-card { min-width: 130px; padding: 15px 10px; }
+  .stat-number { font-size: 1.8rem; }
+  .stat-label { font-size: .85rem; }
+  
+  /* Footer */
+  .footer-content { flex-direction: column; text-align: center; gap: 20px; }
+  .footer-section h3::after { right: 50%; transform: translateX(50%); }
+  .social-icons { justify-content: center; }
+  .copyright { flex-direction: column; gap: 4px; }
 }
-body {
-font-family: 'Tajawal', sans-serif;
-background-color: #f0f2f5;
-color: #1e293b;
-line-height: 1.5;
-overflow-x: hidden;
-}
-a { text-decoration: none; color: inherit; }
 
-/* ==================== تأثيرات حركية للموقع ==================== */
-@keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes slideInRight { from { opacity: 0; transform: translateX(50px); } to { opacity: 1; transform: translateX(0); } }
-@keyframes pulse { 0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); } 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
-@keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
-@keyframes shimmer { 0% { background-position: -1000px 0; } 100% { background-position: 1000px 0; } }
-@keyframes glowPulse { 0% { box-shadow: 0 0 0 0 rgba(233, 69, 96, 0.4); } 70% { box-shadow: 0 0 0 15px rgba(233, 69, 96, 0); } 100% { box-shadow: 0 0 0 0 rgba(233, 69, 96, 0); } }
-@keyframes borderFlow { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
-@keyframes rotateSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-@keyframes slideInGlow { 0% { opacity: 0; transform: scale(0.95); filter: blur(5px); } 100% { opacity: 1; transform: scale(1); filter: blur(0); } }
-
-/* ==================== شريط الأخبار المحسن ==================== */
-.news-ticker { background: linear-gradient(135deg, #0f3460, #1e3a5f); color: white; padding: 10px 20px; position: relative; overflow: hidden; white-space: nowrap; box-sizing: border-box; border-bottom: 3px solid #e94560; font-weight: 600; direction: ltr; }
-.ticker-wrapper { display: flex; align-items: center; gap: 15px; }
-.ticker-label { background: linear-gradient(135deg, #e94560, #c72a48); color: white; padding: 4px 16px; border-radius: 20px; font-size: 0.9rem; font-weight: 800; flex-shrink: 0; box-shadow: 0 2px 10px rgba(233, 69, 96, 0.5); animation: glowPulse 2s infinite; z-index: 10; position: absolute; right: 20px; top: 50%; transform: translateY(-50%); }
-.ticker-content { display: flex; width: max-content; animation: tickerMove 30s linear infinite; font-weight: 500; direction: ltr; color: #ffffff; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); white-space: nowrap; gap: var(--item-gap, 50px); --item-gap: 50px; }
-.ticker-content span { display: inline-block; }
-.ticker-content i { margin-right: 8px; color: #ffd966; }
-@keyframes tickerMove { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
-
-/* ==================== زر العودة للأعلى ==================== */
-.back-to-top { position: fixed; bottom: 100px; right: 20px; background: linear-gradient(135deg, #e94560, #c72a48); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 999; box-shadow: 0 4px 15px rgba(233, 69, 96, 0.4); font-size: 1.4rem; animation: glowPulse 2s infinite; }
-.back-to-top.show { opacity: 1; visibility: visible; }
-.back-to-top:hover { background: linear-gradient(135deg, #c72a48, #a01e3a); transform: translateY(-5px) scale(1.1); }
-
-/* ==================== الأزرار العائمة ==================== */
-.float-buttons { position: fixed; bottom: 20px; left: 20px; display: flex; flex-direction: column; gap: 12px; z-index: 999; }
-.float-btn { width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.2); cursor: pointer; text-decoration: none; animation: float 2s ease-in-out infinite; }
-.float-btn:hover { transform: scale(1.1); animation: none; }
-.btn-whatsapp { background: #25d366; animation-delay: 0s; } .btn-whatsapp:hover { background: #128C7E; }
-.btn-facebook { background: #1877f2; animation-delay: 0.2s; } .btn-facebook:hover { background: #0c5bd1; }
-.btn-call { background: #e94560; animation-delay: 0.4s; } .btn-call:hover { background: #c72a48; }
-
-/* ==================== الهيدر ==================== */
-header { background-color: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 1000; }
-.top-bar { display: flex; justify-content: space-between; align-items: center; padding: 8px 5%; border-bottom: 1px solid #e0e0e0; flex-wrap: wrap; gap: 15px; }
-.logo-container { display: flex; align-items: center; gap: 10px; }
-.logo-img { width: 50px; height: 50px; background: linear-gradient(135deg, #0f3460, #1e3a5f); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; transition: transform 0.3s ease; animation: glowPulse 2s infinite; }
-.logo-img:hover { transform: rotate(10deg) scale(1.05); }
-.school-name h1 { color: #0f3460; font-size: 1.2rem; font-weight: 800; margin-bottom: 2px; }
-.school-name span { font-size: 0.75rem; color: #c2410c; font-weight: 600; }
-nav ul { display: flex; list-style: none; gap: 12px; flex-wrap: wrap; }
-nav ul li a { font-weight: 700; color: #0f3460; font-size: 0.9rem; padding: 6px 12px; border-radius: 8px; transition: all 0.3s ease; cursor: pointer; display: inline-block; position: relative; }
-nav ul li a::after { content: ''; position: absolute; bottom: 0; right: 50%; width: 0; height: 2px; background: #e94560; transition: all 0.3s ease; transform: translateX(50%); }
-nav ul li a:hover::after { width: 80%; }
-nav ul li a:hover { background-color: #0f3460; color: #ffffff; transform: translateY(-2px); }
-
-/* ==================== قسم الهيرو ==================== */
-.hero-section { position: relative; width: 100%; height: 400px; overflow: hidden; }
-.hero-section img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-.hero-section:hover img { transform: scale(1.05); }
-
-/* ==================== كروت الخدمات ==================== */
-.cards-container { display: flex; justify-content: center; gap: 20px; margin-top: -50px; padding: 0 5%; position: relative; z-index: 10; flex-wrap: wrap; }
-.card { background: #ffffff; flex: 1; min-width: 180px; max-width: 240px; padding: 20px 12px; border-radius: 12px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: all 0.3s ease; cursor: pointer; border: 1px solid #e8eef2; position: relative; overflow: hidden; }
-.card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(15, 52, 96, 0.05), rgba(233, 69, 96, 0.05)); transform: translateX(-100%); transition: transform 0.5s ease; }
-.card:hover::before { transform: translateX(0); }
-.card:hover { transform: translateY(-8px); box-shadow: 0 12px 24px rgba(0,0,0,0.15); }
-.card-icon { font-size: 2rem; color: #0f3460; margin-bottom: 8px; transition: transform 0.3s ease; }
-.card:hover .card-icon { transform: scale(1.1) rotate(5deg); color: #e94560; }
-.card h3 { color: #0f3460; font-size: 1rem; margin-bottom: 5px; font-weight: 800; }
-.card p { color: #334155; font-size: 0.75rem; line-height: 1.3; }
-
-/* ==================== الرؤية والرسالة ==================== */
-.vision-mission-section { padding: 40px 5%; background-color: #ffffff; margin-top: 30px; }
-.section-title { text-align: center; color: #0f3460; font-size: 1.8rem; margin-bottom: 25px; font-weight: 800; position: relative; }
-.section-title::after { content: ''; display: block; width: 70px; height: 3px; background: linear-gradient(90deg, #0f3460, #e94560); margin: 8px auto 0; border-radius: 2px; animation: shimmer 2s infinite; background-size: 200% auto; }
-.vision-mission-container { display: flex; gap: 25px; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; }
-.vision-box, .mission-box { flex: 1; min-width: 260px; background: linear-gradient(135deg, #f8fafc, #ffffff); padding: 25px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; transition: all 0.3s ease; position: relative; overflow: hidden; }
-.vision-box::before, .mission-box::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(233, 69, 96, 0.03), transparent); transform: rotate(0deg); transition: transform 0.6s ease; }
-.vision-box:hover::before, .mission-box:hover::before { transform: rotate(10deg); }
-.vision-box:hover, .mission-box:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
-.vision-box h2, .mission-box h2 { color: #0f3460; font-size: 1.4rem; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
-.vision-box p, .mission-box p { color: #0f172a; font-size: 0.9rem; line-height: 1.5; text-align: justify; font-weight: 500; }
-.mission-box ul { list-style: none; padding-right: 0; }
-.mission-box ul li { padding: 5px 0; padding-right: 24px; position: relative; font-size: 0.85rem; line-height: 1.4; color: #0f172a; font-weight: 500; }
-.mission-box ul li::before { content: '✓'; position: absolute; right: 0; color: #e94560; font-weight: bold; }
-
-/* ==================== الإحصائيات ==================== */
-.stats-section { padding: 40px 5%; background: linear-gradient(135deg, #f0f9ff, #ffffff); }
-.stats-container { display: flex; justify-content: center; flex-wrap: wrap; gap: 25px; max-width: 1200px; margin: 0 auto; }
-.stat-card { background: white; border-radius: 16px; padding: 25px 20px; text-align: center; flex: 1; min-width: 200px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); transition: all 0.3s ease; border: 1px solid #eef2ff; position: relative; overflow: hidden; }
-.stat-card::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, #0f3460, #e94560); transform: scaleX(0); transition: transform 0.3s ease; }
-.stat-card:hover::after { transform: scaleX(1); }
-.stat-card:hover { transform: translateY(-8px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
-.stat-icon { font-size: 2.5rem; color: #e94560; margin-bottom: 15px; transition: transform 0.3s ease; }
-.stat-card:hover .stat-icon { transform: scale(1.1) rotateY(180deg); }
-.stat-number { font-size: 2.8rem; font-weight: 800; color: #0f3460; line-height: 1; margin-bottom: 8px; }
-.stat-label { font-size: 1rem; color: #4b5563; font-weight: 600; }
-
-/* ==================== معرض الصور الاحترافي المحسن ==================== */
-.gallery-section { padding: 60px 5%; background: linear-gradient(135deg, #f8fafc, #ffffff); position: relative; overflow: hidden; }
-.gallery-container { 
-    position: relative; 
-    max-width: 1100px; 
-    margin: 0 auto; 
-    overflow: hidden; 
-    border-radius: 24px; 
-    box-shadow: 0 25px 60px rgba(15, 52, 96, 0.25), 0 0 0 1px rgba(255,255,255,0.1); 
-    background: #0f3460; 
-    aspect-ratio: 16/9; 
-    max-height: 650px;
-    border: 3px solid rgba(255,255,255,0.05);
-}
-.gallery-slider { position: relative; width: 100%; height: 100%; }
-.gallery-slide { 
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
-    opacity: 0; 
-    transform: scale(1.08);
-    transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), transform 1.5s cubic-bezier(0.4, 0, 0.2, 1); 
-    z-index: 1; 
-}
-.gallery-slide.active { opacity: 1; transform: scale(1); z-index: 2; }
-.gallery-slide img { width: 100%; height: 100%; object-fit: cover; }
-.gallery-caption { 
-    position: absolute; bottom: 0; left: 0; right: 0; 
-    background: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.4), transparent); 
-    color: white; padding: 60px 30px 30px; 
-    text-align: center; font-size: 1.3rem; font-weight: 600; 
-    transform: translateY(100%); 
-    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1); 
-    z-index: 3; backdrop-filter: blur(6px);
-}
-.gallery-slide.active .gallery-caption { transform: translateY(0); }
-.gallery-caption i { margin-left: 10px; color: #ffd966; animation: glowPulse 2s infinite; }
-
-.gallery-btn { 
-    position: absolute; top: 50%; transform: translateY(-50%); 
-    background: rgba(255,255,255,0.15); backdrop-filter: blur(12px); 
-    color: white; border: 1px solid rgba(255,255,255,0.3); 
-    width: 55px; height: 55px; border-radius: 50%; cursor: pointer; 
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-    z-index: 10; font-size: 1.4rem; display: flex; align-items: center; justify-content: center; 
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
-.gallery-btn:hover { background: #e94560; border-color: #e94560; transform: translateY(-50%) scale(1.15); }
-.gallery-btn.prev { right: 25px; }
-.gallery-btn.next { left: 25px; }
-
-.gallery-dots { 
-    position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%); 
-    display: flex; gap: 12px; z-index: 5; 
-}
-.dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.4); cursor: pointer; transition: all 0.3s ease; border: 2px solid transparent; }
-.dot.active { background: #e94560; width: 32px; border-radius: 20px; transform: scale(1.1); box-shadow: 0 0 15px rgba(233, 69, 96, 0.8); }
-.dot:hover { background: #ffffff; transform: scale(1.2); }
-
-.progress-bar { position: absolute; bottom: 0; left: 0; height: 4px; background: linear-gradient(90deg, #e94560, #ff8c42, #e94560); background-size: 200% auto; width: 0%; z-index: 15; transition: width 0.05s linear; border-radius: 0 4px 4px 0; animation: borderFlow 2s linear infinite; }
-.slide-counter { position: absolute; top: 20px; right: 20px; background: rgba(0,0,0,0.6); backdrop-filter: blur(10px); color: white; padding: 8px 16px; border-radius: 25px; font-size: 0.9rem; font-weight: 700; z-index: 5; border: 1px solid rgba(255,255,255,0.2); letter-spacing: 1px; }
-
-/* ==================== صفحات الديناميكية ==================== */
-.page-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.85); backdrop-filter: blur(8px); z-index: 2000; overflow-y: auto; }
-.page-content { background: linear-gradient(135deg, #f8fafc, #ffffff); min-height: 100vh; width: 85%; max-width: 1000px; margin: 40px auto; border-radius: 24px; padding: 25px 30px; position: relative; box-shadow: 0 25px 50px rgba(0,0,0,0.3); animation: zoomIn 0.5s ease-out; }
-.close-btn { position: absolute; top: 20px; left: 20px; background: linear-gradient(135deg, #e94560, #c72a48); color: white; border: none; width: 36px; height: 36px; border-radius: 50%; font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; }
-.close-btn:hover { background: linear-gradient(135deg, #c72a48, #a01e3a); transform: rotate(90deg) scale(1.1); }
-.back-home-btn { background: linear-gradient(135deg, #0f3460, #1e3a5f); color: white; border: none; padding: 8px 20px; border-radius: 10px; cursor: pointer; font-family: 'Tajawal', sans-serif; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease; font-weight: 500; }
-.back-home-btn:hover { background: linear-gradient(135deg, #e94560, #c72a48); transform: translateX(-5px); box-shadow: 0 4px 12px rgba(233, 69, 96, 0.4); }
-.back-home-bottom { margin-top: 25px; text-align: center; padding-top: 15px; border-top: 1px solid #e2e8f0; }
-.editable-section { margin-bottom: 20px; }
-.main-title { font-size: 1.6rem; color: #0f3460; margin-bottom: 12px; text-align: center; padding: 10px; border: 1px solid #cbd5e1; border-radius: 10px; background: linear-gradient(135deg, #fff, #f8fafc); font-weight: 800; }
-.sub-title { font-size: 1.1rem; color: #1e293b; margin-bottom: 10px; padding: 8px; border: 1px solid #cbd5e1; border-radius: 8px; background: linear-gradient(135deg, #fff, #f8fafc); font-weight: 700; }
-.text-content { font-size: 0.9rem; line-height: 1.6; padding: 15px; border: 1px solid #cbd5e1; border-radius: 8px; background-color: #fff; min-height: 130px; white-space: pre-line; color: #0f172a; font-weight: 500; }
-.image-box { margin: 10px 0 15px 0; text-align: center; padding: 10px; border-radius: 10px; background-color: #fff; border: 1px solid #e2e8f0; transition: transform 0.3s ease; }
-.image-box:hover { transform: scale(1.02); }
-.image-box img { max-width: 100%; max-height: 250px; border-radius: 10px; display: block; margin-left: auto; margin-right: auto; object-fit: cover; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
-.image-box img:hover { transform: scale(1.02); }
-.split-container { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 15px; }
-.split-section { flex: 1; min-width: 260px; background: linear-gradient(135deg, #fff, #f8fafc); padding: 15px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; transition: all 0.3s ease; }
-.split-section:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
-.split-section h3 { color: #0f3460; font-size: 1.2rem; margin-bottom: 12px; text-align: center; border-bottom: 2px solid #e94560; padding-bottom: 6px; display: inline-block; width: auto; margin-left: auto; margin-right: auto; }
-.split-section .image-box img { max-height: 180px; }
-.split-section .sub-title { font-size: 1rem; margin: 8px 0; color: #1e293b; }
-.split-section .text-content { font-size: 0.85rem; padding: 10px; min-height: 100px; color: #0f172a; }
-.location-map { margin-top: 20px; padding: 12px; background: linear-gradient(135deg, #fff, #f8fafc); border-radius: 12px; border: 1px solid #e2e8f0; text-align: center; transition: all 0.3s ease; }
-.location-map:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
-.location-map h4 { color: #0f3460; font-size: 1rem; margin-bottom: 10px; display: flex; align-items: center; justify-content: center; gap: 6px; }
-.location-map iframe { width: 100%; height: 280px; border-radius: 10px; border: none; margin-top: 8px; }
-.location-link { display: inline-block; margin-top: 10px; background: linear-gradient(135deg, #0f3460, #1e3a5f); color: white; padding: 8px 20px; border-radius: 10px; text-decoration: none; transition: all 0.3s ease; }
-.location-link:hover { background: linear-gradient(135deg, #e94560, #c72a48); transform: translateX(-5px); }
-.contact-link { color: #e2e8f0; transition: 0.2s; }
-.contact-link:hover { color: #e94560; }
-
-/* ==================== صفحة المعلمين ==================== */
-.teachers-section { padding: 40px 5%; background: linear-gradient(135deg, #f8fafc, #ffffff); color: #1e293b; text-align: center; }
-.teachers-section h2 { font-size: 1.8rem; color: #0f3460; margin-bottom: 12px; position: relative; display: inline-block; }
-.teachers-section h2 i { margin-left: 8px; color: #e94560; }
-.teachers-section h2::after { content: ''; position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); width: 70px; height: 3px; background: linear-gradient(90deg, #0f3460, #e94560); border-radius: 2px; }
-.teachers-section > p { color: #4a627a; margin-bottom: 30px; font-size: 0.9rem; }
-.leaders-container { display: flex; justify-content: center; gap: 35px; flex-wrap: wrap; margin-bottom: 40px; }
-.leader-wrapper { display: flex; flex-direction: column; align-items: center; position: relative; }
-.leader-badge { background: linear-gradient(135deg, #0f3460, #1e3a5f); color: white; padding: 5px 20px; border-radius: 30px; font-size: 0.9rem; font-weight: 700; margin-bottom: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); position: relative; z-index: 5; display: inline-block; }
-.leader-badge i { margin-left: 6px; }
-.leader-card { position: relative; width: 280px; height: 320px; border-radius: 20px; overflow: hidden; cursor: pointer; transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-.leader-card:hover { transform: translateY(-12px) scale(1.02); box-shadow: 0 25px 45px rgba(0,0,0,0.25); }
-.leader-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
-.leader-card:hover img { transform: scale(1.12); }
-.leader-card .overlay { position: absolute; bottom: 0; left: 0; right: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(15, 52, 96, 0.95), rgba(30, 58, 138, 0.95)); backdrop-filter: blur(8px); display: flex; flex-direction: column; justify-content: center; align-items: center; opacity: 0; transform: translateY(100%); transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); padding: 20px; text-align: center; }
-.leader-card:hover .overlay { opacity: 1; transform: translateY(0); }
-.overlay h3 { font-size: 1.1rem; margin-bottom: 5px; font-weight: 800; color: white; transform: translateY(20px); transition: transform 0.4s ease 0.1s; }
-.overlay p { margin-bottom: 5px; font-size: 0.8rem; color: rgba(255,255,255,0.9); transform: translateY(20px); transition: transform 0.4s ease 0.15s; }
-.overlay .subject { font-size: 0.75rem; background: rgba(255,255,255,0.2); padding: 3px 12px; border-radius: 20px; margin-bottom: 10px; color: white; transform: translateY(20px); transition: transform 0.4s ease 0.2s; }
-.overlay .phone { font-size: 0.75rem; color: #ffd966; margin-bottom: 10px; transform: translateY(20px); transition: transform 0.4s ease 0.22s; }
-.overlay button { padding: 6px 18px; border: none; border-radius: 25px; background: linear-gradient(135deg, #e94560, #c72a48); color: white; cursor: pointer; font-family: 'Tajawal', sans-serif; font-size: 0.75rem; font-weight: 600; transition: all 0.3s ease; transform: translateY(20px); transition: transform 0.4s ease 0.25s, background 0.3s; }
-.overlay button:hover { background: linear-gradient(135deg, #ff6b81, #e94560); transform: translateY(20px) scale(1.05); }
-.leader-card:hover .overlay h3, .leader-card:hover .overlay p, .leader-card:hover .overlay .subject, .leader-card:hover .overlay .phone, .leader-card:hover .overlay button { transform: translateY(0); }
-.teachers-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 25px; max-width: 1200px; margin-left: auto; margin-right: auto; }
-.teacher-card { position: relative; width: 100%; height: 280px; border-radius: 16px; overflow: hidden; cursor: pointer; transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
-.teacher-card:hover { transform: translateY(-8px); box-shadow: 0 20px 35px rgba(0,0,0,0.2); }
-.teacher-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s ease; }
-.teacher-card:hover img { transform: scale(1.1); }
-.teacher-card .overlay { position: absolute; bottom: 0; left: 0; right: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(15, 52, 96, 0.95), rgba(30, 58, 138, 0.95)); backdrop-filter: blur(8px); display: flex; flex-direction: column; justify-content: center; align-items: center; opacity: 0; transform: translateY(100%); transition: all 0.5s ease; padding: 15px; text-align: center; }
-.teacher-card:hover .overlay { opacity: 1; transform: translateY(0); }
-.teacher-card .overlay h3 { font-size: 1rem; margin-bottom: 4px; color: white; }
-.teacher-card .overlay p { font-size: 0.75rem; color: rgba(255,255,255,0.9); margin-bottom: 5px; }
-.teacher-card .overlay .subject { font-size: 0.7rem; background: rgba(255,255,255,0.2); padding: 2px 10px; border-radius: 20px; margin-bottom: 8px; color: white; }
-.teacher-card .overlay .phone { font-size: 0.7rem; color: #ffd966; margin-bottom: 8px; }
-.teacher-card .overlay button { padding: 5px 14px; border: none; border-radius: 20px; background: linear-gradient(135deg, #e94560, #c72a48); color: white; cursor: pointer; font-family: 'Tajawal', sans-serif; font-size: 0.7rem; font-weight: 600; transition: all 0.3s ease; }
-.teacher-card .overlay button:hover { background: linear-gradient(135deg, #ff6b81, #e94560); transform: scale(1.05); }
-.teacher-social { display: flex; gap: 8px; margin-top: 8px; }
-.teacher-social a { width: 26px; height: 26px; border-radius: 50%; background: rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; color: white; font-size: 0.7rem; transition: all 0.3s ease; }
-.teacher-social a:hover { background: #e94560; transform: scale(1.1) rotate(10deg); }
-.popup-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.92); backdrop-filter: blur(10px); z-index: 3000; justify-content: center; align-items: center; animation: fadeInUp 0.3s ease; }
-.popup-content { background: linear-gradient(135deg, #fff, #f8fafc); border-radius: 28px; max-width: 500px; width: 90%; padding: 30px; text-align: center; position: relative; animation: zoomIn 0.5s ease; direction: rtl; box-shadow: 0 25px 50px rgba(0,0,0,0.3); }
-.popup-content img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; border: 4px solid #e94560; box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
-.popup-content h3 { color: #0f3460; font-size: 1.4rem; margin-bottom: 10px; }
-.popup-content p { color: #334155; margin: 8px 0; font-size: 0.95rem; }
-.popup-content .phone-link { color: #e94560; text-decoration: none; font-weight: bold; }
-.popup-content .phone-link:hover { text-decoration: underline; }
-.popup-close { position: absolute; top: 15px; left: 15px; background: linear-gradient(135deg, #e94560, #c72a48); color: white; border: none; width: 35px; height: 35px; border-radius: 50%; font-size: 18px; cursor: pointer; transition: all 0.3s ease; }
-.popup-close:hover { background: linear-gradient(135deg, #c72a48, #a01e3a); transform: rotate(90deg) scale(1.1); }
-
-/* ==================== الفوتر ==================== */
-footer { background: linear-gradient(135deg, #0f2b3d, #0a1e2c); color: #ffffff; padding: 30px 5% 20px; margin-top: 50px; }
-.footer-content { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.15); max-width: 1200px; margin: 0 auto; }
-.footer-section { flex: 1; min-width: 200px; }
-.footer-section h3 { color: #ffffff; font-size: 1rem; margin-bottom: 12px; font-weight: 700; position: relative; display: inline-block; }
-.footer-section h3::after { content: ''; position: absolute; bottom: -5px; right: 0; width: 40px; height: 2px; background: #e94560; }
-.contact-info p { margin: 8px 0; font-size: 0.8rem; display: flex; align-items: center; gap: 8px; color: #e2e8f0; }
-.contact-info i { color: #e94560; font-size: 0.9rem; width: 22px; }
-.social-icons { display: flex; gap: 12px; margin-top: 15px; }
-.social-icons a { width: 35px; height: 35px; background: rgba(255,255,255,0.12); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 1rem; transition: all 0.3s ease; }
-.social-icons a:hover { background: linear-gradient(135deg, #e94560, #c72a48); transform: translateY(-3px) scale(1.1); }
-.copyright { text-align: center; padding-top: 20px; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 0.75rem; color: #cbd5e1; }
-.copyright img { width: 24px; height: 24px; transition: transform 0.3s ease; }
-.copyright img:hover { transform: rotate(10deg) scale(1.1); }
-.fade-in-scroll { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
-.fade-in-scroll.visible { opacity: 1; transform: translateY(0); }
-
-/* ==================== التجاوب مع الشاشات ==================== */
-@media (max-width: 1024px) { .gallery-container { aspect-ratio: 16/10; max-height: 500px; } .teachers-grid { grid-template-columns: repeat(3, 1fr); gap: 15px; } }
-@media (max-width: 768px) { 
-    .gallery-container { aspect-ratio: 4/3; max-height: 400px; border-radius: 16px; }
-    .gallery-slide img { height: 400px; }
-    .gallery-btn { width: 45px; height: 45px; font-size: 1.2rem; }
-    .gallery-caption { font-size: 1rem; padding: 25px 15px 20px; }
-    .slide-counter { bottom: 15px; right: 15px; font-size: 0.8rem; padding: 6px 14px; top: auto; bottom: 10px; right: 10px; left: auto; transform: none; }
-    .gallery-btn.prev { right: 10px; }
-    .gallery-btn.next { left: 10px; }
-    .teachers-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-    .leader-card { width: 240px; height: 280px; }
-    .teacher-card { height: 240px; }
-    .top-bar { flex-direction: column; text-align: center; }
-    nav ul { justify-content: center; }
-}
+/* Mobile (480px and below) */
 @media (max-width: 480px) {
-    .gallery-container { aspect-ratio: 1/1; max-height: 320px; border-radius: 12px; }
-    .gallery-slide img { height: 320px; }
-    .gallery-btn { width: 38px; height: 38px; font-size: 1rem; }
-    .gallery-caption { font-size: 0.85rem; padding: 20px 12px 15px; }
-    .slide-counter { bottom: 8px; right: 8px; font-size: 0.7rem; padding: 5px 12px; }
-    .teachers-grid { grid-template-columns: 1fr; }
-    .hero-section { height: 300px; }
-    .cards-container { margin-top: -30px; }
-    .card { min-width: 150px; max-width: 200px; padding: 15px 10px; }
+  /* Header */
+  .top-bar { padding: 6px 3%; }
+  .logo-img { width: 40px; height: 40px; font-size: 18px; }
+  .school-name h1 { font-size: 1rem; }
+  .school-name span { font-size: .65rem; }
+  
+  /* Hero */
+  .hero-section { height: 220px; }
+  
+  /* Cards - Single Column */
+  .cards-container { flex-direction: column; align-items: center; }
+  .card { min-width: 100%; max-width: 320px; }
+  
+  /* Vision/Mission */
+  .vision-mission-container { flex-direction: column; }
+  .vision-box, .mission-box { min-width: 100%; }
+  
+  /* Gallery */
+  .gallery-container { aspect-ratio: 1/1; max-height: 320px; }
+  .gallery-caption { font-size: .95rem; }
+  
+  /* Stats - 2 Columns */
+  .stats-container { grid-template-columns: repeat(2, 1fr); }
+  .stat-card { min-width: 100%; }
+  
+  /* Float Buttons */
+  .float-buttons { bottom: 10px; left: 10px; gap: 8px; }
+  .float-btn { width: 45px; height: 45px; font-size: 1.2rem; }
+  
+  /* Back to Top */
+  .back-to-top { bottom: 70px; right: 10px; width: 44px; height: 44px; }
+  
+  /* News Ticker */
+  .ticker-content { gap: 30px; padding-left: 70px; font-size: .85rem; }
+  .ticker-label { font-size: .8rem; padding: 3px 10px; right: 10px; }
+}
+
+/* Small Mobile (360px and below) */
+@media (max-width: 360px) {
+  .school-name h1 { font-size: .95rem; }
+  .card h3 { font-size: .8rem; }
+  .stat-number { font-size: 1.6rem; }
+  .gallery-container { max-height: 280px; }
+}
+
+/* High DPI / Retina Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .logo-img, .float-btn, .gallery-btn { image-rendering: -webkit-optimize-contrast; }
+}
+
+/* Print Styles */
+@media print {
+  .news-ticker, .float-buttons, .back-to-top, nav { display: none !important; }
+  body { background: #fff; color: #000; }
+  .card, .stat-card { break-inside: avoid; }
+}
+
+/* Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 </style>
 </head>
 <body>
-<!-- شريط الأخبار المتحرك المحسن -->
+
+<!-- News Ticker -->
 <div class="news-ticker">
-<div class="ticker-wrapper">
-<div class="ticker-label">🔴 أخبار عاجلة</div>
-<div class="ticker-content">
-<span><i class="fas fa-calendar-alt"></i> استمرار اعمال الامتحانات من يوم الاحد عقب اجازة الاربعاء لسوء الاحوال الجوية</span>
-<span><i class="fas fa-star"></i> ممنوع الغياب نهائيا </span>
-<span><i class="fas fa-chalkboard-teacher"></i> اجتماع أولياء الأمور: الخميس القادم الساعة 10 صباحاً</span>
-<span><i class="fas fa-trophy"></i> تدريب الحاسب الالي للتلاميذ تم تاجيله ليكون الخميس القادم 2 ابريل </span>
-<span><i class="fas fa-bell"></i> إجازة نصف العام: من 26 يناير حتى 6 فبراير</span>
-<span><i class="fas fa-bell"></i> إننوه على عد الغياب نهائيا الا بعذر طبي مقبول </span>
-<span><i class="fas fa-bell"></i>اخبار عاجلة مدرسة الشهيد عيد عطية </span>
+  <div class="ticker-wrapper">
+    <div class="ticker-label">🔴 أخبار عاجلة</div>
+    <div class="ticker-content">
+      <span><i class="fas fa-bell"></i> يرجى متابعة الصفحة الرسمية للمدرسة لأحدث التحديثات</span>
+      <span><i class="fas fa-bell"></i> مدرسة الشهيد عيد عطية</span>
+      <span><i class="fas fa-calendar-alt"></i> استمرار اعمال الامتحانات من يوم الاحد</span>
+      <span><i class="fas fa-star"></i> ممنوع الغياب نهائيا</span>
+      <span><i class="fas fa-bell"></i> مدرسة الشهيد عيد عطية</span>
+      <span><i class="fas fa-chalkboard-teacher"></i> اجتماع أولياء الأمور: الخميس القادم الساعة 10 صباحاً</span>
+      <span><i class="fas fa-bell"></i> مدرسة الشهيد عيد عطية</span>
+      <span><i class="fas fa-trophy"></i> تدريب الحاسب الالي للتلاميذ تم تاجيله ليكون الخميس القادم 2 ابريل</span>
+      <span><i class="fas fa-bell"></i> مدرسة الشهيد عيد عطية</span>
+      <span><i class="fas fa-bell"></i> إجازة نصف العام: من 26 يناير حتى 6 فبراير</span>
+      <span><i class="fas fa-bell"></i> مدرسة الشهيد عيد عطية</span>
+    </div>
+  </div>
 </div>
-</div>
-</div>
+
+<!-- Header with Mobile Menu -->
 <header>
-<div class="top-bar">
-<div class="logo-container">
-<div class="logo-img"><i class="fas fa-school"></i></div>
-<div class="school-name">
-<h1>مدرسة الشهيد عيد عطية (إطسا بنات سابقاً)</h1>
-<span>هدفنا اعداد تلميذ متميز ومبدع</span>
-</div>
-</div>
-<nav>
-<ul>
-<li><a onclick="showMainPage()">الرئيسية</a></li>
-<li><a onclick="openPage('about')">عن المدرسة</a></li>
-<li><a onclick="openPage('activities')">الأنشطة</a></li>
-<li><a onclick="openPage('exams')">امتحانات ونتائج</a></li>
-<li><a onclick="openPage('contact')">التواصل</a></li>
-</ul>
-</nav>
-</div>
-</header>
-<div id="mainPage">
-<section class="hero-section">
-<img src="https://res.cloudinary.com/dar1qf8p7/image/upload/v1774330930/123_z2keyc.png" alt="مدرسة الشهيد عيد عطية">
-</section>
-<section class="cards-container">
-<div class="card" onclick="openPage('notifications')"><div class="card-icon"><i class="fas fa-bullhorn"></i></div><h3>تنويهات هامة</h3><p>آخر الأخبار والإعلانات المدرسية المهمة</p></div>
-<div class="card" onclick="openPage('stages')"><div class="card-icon"><i class="fas fa-layer-group"></i></div><h3>المراحل الدراسية</h3><p>المرحلة الابتدائية ورياض الأطفال</p></div>
-<div class="card" onclick="openPage('exams')"><div class="card-icon"><i class="fas fa-clipboard-list"></i></div><h3>امتحانات ونتائج</h3><p>جداول الامتحانات والنتائج</p></div>
-<div class="card" onclick="openPage('teachers')"><div class="card-icon"><i class="fas fa-chalkboard-teacher"></i></div><h3>المعلمين</h3><p>نخبة من أفضل المعلمين والمعلمات</p></div>
-<div class="card" onclick="window.open('https://www.facebook.com/itsabanat', '_blank')"><div class="card-icon"><i class="fab fa-facebook-f"></i></div><h3>تابعنا على فيسبوك</h3><p>لمتابعة أحدث الأخبار والتنويهات</p></div>
-</section>
-<section class="vision-mission-section">
-<h2 class="section-title">الرؤية والرسالة</h2>
-<div class="vision-mission-container">
-<div class="vision-box"><h2><i class="fas fa-eye"></i> الرؤية</h2><p>تحقّق المدرسة التميّز في بناء شخصية طلابها، وإعداد جيلٍ مبدعٍ يواكب التطور العلمي والتكنولوجي.</p></div>
-<div class="mission-box"><h2><i class="fas fa-paper-plane"></i> الرسالة</h2><ul><li>التنمية المهنية للمعلمين، وإشراكهم في تدريبات وثيقة الصلة بموادهم العلمية.</li><li>تنمية مواهب التلاميذ المختلفة وصقلها.</li><li>استخدام الوسائل التعليمية المتنوعة التي تخدم العملية التعليمية.</li><li>التقويم المستمر لأداء عناصر العملية التعليمية.</li><li>تفعيل دور مجلس الأمناء وتعزيز المشاركة المجتمعية.</li></ul></div>
-</div>
-</section>
-<!-- معرض الصور الاحترافي -->
-<section class="gallery-section">
-<h2 class="section-title" style="text-align: center; margin-bottom: 35px;"><i class="fas fa-images"></i> معرض الصور</h2>
-<div class="gallery-container" id="galleryContainer">
-<div class="gallery-slider" id="gallerySlider"></div>
-<button class="gallery-btn prev" onclick="prevSlide()" aria-label="السابق"><i class="fas fa-chevron-right"></i></button>
-<button class="gallery-btn next" onclick="nextSlide()" aria-label="التالي"><i class="fas fa-chevron-left"></i></button>
-<div class="gallery-dots" id="galleryDots"></div>
-<div class="progress-bar" id="progressBar"></div>
-<div class="slide-counter" id="slideCounter">1 / 1</div>
-</div>
-</section>
-<!-- كروت الإحصائيات المتحركة -->
-<section class="stats-section">
-<h2 class="section-title">إنجازاتنا وأرقامنا</h2>
-<div class="stats-container">
-<div class="stat-card"><div class="stat-icon"><i class="fas fa-users"></i></div><div class="stat-number" id="students-count" data-target="1400">0</div><div class="stat-label">عدد التلاميذ</div></div>
-<div class="stat-card"><div class="stat-icon"><i class="fas fa-chalkboard-user"></i></div><div class="stat-number" id="teachers-count" data-target="64">0</div><div class="stat-label">عدد المعلمين والمعلمات</div></div>
-<div class="stat-card"><div class="stat-icon"><i class="fas fa-award"></i></div><div class="stat-number" id="years-count" data-target="63">0</div><div class="stat-label">عاماً من التميز</div></div>
-<div class="stat-card"><div class="stat-icon"><i class="fas fa-door-open"></i></div><div class="stat-number" id="classes-count" data-target="33">0</div><div class="stat-label">عدد الفصول</div></div>
-</div>
-</section>
-</div>
-<!-- صفحة المحتوى الديناميكي -->
-<div id="pageOverlay" class="page-overlay">
-<div class="page-content" id="dynamicPageContent">
-<button class="close-btn" onclick="closePage()">✕</button>
-<div id="pageInnerContent"></div>
-</div>
-</div>
-<!-- الأزرار العائمة -->
-<div class="float-buttons">
-<a href="https://wa.me/201008268284" target="_blank" class="float-btn btn-whatsapp" title="واتساب"><i class="fab fa-whatsapp"></i></a>
-<a href="https://www.facebook.com/itsabanat" target="_blank" class="float-btn btn-facebook" title="فيسبوك"><i class="fab fa-facebook-f"></i></a>
-<a href="tel:01008268284" class="float-btn btn-call" title="اتصال"><i class="fas fa-phone-alt"></i></a>
-</div>
-<!-- زر العودة للأعلى -->
-<div class="back-to-top" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></div>
-<!-- Popup للمعلمين -->
-<div id="teacherPopup" class="popup-overlay">
-<div class="popup-content">
-<button class="popup-close" onclick="closePopup()">✕</button>
-<img id="popupImg" src="" alt="المعلم">
-<h3 id="popupName"></h3>
-<p id="popupTitle"></p>
-<p id="popupQualification"></p>
-<p id="popupExperience"></p>
-<p id="popupPhone"></p>
-<p id="popupBio"></p>
-</div>
-</div>
-<footer>
-<div class="footer-content">
-<div class="footer-section">
-<h3>معلومات الاتصال</h3>
-<div class="contact-info">
-<p><i class="fas fa-phone"></i> <a href="tel:01008268284" class="contact-link">هاتف: 01008268284</a></p>
-<p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/201008268284" target="_blank" class="contact-link">واتساب: 01008268284</a></p>
-<p><i class="fas fa-map-marker-alt"></i> العنوان: شارع المدارس - مركز ومدينة إطسا - الفيوم</p>
-<p><i class="fas fa-envelope"></i> البريد الإلكتروني: info@school.edu.eg</p>
-</div>
-<div class="social-icons">
-<a href="https://www.facebook.com/itsabanat" target="_blank"><i class="fab fa-facebook-f"></i></a>
-<a href="https://wa.me/201008268284" target="_blank"><i class="fab fa-whatsapp"></i></a>
-<a href="https://www.youtube.com/channel/UCH2wYK3_EBCC01L8pLLhH6Q" target="_blank"><i class="fab fa-youtube"></i></a>
-</div>
-</div>
-<div class="footer-section">
-<h3>روابط سريعة</h3>
-<ul style="list-style: none; line-height: 1.6;">
-<li><a onclick="showMainPage()" style="cursor: pointer; color: #ccc;">الرئيسية</a></li>
-<li><a onclick="openPage('about')" style="cursor: pointer; color: #ccc;">عن المدرسة</a></li>
-<li><a onclick="openPage('activities')" style="cursor: pointer; color: #ccc;">الأنشطة</a></li>
-<li><a onclick="openPage('contact')" style="cursor: pointer; color: #ccc;">التواصل</a></li>
-</ul>
-</div>
-<div class="footer-section">
-<h3>عن المدرسة</h3>
-<p style="color: #ccc; line-height: 1.5; font-size: 0.85rem;">مدرسة الشهيد عيد عطية (إطسا بنات سابقاً) - مؤسسة تعليمية تهدف إلى إعداد جيل متميز ومبدع.</p>
-</div>
-</div>
-<div class="copyright">
-<p>جميع الحقوق محفوظة © 2026</p>
-<img src="https://res.cloudinary.com/dar1qf8p7/image/upload/v1775150037/logo_emad_sfxlgc.png" alt="Master Emad Elnaggar">
-<p>Master Emad Elnaggar</p>
-</div>
-</footer>
-<script>
-// ==================== معرض الصور - بيانات الصور ====================
-const galleryImages = [
-{ src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1774288114/%D8%A7%D9%84%D9%85%D8%A8%D9%86%D9%89_mjhc6a.jpg", caption: "🏫 مبنى مدرسة الشهيد عيد عطية - صرح تعليمي متميز" },
-{ src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1774287992/%D8%B5%D9%88%D8%B1%D8%A9_%D9%85%D8%A8%D9%87%D8%AC%D8%A9_cybavn.jpg", caption: "🎉 فعاليات وأنشطة مدرسية مميزة - نرتقي بالتعليم" },
-{ src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1774289447/%D9%83%D8%B12_cmtdqg.jpg", caption: "📚 فصول دراسية مجهزة - بيئة تعليمية محفزة" },
-{ src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1774289276/%D8%B1%D9%8A%D8%A7%D8%B6_%D8%A7%D9%84%D8%A7%D8%B7%D9%81%D8%A7%D9%84_asrxdw.jpg", caption: "🎨 رياض الأطفال - نزرع الإبداع منذ الصغر" },
-{ src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1774289341/%D9%85%D8%B9%D9%84%D9%85%D9%88%D9%86_foielb.png", caption: "👨‍🏫 فريق المعلمين المتميز - نخبة من الكفاءات" },
-{ src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1774288628/%D8%AC%D8%AF%D9%88%D9%84_%D8%A7%D9%84%D8%A7%D9%85%D8%AA%D8%AD%D8%A7%D9%86%D8%A7%D8%AA_wauaxx.png", caption: "📝 الامتحانات والنتائج - نصنع التميز معاً" },
-{ src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775121887/583951927_1376895284447204_6988680476413416143_n_k4ttrr.jpg", caption: "🏫 مدرستي - صرحنا التعليمي الشامخ" },
-{ src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775121871/493280021_1198135035656564_7775304818970337216_n_igc397.jpg", caption: "🏆 لحظات تكريم وتميز" },
-{ src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775121871/515254647_24229516266684592_1477505137331139619_n_mtvhyy.jpg", caption: "🏆 تكريمات طلابنا المبدعين" },
-{ src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775121870/482065839_1695430884730785_8666615673719201111_n_bwbxdj.jpg", caption: "🏆 شهادات تقدير وإنجازات" },
-{ src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775121900/660469455_1492858439517554_8297215354032378992_n_zmzimw.jpg", caption: "🏆 حفلات التكريم السنوية" },
-{ src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775121901/648927166_1474053938064671_1838580142485229435_n_srbrfr.jpg", caption: "🏆 تميز مدرستنا على مستوى المحافظة" },
-{ src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775121897/595296005_1396267085843357_8410776868839147202_n_pfsft6.jpg", caption: "🏆 دروع وشهادات الشكر" },
-{ src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775121894/603774352_25369258256072535_2777624409033646060_n_d0phxt.jpg", caption: "🏆 فخرنا بإنجازات أبنائنا" },
-{ src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775121899/599707136_1402265001910232_4332550595457639745_n_dtggos.jpg", caption: "🎨 أطفالنا في رياض الأطفال - براعم المستقبل" },
-{ src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775121899/602319314_1406725981464134_7589583284507290531_n_fvwpft.jpg", caption: "🎨 أنشطة تعليمية ممتعة للصغار" },
-{ src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775121873/552576694_1322002539936479_8297904118837051090_n_xkcne6.jpg", caption: "🎨 بيئة آمنة ومحببة للأطفال" },
-{ src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775121899/643852392_1464606009009464_5312512734799058305_n_xxzta1.jpg", caption: "⚽ أنشطة مدرسية متنوعة - نكتشف المواهب" },
-{ src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775121898/641336819_1464606082342790_530542102580372893_n_wu3zcb.jpg", caption: "⚽ مسابقات رياضية وثقافية" },
-{ src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775121896/641259775_1464606145676117_2328653931797803546_n_kybziy.jpg", caption: "⚽ فعاليات ترفيهية وتعليمية" },
-{ src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775121888/576378843_1368474175289315_5516551055049729650_n_lvmid4.jpg", caption: "⚽ مشاركة طلابنا في الفعاليات" },
-{ src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775121887/577863325_1368473761956023_6613377093671087393_n_fepdpw.jpg", caption: "⚽ أنشطة فنية وإبداعية" },
-{ src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775121886/576890684_1365601875576545_1939078781277068871_n_a2qcbe.jpg", caption: "⚽ رحلات تعليمية ميدانية" },
-{ src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775121875/514763925_24228950953407790_6214286212847841964_n_fo3int.jpg", caption: "⚽ احتفالات ومناسبات مدرسية" },
-{ src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775121899/626612776_1442829671187098_6760085392200824628_n_ao3ufr.jpg", caption: "👨‍🏫 تميز معلمينا الأفاضل - فخراً لنا" },
-{ src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775121898/641284648_1463990135737718_2774566008817175686_n_hullee.jpg", caption: "👨‍🏫 كوادر تعليمية متميزة" },
-{ src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775121877/557421895_1469728271828024_9085241449465565797_n_sfq44o.jpg", caption: "👨‍🏫 جهود معلمينا في بناء الأجيال" },
-{ src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775121872/514478527_24228973126738906_9120666101809034061_n_j1mlho.jpg", caption: "💻 جلسات تدريبية وتطويرية للمعلمين" },
-{ src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775121871/515536904_24228951023407783_2361271723766718212_n_n6ggah.jpg", caption: "💻 ورش عمل لتطوير العملية التعليمية" }
-];
-
-// ==================== متغيرات السلايدر ====================
-let currentSlideIndex = 0;
-let autoSlideTimer = null;
-let progressInterval = null;
-let isPlaying = true;
-let progressWidth = 0;
-const totalSlides = galleryImages.length;
-const autoSlideDelay = 6000; // ⏱️ تم التعديل إلى 6 ثوانٍ
-
-// ==================== بناء السلايدر ====================
-function buildGallery() {
-    const slider = document.getElementById('gallerySlider');
-    const dotsContainer = document.getElementById('galleryDots');
-    if (!slider || !dotsContainer) return;
+  <div class="top-bar">
+    <div class="logo-container">
+      <div class="logo-img"><i class="fas fa-school"></i></div>
+      <div class="school-name">
+        <h1>مدرسة الشهيد عيد عطية (إطسا بنات سابقاً)</h1>
+        <span>هدفنا اعداد تلميذ متميز ومبدع</span>
+      </div>
+    </div>
     
-    slider.innerHTML = '';
-    galleryImages.forEach((image, index) => {
-        const slide = document.createElement('div');
-        slide.className = `gallery-slide ${index === 0 ? 'active' : ''}`;
-        slide.innerHTML = `<img src="${image.src}" alt="صورة ${index + 1}" loading="${index === 0 ? 'eager' : 'lazy'}"><div class="gallery-caption"><i class="fas fa-camera"></i> ${image.caption}</div>`;
-        slider.appendChild(slide);
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="القائمة" aria-expanded="false">
+      <i class="fas fa-bars"></i>
+    </button>
+    
+    <!-- Navigation -->
+    <nav>
+      <ul id="mainNav">
+        <li><a href="index.html" class="home-nav-btn"><i class="fas fa-home"></i> الرئيسية</a></li>
+        <li><a href="about.html">عن المدرسة</a></li>
+        <li><a href="activities.html">الأنشطة</a></li>
+        <li><a href="exams.html">نتائج وامتحانات</a></li>
+        <li><a href="teachers.html">المعلمين</a></li>
+        <li><a href="notifications.html">تنويهات هامة</a></li>
+        <li><a href="stages.html">المراحل الدراسية</a></li>
+        <li><a href="contact.html">التواصل</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Main Content -->
+<main>
+  <section class="hero-section">
+    <img src="https://res.cloudinary.com/dar1qf8p7/image/upload/v1774330930/123_z2keyc.png" 
+         alt="مدرسة الشهيد عيد عطية" 
+         loading="eager" 
+         width="1200" 
+         height="400">
+  </section>
+  
+  <section class="cards-container">
+    <div class="card" onclick="location.href='notifications.html'" role="button" tabindex="0">
+      <div class="card-icon"><i class="fas fa-bullhorn"></i></div>
+      <h3>تنويهات هامة</h3>
+      <p>آخر الأخبار والإعلانات المدرسية المهمة</p>
+    </div>
+    <div class="card" onclick="location.href='stages.html'" role="button" tabindex="0">
+      <div class="card-icon"><i class="fas fa-layer-group"></i></div>
+      <h3>المراحل الدراسية</h3>
+      <p>المرحلة الابتدائية ورياض الأطفال</p>
+    </div>
+    <div class="card" onclick="location.href='exams.html'" role="button" tabindex="0">
+      <div class="card-icon"><i class="fas fa-clipboard-list"></i></div>
+      <h3>امتحانات ونتائج</h3>
+      <p>جداول الامتحانات والنتائج</p>
+    </div>
+    <div class="card" onclick="location.href='teachers.html'" role="button" tabindex="0">
+      <div class="card-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+      <h3>المعلمين</h3>
+      <p>نخبة من أفضل المعلمين والمعلمات</p>
+    </div>
+    <div class="card" onclick="window.open('https://www.facebook.com/itsabanat','_blank')" role="button" tabindex="0">
+      <div class="card-icon"><i class="fab fa-facebook-f"></i></div>
+      <h3>تابعنا على فيسبوك</h3>
+      <p>لمتابعة أحدث الأخبار والتنويهات</p>
+    </div>
+  </section>
+  
+  <section class="vision-mission-section">
+    <h2 class="section-title">الرؤية والرسالة</h2>
+    <div class="vision-mission-container">
+      <div class="vision-box">
+        <h2><i class="fas fa-eye"></i> الرؤية</h2>
+        <p>تحقّق المدرسة التميّز في بناء شخصية طلابها، وإعداد جيلٍ مبدعٍ يواكب التطور العلمي والتكنولوجي.</p>
+      </div>
+      <div class="mission-box">
+        <h2><i class="fas fa-paper-plane"></i> الرسالة</h2>
+        <ul>
+          <li>التنمية المهنية للمعلمين، وإشراكهم في تدريبات وثيقة الصلة بموادهم العلمية.</li>
+          <li>تنمية مواهب التلاميذ المختلفة وصقلها.</li>
+          <li>استخدام الوسائل التعليمية المتنوعة التي تخدم العملية التعليمية.</li>
+          <li>التقويم المستمر لأداء عناصر العملية التعليمية.</li>
+          <li>تفعيل دور مجلس الأمناء وتعزيز المشاركة المجتمعية.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  
+  <section class="gallery-section">
+    <h2 class="section-title"><i class="fas fa-images"></i> معرض الصور</h2>
+    <div class="gallery-container" id="galleryContainer">
+      <div class="gallery-slider" id="gallerySlider"></div>
+      <button class="gallery-btn prev" onclick="prevSlide()" aria-label="السابق"><i class="fas fa-chevron-right"></i></button>
+      <button class="gallery-btn next" onclick="nextSlide()" aria-label="التالي"><i class="fas fa-chevron-left"></i></button>
+      <div class="gallery-dots" id="galleryDots"></div>
+      <div class="progress-bar" id="progressBar"></div>
+      <div class="slide-counter" id="slideCounter" aria-live="polite">1 / 1</div>
+    </div>
+  </section>
+  
+  <section class="stats-section">
+    <h2 class="section-title">إنجازاتنا وأرقامنا</h2>
+    <div class="stats-container">
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fas fa-users"></i></div>
+        <div class="stat-number" data-target="1400">0</div>
+        <div class="stat-label">عدد التلاميذ</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fas fa-chalkboard-user"></i></div>
+        <div class="stat-number" data-target="64">0</div>
+        <div class="stat-label">عدد المعلمين</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fas fa-award"></i></div>
+        <div class="stat-number" data-target="63">0</div>
+        <div class="stat-label">عاماً من التميز</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fas fa-door-open"></i></div>
+        <div class="stat-number" data-target="33">0</div>
+        <div class="stat-label">عدد الفصول</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Float Buttons -->
+<div class="float-buttons">
+  <a href="https://wa.me/201008268284" target="_blank" class="float-btn btn-whatsapp" aria-label="واتساب"><i class="fab fa-whatsapp"></i></a>
+  <a href="https://www.facebook.com/itsabanat" target="_blank" class="float-btn btn-facebook" aria-label="فيسبوك"><i class="fab fa-facebook-f"></i></a>
+  <a href="https://www.youtube.com/channel/UCH2wYK3_EBCC01L8pLLhH6Q" target="_blank" class="float-btn btn-youtube" aria-label="يوتيوب"><i class="fab fa-youtube"></i></a>
+  <a href="tel:01008268284" class="float-btn btn-call" aria-label="اتصال"><i class="fas fa-phone-alt"></i></a>
+</div>
+
+<!-- Back to Top -->
+<div class="back-to-top" onclick="scrollToTop()" role="button" tabindex="0" aria-label="العودة للأعلى"><i class="fas fa-arrow-up"></i></div>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>معلومات الاتصال</h3>
+      <div class="contact-info">
+        <p><i class="fas fa-phone"></i> هاتف: <a href="tel:01008268284">01008268284</a></p>
+        <p><i class="fab fa-whatsapp"></i> واتساب: <a href="https://wa.me/201008268284" target="_blank">01008268284</a></p>
+        <p><i class="fas fa-map-marker-alt"></i> شارع المدارس - إطسا - الفيوم</p>
+      </div>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/itsabanat" target="_blank" aria-label="فيسبوك"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://wa.me/201008268284" target="_blank" aria-label="واتساب"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.youtube.com/channel/UCH2wYK3_EBCC01L8pLLhH6Q" target="_blank" aria-label="يوتيوب"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="footer-section">
+      <h3>روابط سريعة</h3>
+      <ul style="list-style:none;line-height:1.6">
+        <li><a href="about.html">عن المدرسة</a></li>
+        <li><a href="activities.html">الأنشطة</a></li>
+        <li><a href="exams.html">النتائج</a></li>
+        <li><a href="contact.html">التواصل</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>عن المدرسة</h3>
+      <p style="color:#ccc;line-height:1.5;font-size:.85rem">مدرسة الشهيد عيد عطية (إطسا بنات سابقاً) - مؤسسة تعليمية تهدف إلى إعداد جيل متميز ومبدع.</p>
+    </div>
+  </div>
+  <div class="copyright">
+    <p>جميع الحقوق محفوظة © 2026</p>
+    <p>Master Emad Elnaggar</p>
+  </div>
+</footer>
+
+<script>
+// ============================================
+// 📱 Mobile Menu Toggle
+// ============================================
+document.addEventListener('DOMContentLoaded', () => {
+  const menuBtn = document.getElementById('mobileMenuBtn');
+  const mainNav = document.getElementById('mainNav');
+  
+  if (menuBtn && mainNav) {
+    menuBtn.addEventListener('click', () => {
+      const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', !isExpanded);
+      mainNav.classList.toggle('active');
+      menuBtn.innerHTML = isExpanded ? '<i class="fas fa-bars"></i>' : '<i class="fas fa-times"></i>';
     });
     
-    dotsContainer.innerHTML = '';
-    galleryImages.forEach((_, index) => {
+    // Close menu when clicking a link
+    mainNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mainNav.classList.remove('active');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+      });
+    });
+  }
+});
+
+// ============================================
+// Gallery Images Data
+// ============================================
+const galleryImages = [
+    { src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1774288114/%D8%A7%D9%84%D9%85%D8%A8%D9%86%D9%89_mjhc6a.jpg", caption: "🏫 مبنى المدرسة" },
+    { src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1774287992/%D8%B5%D9%88%D8%B1%D8%A9_%D9%85%D8%A8%D9%87%D8%AC%D8%A9_cybavn.jpg", caption: "🎉 فعاليات مدرسية" },
+    { src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1774289447/%D9%83%D8%B12_cmtdqg.jpg", caption: "📚 فصول دراسية" },
+    { src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775121899/599707136_1402265001910232_4332550595457639745_n_dtggos.jpg", caption: "🎉 رياض الاطفال" },
+    { src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775121899/626612776_1442829671187098_6760085392200824628_n_ao3ufr.jpg", caption: "🎉 تكريمات" },
+    { src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775121898/641284648_1463990135737718_2774566008817175686_n_hullee.jpg", caption: "🎉 معلمات رياض الاطفال" },
+    { src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775121893/599941393_1402264961910236_62486962156740551_n_lfo8mb.jpg", caption: "🎉 رياض الاطفال" },
+    { src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775121894/603774352_25369258256072535_2777624409033646060_n_d0phxt.jpg", caption: "🎉 تكريمات" },
+    { src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775121888/576378843_1368474175289315_5516551055049729650_n_lvmid4.jpg", caption: "🎉 أنشطة مدرسية" },
+    { src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775121887/583951927_1376895284447204_6988680476413416143_n_k4ttrr.jpg", caption: "🎉 مدرستنا" },
+    { src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775121877/557421895_1469728271828024_9085241449465565797_n_sfq44o.jpg", caption: "🎉 المركز الاول على مستوى الجمهورية" },
+    { src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775121871/493280021_1198135035656564_7775304818970337216_n_igc397.jpg", caption: "🎉جائزة افضل مدير على مستوى الادارة" },
+    { src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1774289276/%D8%B1%D9%8A%D8%A7%D8%B6_%D8%A7%D9%84%D8%A7%D8%B7%D9%81%D8%A7%D9%84_asrxdw.jpg", caption: "🎨 رياض الأطفال" },
+    { src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775667330/%D9%85%D8%B9%D9%84%D9%85%D9%8A%D9%86_1_mdszrd.png", caption: "👨‍🏫 فريق المعلمين" }
+];
+
+// ============================================
+// Gallery Slider Logic
+// ============================================
+let currentSlideIndex = 0, autoSlideTimer, isPlaying = true, progressInterval, progressWidth = 0;
+
+function buildGallery() {
+    const slider = document.getElementById('gallerySlider'), dots = document.getElementById('galleryDots');
+    if (!slider) return;
+    slider.innerHTML = '';
+    dots.innerHTML = '';
+    galleryImages.forEach((img, i) => {
+        slider.innerHTML += `<div class="gallery-slide ${i === 0 ? 'active' : ''}"><img src="${img.src}" alt="${img.caption}" loading="lazy" width="1200" height="675"><div class="gallery-caption">${img.caption}</div></div>`;
         const dot = document.createElement('div');
-        dot.classList.add('dot');
-        if (index === 0) dot.classList.add('active');
-        dot.onclick = () => goToSlide(index);
-        dot.setAttribute('aria-label', `الشريحة ${index + 1}`);
-        dotsContainer.appendChild(dot);
+        dot.className = `dot ${i === 0 ? 'active' : ''}`;
+        dot.setAttribute('role', 'button');
+        dot.setAttribute('tabindex', '0');
+        dot.setAttribute('aria-label', `انتقل للصورة ${i + 1}`);
+        dot.onclick = () => goToSlide(i);
+        dot.onkeydown = (e) => { if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); goToSlide(i); } };
+        dots.appendChild(dot);
     });
     updateCounter();
 }
 
-// ==================== تحديث السلايدر ====================
 function updateSlider() {
-    const slides = document.querySelectorAll('.gallery-slide');
-    slides.forEach((slide, index) => { 
-        slide.classList.toggle('active', index === currentSlideIndex); 
-    });
-    
-    const dots = document.querySelectorAll('.dot');
-    dots.forEach((dot, index) => { dot.classList.toggle('active', index === currentSlideIndex); });
-    
+    document.querySelectorAll('.gallery-slide').forEach((s, i) => s.classList.toggle('active', i === currentSlideIndex));
+    document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === currentSlideIndex));
     updateCounter();
-    resetProgressBar();
+    resetProgress();
 }
 
 function updateCounter() {
     const counter = document.getElementById('slideCounter');
-    if (counter) counter.textContent = `${currentSlideIndex + 1} / ${totalSlides}`;
+    if (counter) counter.textContent = `${currentSlideIndex + 1} / ${galleryImages.length}`;
 }
 
-// ==================== شريط التقدم ====================
-function startProgressBar() {
-    const progressBar = document.getElementById('progressBar');
-    if (!progressBar) return;
+function startProgress() {
+    const bar = document.getElementById('progressBar');
+    if (!bar) return;
     progressWidth = 0;
-    const intervalTime = 50;
-    const increment = (intervalTime / autoSlideDelay) * 100;
-    if (progressInterval) clearInterval(progressInterval);
     progressInterval = setInterval(() => {
         if (isPlaying) {
-            progressWidth += increment;
+            progressWidth += 0.5;
             if (progressWidth >= 100) progressWidth = 0;
-            progressBar.style.width = `${progressWidth}%`;
+            bar.style.width = `${progressWidth}%`;
         }
-    }, intervalTime);
+    }, 50);
 }
 
-function resetProgressBar() {
-    const progressBar = document.getElementById('progressBar');
-    if (progressBar) { progressBar.style.width = '0%'; progressWidth = 0; }
-    if (progressInterval) clearInterval(progressInterval);
-    startProgressBar();
+function resetProgress() {
+    const bar = document.getElementById('progressBar');
+    if (bar) bar.style.width = '0%';
+    clearInterval(progressInterval);
+    startProgress();
 }
 
-// ==================== التحكم في السلايدر ====================
 function nextSlide() {
-    currentSlideIndex = (currentSlideIndex + 1) % totalSlides;
+    currentSlideIndex = (currentSlideIndex + 1) % galleryImages.length;
     updateSlider();
-    resetAutoTimer();
+    resetAuto();
 }
 
 function prevSlide() {
-    currentSlideIndex = (currentSlideIndex - 1 + totalSlides) % totalSlides;
+    currentSlideIndex = (currentSlideIndex - 1 + galleryImages.length) % galleryImages.length;
     updateSlider();
-    resetAutoTimer();
+    resetAuto();
 }
 
-function goToSlide(index) {
-    if (index === currentSlideIndex) return;
-    currentSlideIndex = index;
+function goToSlide(i) {
+    if (i === currentSlideIndex) return;
+    currentSlideIndex = i;
     updateSlider();
-    resetAutoTimer();
+    resetAuto();
 }
 
-// ==================== التشغيل التلقائي ====================
-function startAutoSlide() {
-    if (autoSlideTimer) clearInterval(autoSlideTimer);
+function resetAuto() {
+    clearInterval(autoSlideTimer);
     isPlaying = true;
-    autoSlideTimer = setInterval(() => { if (isPlaying) nextSlide(); }, autoSlideDelay);
+    autoSlideTimer = setInterval(() => { if (isPlaying) nextSlide(); }, 6000);
 }
 
-function stopAutoSlide() { isPlaying = false; }
+// Pause gallery on hover/touch
+document.getElementById('galleryContainer')?.addEventListener('mouseenter', () => isPlaying = false);
+document.getElementById('galleryContainer')?.addEventListener('mouseleave', () => { isPlaying = true; resetAuto(); });
+document.getElementById('galleryContainer')?.addEventListener('touchstart', () => isPlaying = false, { passive: true });
+document.getElementById('galleryContainer')?.addEventListener('touchend', () => { isPlaying = true; resetAuto(); });
 
-function resetAutoTimer() {
-    stopAutoSlide();
-    if (autoSlideTimer) clearInterval(autoSlideTimer);
-    startAutoSlide();
-}
-
-// ==================== أحداث التفاعل ====================
-function setupGalleryEvents() {
-    const container = document.getElementById('galleryContainer');
-    if (!container) return;
-    container.addEventListener('mouseenter', () => stopAutoSlide());
-    container.addEventListener('mouseleave', () => { isPlaying = true; startAutoSlide(); });
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowRight') { e.preventDefault(); prevSlide(); }
-        else if (e.key === 'ArrowLeft') { e.preventDefault(); nextSlide(); }
-    });
-    let touchStartX = 0, touchEndX = 0;
-    container.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; stopAutoSlide(); }, { passive: true });
-    container.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        if (touchEndX < touchStartX - 50) nextSlide();
-        else if (touchEndX > touchStartX + 50) prevSlide();
-        startAutoSlide();
-    }, { passive: true });
-}
-
-// ==================== روابط الصور للصفحات ====================
-const imageUrls = {
-    about: 'https://res.cloudinary.com/dar1qf8p7/image/upload/v1774288114/%D8%A7%D9%84%D9%85%D8%A8%D9%86%D9%89_mjhc6a.jpg',
-    activities: 'https://res.cloudinary.com/dar1qf8p7/image/upload/v1774287992/%D8%B5%D9%88%D8%B1%D8%A9_%D9%85%D8%A8%D9%87%D8%AC%D8%A9_cybavn.jpg',
-    exams: 'https://res.cloudinary.com/dar1qf8p7/image/upload/v1774288628/%D8%AC%D8%AF%D9%88%D9%84_%D8%A7%D9%84%D8%A7%D9%85%D8%AA%D8%AD%D8%A7%D9%86%D8%A7%D8%AA_wauaxx.png',
-    contact: 'https://res.cloudinary.com/dar1qf8p7/image/upload/v1774288399/%D8%AA%D9%88%D8%A7%D8%B5%D9%84_%D9%85%D8%B9%D9%86%D8%A7_uqfuhl.jpg',
-    notifications: 'https://res.cloudinary.com/dar1qf8p7/image/upload/v1774289558/%D8%AA%D9%86%D9%88%D9%8A%D9%87_gba2fh.png',
-    teachers: 'https://res.cloudinary.com/dar1qf8p7/image/upload/v1774289341/%D9%85%D8%B9%D9%84%D9%85%D9%88%D9%86_foielb.png',
-    primary: 'https://res.cloudinary.com/dar1qf8p7/image/upload/v1774289447/%D9%83%D8%B12_cmtdqg.jpg',
-    kindergarten: 'https://res.cloudinary.com/dar1qf8p7/image/upload/v1774289276/%D8%B1%D9%8A%D8%A7%D8%B6_%D8%A7%D9%84%D8%A7%D8%B7%D9%81%D8%A7%D9%84_asrxdw.jpg'
-};
-
-// ==================== بيانات المعلمين ====================
-const teachersData = [
-{ name: "أ. خالد توفيق عويس", title: "مدير المدرسة", subject: "اللغة العربية", qualification: "ليسانس آداب وتربية - لغة عربية", experience: "32 عاماً", phone: "01008268284", bio: "مدير المدرسة منذ عام 2022، قيادة متميزة في تطوير العملية التعليمية.", img: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1774513631/%D8%AE%D8%A7%D9%84%D8%AF_%D8%AA%D9%88%D9%81%D9%8A%D9%82_ikmkeq.jpg", role: "leader", badge: "المدير" },
-{ name: "أ. أميرة محمود الدوح", title: "وكيلة المدرسة", subject: "تربية نوعية", qualification: "بكالوريوس تربية نوعية", experience: "17 عاماً", phone: "", bio: "وكيل المدرسة منذ عام 2024، تشرف على الأنشطة التربوية والتعليمية.", img: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1774513780/%D8%A7%D9%85%D9%8A%D8%B1%D8%A9_%D8%A7%D9%84%D8%AF%D9%88%D8%AD_qhyvaa.jpg", role: "leader", badge: "الوكيل" },
-{ name: "أ. عماد علي حسين", title: "معلم أول أ", subject: "اللغة العربية", qualification: "ليسانس دار العلوم - دبلوم تربوي", experience: "17 عاماً", phone: "01007235883", bio: "المنسق الإعلامي للمدرسة ومسئول وحدة الدعم والتواصل. حاصل على المركز الأول على مستوى الجمهورية في الذكاء الاصطناعي.", img: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1774513967/%D9%85%D8%B3%D8%AA%D8%B1_%D8%B9%D9%85%D8%A7%D8%AF_lvdeom.jpg", role: "teacher" },
-{ name: "أ. رمضان فتحى أمين صبره", title: "كبير معلمين", subject: "اللغة العربية", qualification: "ليسانس آداب", experience: "30 عاماً", phone: "01060907454", bio: "خبرة طويلة في تدريس اللغة العربية للمراحل المختلفة.", img: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1774514763/%D8%B1%D9%85%D8%B6%D8%A7%D9%86_y6leup.jpg", role: "teacher" },
-{ name: "أ. محمد رمضان سرحان", title: "معلم أول أ", subject: "اللغة الإنجليزية", qualification: "ليسانس آداب وتربية - لغة إنجليزية", experience: "17 عاماً", phone: "01009092550", bio: "مسئول الأمن والسلامة بالمدرسة.", img: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1774515711/%D8%B3%D8%B1%D8%AD%D8%A7%D9%86_cylybl.jpg", role: "teacher" },
-{ name: "أ. محمد عبداللطيف محمد", title: "كبير معلمين", subject: "الرياضيات", qualification: "ليسانس علوم", experience: "30 عاماً", phone: "01096065705", bio: "خبير في تدريس الرياضيات.", img: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1774515854/%D8%A7%D9%84%D9%87%D8%B1%D8%B4_kay1ax.jpg", role: "teacher" },
-{ name: "أ. شعبان فوزي عبدالسلام", title: "معلم خبير", subject: "الرياضيات", qualification: "ليسانس علوم", experience: "25 عاماً", phone: "01020145678", bio: "خبرة واسعة في تدريس الرياضيات.", img: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1774515941/%D8%B4%D8%B9%D8%A8%D8%A7%D9%86_y0psxh.jpg", role: "teacher" },
-{ name: "أ. محمود محمد فخري", title: "كبير معلمين", subject: "المهارات والمجال الزراعي", qualification: "ليسانس زراعة", experience: "30 عاماً", phone: "", bio: "رئيس الكنترول بالمدرسة.", img: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1774516082/%D9%81%D8%AE%D8%B1%D9%8A_czlsyq.jpg", role: "teacher" },
-{ name: "المرحوم أ. مدحت أحمد إبراهيم دهشان", title: "كبير معلمين", subject: "العلوم", qualification: "ليسانس آداب وتربية", experience: "30 عاماً", phone: "", bio: "رحمه الله (1971-2025)، كان له دور كبير في تعليم الأجيال.", img: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1774516232/%D9%85%D8%AF%D8%AD%D8%AA_xaoq4r.jpg", role: "teacher" },
-{ name: "أ. محمد هاشم محمد سلام", title: "كبير معلمين", subject: "التربية الرياضية", qualification: "بكالوريوس تربية رياضية", experience: "31 عاماً", phone: "01064600663", bio: "يشرف على الأنشطة الرياضية بالمدرسة.", img: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1774516349/%D8%A7%D8%A8%D9%88_%D9%87%D8%A7%D8%B4%D9%85_is3tsf.jpg", role: "teacher" },
-{ name: "أ. عصام عيد أحمد محمد", title: "كبير معلمين", subject: "المهارات والمجال الصناعي", qualification: "بكالوريوس صناعي", experience: "31 عاماً", phone: "01002857256", bio: "خبير في المجال الصناعي والمهارات المهنية.", img: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1774516428/%D8%B9%D8%B5%D8%A7%D9%85_yzwmeu.jpg", role: "teacher" },
-{ name: "أ. محمد أحمد رضوان", title: "معلم أول", subject: "التربية الرياضية", qualification: "بكالوريوس تربية رياضية", experience: "13 عاماً", phone: "01014054140", bio: "حاصل على أكثر من جائزة ومسابقات من التربية والتعليم.", img: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1774516523/%D8%B1%D8%B6%D9%88%D8%A7%D9%86_rczhf6.jpg", role: "teacher" },
-{ name: "أ. سعيد رمضان عرفه", title: "معلم", subject: "الرياضيات", qualification: "ليسانس علوم", experience: "10 سنوات", phone: "", bio: "معلم رياضيات متميز.", img: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1774535657/%D8%B1%D8%AC%D9%84_nhrxny.jpg", role: "teacher" },
-{ name: "أ. محمد محمود", title: "معلم", subject: "الدراسات الاجتماعية", qualification: "ليسانس آداب", experience: "12 عاماً", phone: "", bio: "معلم مواد اجتماعية متميز.", img: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1774535657/%D8%B1%D8%AC%D9%84_nhrxny.jpg", role: "teacher" }
-];
-
-// ==================== تأثيرات التمرير ====================
-function handleScrollAnimations() {
-    const elements = document.querySelectorAll('.card, .vision-box, .mission-box, .stat-card');
-    elements.forEach(el => {
-        const rect = el.getBoundingClientRect();
-        const isVisible = rect.top < window.innerHeight - 100;
-        if (isVisible && !el.classList.contains('animated')) {
-            el.classList.add('animated');
-            el.style.opacity = '1';
-            el.style.transform = 'translateY(0)';
-        }
-    });
-}
-const animatedElements = document.querySelectorAll('.card, .vision-box, .mission-box, .stat-card');
-animatedElements.forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-});
-window.addEventListener('scroll', handleScrollAnimations);
-
-// ==================== عداد متحرك ====================
+// ============================================
+// Stats Counter Animation
+// ============================================
 function startCounters() {
-    const counters = document.querySelectorAll('.stat-number');
-    counters.forEach(counter => {
-        const target = parseInt(counter.getAttribute('data-target'));
+    document.querySelectorAll('.stat-number').forEach(counter => {
+        const target = +counter.dataset.target;
         let current = 0;
         const increment = target / 50;
-        const updateCounter = () => {
+        const update = () => {
             if (current < target) {
                 current += increment;
                 counter.innerText = Math.ceil(current);
-                setTimeout(updateCounter, 30);
-            } else { counter.innerText = target; }
+                setTimeout(update, 30);
+            } else counter.innerText = target;
         };
-        updateCounter();
+        // Start animation when element is in viewport
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                update();
+                observer.disconnect();
+            }
+        }, { threshold: 0.5 });
+        observer.observe(counter);
     });
 }
 
-// ==================== زر العودة للأعلى ====================
+// ============================================
+// Scroll to Top & Back Button
+// ============================================
 function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+
 window.addEventListener('scroll', () => {
-    const backToTop = document.querySelector('.back-to-top');
-    if (window.scrollY > 300) backToTop.classList.add('show');
-    else backToTop.classList.remove('show');
+    const btn = document.querySelector('.back-to-top');
+    if (btn) {
+        window.scrollY > 300 ? btn.classList.add('show') : btn.classList.remove('show');
+    }
+}, { passive: true });
+
+// Keyboard accessibility for back-to-top
+document.querySelector('.back-to-top')?.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        scrollToTop();
+    }
 });
 
-// ==================== التنقل بين الصفحات ====================
-function showMainPage() {
-    document.getElementById('mainPage').style.display = 'block';
-    document.getElementById('pageOverlay').style.display = 'none';
-    document.body.style.overflow = 'auto';
-}
-function closePage() {
-    document.getElementById('pageOverlay').style.display = 'none';
-    document.getElementById('mainPage').style.display = 'block';
-    document.body.style.overflow = 'auto';
-}
-function openPage(pageType) {
-    const mainPage = document.getElementById('mainPage');
-    const overlay = document.getElementById('pageOverlay');
-    const innerContent = document.getElementById('pageInnerContent');
-    let html = '';
-    if (pageType === 'about') {
-        html = generateEditablePage('عن المدرسة', 'مدرسة الشهيد عيد عطية (إطسا بنات سابقاً)',
-        'مرحباً بكم في مدرسة الشهيد عيد عطية العناني - إطسا بنات سابقاً\n📌 نبذة تاريخية عن المدرسة:\n• اسم المدرسة: إطسا بنات الابتدائية وتم تغييرها إلى الشهيد عيد عطية العناني وهو أحد شهداء الشرطة البواسل في مدينة إطسا.\n• تاريخ الإنشاء: تم إنشاؤها عام 1964.\n• كانت عبارة عن دور واحد وتم تطويرها وبناؤها عام 2000.\n• أصبحت خمسة أدوار ولم تدخل الترميم الشامل إلا العام 2009.\n• وكيل المدرسة: أ. أميرة الدوح\n• مدير المدرسة: أ. خالد توفيق\n• تم إنشاء مبنى آخر بخمسة أدوار في عام 2018.\n👤 المشرف على الصفحة والموقع: أ. عماد علي - المنسق الإعلامي للمدرسة.\n🏫 مدرسة عريقة تهدف إلى تقديم تعليم متميز، وبناء جيل واعٍ قادر على مواكبة التطور العلمي والتكنولوجي.',
-        imageUrls.about);
-    } else if (pageType === 'activities') {
-        html = generateEditablePage('الأنشطة المدرسية', 'نشاطات متنوعة لتنمية المواهب',
-        'نقدم مجموعة متنوعة من الأنشطة الرياضية والفنية والثقافية والعلمية التي تساعد على اكتشاف مواهب الطلاب وتنميتها.\nالأنشطة المتوفرة:\n⚽ كرة القدم\n🏀 كرة السلة\n🎨 الرسم والفنون\n🎵 الموسيقى والإنشاد\n💻 الحاسب الآلي والبرمجة\n🔬 الأنشطة العلمية\n📖 النشاط الثقافي والقراءة',
-        imageUrls.activities);
-    } else if (pageType === 'exams') {
-        html = generateEditablePage('الامتحانات والنتائج', 'جداول الامتحانات ونتائج الطلاب',
-        'سيتم نشر جميع جداول الامتحانات الفصلية والنهائية هنا فور اعتمادها من قبل الإدارة.\n🗓️ مواعيد الامتحانات:\n• امتحانات نصف العام: يناير\n• امتحانات نهاية العام: مايو\n📊 النتائج:\nيمكنكم الاطلاع على نتائج الامتحانات بعد اعتمادها مباشرة.\n📌 ملاحظات هامة:\n• يتم تحديث الجداول باستمرار\n• الالتزام بالحضور في المواعيد المحددة',
-        imageUrls.exams);
-    } else if (pageType === 'contact') { html = generateContactPage(); }
-    else if (pageType === 'notifications') {
-        html = generateEditablePage('تنويهات هامة', 'آخر الأخبار والإعلانات',
-        '📢 نرحب بكم في قسم التنويهات الهامة\n🔹 مواعيد الامتحانات النهائية: سيتم الإعلان عنها قريباً\n🔹 جداول الحصص الأسبوعية: متاحة في قسم الإعلانات\n🔹 إجازات المدرسة الرسمية: الجمعة والسبت إجازة أسبوعية\n🔹 اجتماعات مجلس الآباء والمعلمين: أول خميس من كل شهر\n🔹 أخبار الأنشطة والفعاليات: متابعة مستمرة',
-        imageUrls.notifications);
-    } else if (pageType === 'teachers') { html = generateTeachersPage(); }
-    else if (pageType === 'stages') { html = generateSplitStagesPage(); }
-    innerContent.innerHTML = html;
-    mainPage.style.display = 'none';
-    overlay.style.display = 'block';
-    document.body.style.overflow = 'hidden';
-    if (pageType === 'teachers') setTimeout(attachTeacherEvents, 100);
-}
-
-// ==================== توليد صفحة المعلمين ====================
-function generateTeachersPage() {
-    const leaders = teachersData.filter(t => t.role === 'leader');
-    const teachers = teachersData.filter(t => t.role === 'teacher');
-    let leadersHtml = '';
-    leaders.forEach((teacher, idx) => {
-        const index = teachersData.indexOf(teacher);
-        leadersHtml += `<div class="leader-wrapper"><div class="leader-badge"><i class="fas ${teacher.badge === 'المدير' ? 'fa-user-tie' : 'fa-user-graduate'}"></i>${teacher.badge}</div><div class="leader-card" data-index="${index}"><img src="${teacher.img}" alt="${teacher.name}"><div class="overlay"><h3>${teacher.name}</h3><p>${teacher.title}</p><div class="subject">${teacher.subject}</div>${teacher.phone ? `<div class="phone"><i class="fas fa-phone-alt"></i> ${teacher.phone}</div>` : ''}<button onclick="event.stopPropagation(); showTeacherDetails(${index})">📖 عرض التفاصيل</button><div class="teacher-social"><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></div></div></div></div>`;
+// ============================================
+// Card Keyboard Accessibility
+// ============================================
+document.querySelectorAll('.card[onclick]').forEach(card => {
+    card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            card.click();
+        }
     });
-    let teachersHtml = '';
-    teachers.forEach((teacher, idx) => {
-        const index = teachersData.indexOf(teacher);
-        teachersHtml += `<div class="teacher-card" data-index="${index}"><img src="${teacher.img}" alt="${teacher.name}"><div class="overlay"><h3>${teacher.name}</h3><p>${teacher.title}</p><div class="subject">${teacher.subject}</div>${teacher.phone ? `<div class="phone"><i class="fas fa-phone-alt"></i> ${teacher.phone}</div>` : ''}<button onclick="event.stopPropagation(); showTeacherDetails(${index})">📖 عرض التفاصيل</button><div class="teacher-social"><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></div></div></div>`;
-    });
-    return `<div class="teachers-section"><h2><i class="fas fa-chalkboard-teacher"></i> فريق المعلمين المتميز</h2><p>نخبة من أفضل المعلمين والمعلمات ذوي الخبرة والكفاءة العالية</p><div class="leaders-container">${leadersHtml}</div><div class="teachers-grid">${teachersHtml}</div><div class="back-home-bottom" style="margin-top: 40px;"><button class="back-home-btn" onclick="showMainPage()"><i class="fas fa-home"></i> العودة للرئيسية</button></div></div>`;
-}
+});
 
-// ==================== عرض تفاصيل المعلم ====================
-function showTeacherDetails(index) {
-    const teacher = teachersData[index];
-    const popup = document.getElementById('teacherPopup');
-    document.getElementById('popupImg').src = teacher.img;
-    document.getElementById('popupName').innerText = teacher.name;
-    document.getElementById('popupTitle').innerHTML = `<strong>${teacher.title}</strong> - ${teacher.subject}`;
-    document.getElementById('popupQualification').innerHTML = `🎓 المؤهل: ${teacher.qualification}`;
-    document.getElementById('popupExperience').innerHTML = `⏳ الخبرة: ${teacher.experience}`;
-    document.getElementById('popupPhone').innerHTML = teacher.phone ? `📞 <a href="tel:${teacher.phone}" class="phone-link">${teacher.phone}</a>` : '📞 لا يوجد رقم متاح';
-    document.getElementById('popupBio').innerHTML = `📖 ${teacher.bio}`;
-    popup.style.display = 'flex';
-}
-function closePopup() { document.getElementById('teacherPopup').style.display = 'none'; }
-function attachTeacherEvents() {
-    window.showTeacherDetails = showTeacherDetails;
-    window.closePopup = closePopup;
-}
-
-// ==================== توليد الصفحات القابلة للتعديل ====================
-function generateEditablePage(mainTitle, subTitle, textContent, imageUrl) {
-    return `<div class="editable-section"><button class="back-home-btn" onclick="showMainPage()"><i class="fas fa-home"></i> العودة للرئيسية</button><div class="image-box"><img src="${imageUrl}" alt="صورة الصفحة"></div><div class="main-title">${mainTitle}</div><div class="sub-title">${subTitle}</div><div class="text-content">${textContent}</div><div class="back-home-bottom"><button class="back-home-btn" onclick="showMainPage()"><i class="fas fa-home"></i> العودة للرئيسية</button></div></div>`;
-}
-
-// ==================== توليد صفحة التواصل ====================
-function generateContactPage() {
-    return `<div class="editable-section"><button class="back-home-btn" onclick="showMainPage()"><i class="fas fa-home"></i> العودة للرئيسية</button><div class="image-box"><img src="${imageUrls.contact}" alt="صورة التواصل"></div><div class="main-title">التواصل مع المدرسة</div><div class="sub-title">تواصل معنا عبر القنوات التالية</div><div class="text-content">📞 الهاتف: <a href="tel:01008268284" style="color: #0f3460; text-decoration: underline;">01008268284</a> (اضغط للاتصال)\n💬 واتساب: <a href="https://wa.me/201008268284" target="_blank" style="color: #0f3460; text-decoration: underline;">01008268284</a> (اضغط للدردشة)\n📍 العنوان: شارع المدارس - مركز ومدينة إطسا - محافظة الفيوم\n📧 البريد الإلكتروني: info@school.edu.eg\n🌐 صفحات التواصل الاجتماعي:\n• فيسبوك: https://www.facebook.com/itsabanat\n• يوتيوب: قناة المدرسة\n⏰ أوقات العمل:\nمن الأحد إلى الخميس: 8:00 ص - 2:00 م</div><div class="location-map"><h4><i class="fas fa-map-marker-alt"></i> موقع المدرسة على خرائط جوجل</h4><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d424.3072742355385!2d30.78743718367828!3d29.235079779256666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sar!2seg!4v1742900000000!5m2!1sar!2seg" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe><a href="https://maps.app.goo.gl/cznBgPF6fTQuZiq97" target="_blank" class="location-link"><i class="fas fa-external-link-alt"></i> فتح الموقع في خرائط جوجل</a></div><div class="back-home-bottom"><button class="back-home-btn" onclick="showMainPage()"><i class="fas fa-home"></i> العودة للرئيسية</button></div></div>`;
-}
-
-// ==================== توليد صفحة المراحل الدراسية ====================
-function generateSplitStagesPage() {
-    return `<div class="editable-section"><button class="back-home-btn" onclick="showMainPage()"><i class="fas fa-home"></i> العودة للرئيسية</button><div class="main-title">المراحل الدراسية</div><div class="sub-title">نظام تعليمي متكامل لجميع المراحل</div><div class="split-container"><div class="split-section"><h3>🏫 المرحلة الابتدائية</h3><div class="image-box"><img src="${imageUrls.primary}" alt="المرحلة الابتدائية"></div><div class="sub-title">الصفوف من الأول إلى السادس الابتدائي</div><div class="text-content">تهتم المدرسة بتقديم مناهج متطورة للطلاب في المرحلة الابتدائية، مع التركيز على المهارات الأساسية في القراءة والكتابة والحساب.\n🎯 المواد الدراسية:\n• اللغة العربية\n• اللغة الإنجليزية\n• الرياضيات\n• العلوم\n• الدراسات الاجتماعية\n• التربية الدينية</div></div><div class="split-section"><h3>🎨 رياض الأطفال</h3><div class="image-box"><img src="${imageUrls.kindergarten}" alt="رياض الأطفال"></div><div class="sub-title">KG1 - KG2</div><div class="text-content">نوفر بيئة تعليمية آمنة وممتعة للأطفال في مرحلة رياض الأطفال، حيث نركز على تنمية المهارات الاجتماعية والحركية والإبداعية.\n🎨 أنشطة رياض الأطفال:\n• الألعاب التعليمية\n• الأنشطة الفنية والحرفية\n• القصص والأناشيد\n• تنمية المهارات الحركية</div></div></div><div class="back-home-bottom"><button class="back-home-btn" onclick="showMainPage()"><i class="fas fa-home"></i> العودة للرئيسية</button></div></div>`;
-}
-
-// ==================== تهيئة المعرض ====================
-function initGallery() {
-    if (galleryImages.length === 0) { console.warn('لا توجد صور في المعرض'); return; }
-    buildGallery();
-    startAutoSlide();
-    startProgressBar();
-    setupGalleryEvents();
-}
-
-// ==================== إتاحة الدوال للاستخدام العالمي ====================
-window.showMainPage = showMainPage;
-window.closePage = closePage;
-window.openPage = openPage;
-window.showTeacherDetails = showTeacherDetails;
-window.closePopup = closePopup;
-window.scrollToTop = scrollToTop;
+// Make card links work with keyboard
 window.nextSlide = nextSlide;
 window.prevSlide = prevSlide;
 window.goToSlide = goToSlide;
 
-// ==================== تشغيل عند تحميل الصفحة ====================
-document.addEventListener('DOMContentLoaded', function() {
-    showMainPage();
-    handleScrollAnimations();
+// ============================================
+// Initialize on DOM Ready
+// ============================================
+document.addEventListener('DOMContentLoaded', () => {
+    buildGallery();
+    resetAuto();
+    startProgress();
     startCounters();
-    initGallery();
+    
+    // Active navigation link
+    document.querySelectorAll('nav ul li a').forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === 'index.html' || (href === '#' && window.location.pathname.endsWith('index.html')) || (window.location.pathname === '/' && href === 'index.html')) {
+            link.classList.add('active');
+        }
+    });
+    
+    // Service Worker Registration for PWA
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js').catch(err => console.log('SW registration failed:', err));
+    }
 });
+
+// ============================================
+// Performance: Lazy Load Images (Fallback)
+// ============================================
+if ('loading' in HTMLImageElement.prototype) {
+    // Native lazy loading supported
+} else {
+    // Fallback for older browsers
+    const images = document.querySelectorAll('img[loading="lazy"]');
+    if ('IntersectionObserver' in window) {
+        const imgObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.removeAttribute('loading');
+                    observer.unobserve(img);
+                }
+            });
+        });
+        images.forEach(img => {
+            if (img.dataset.src) imgObserver.observe(img);
+        });
+    }
+}
 </script>
 </body>
 </html>
