@@ -96,7 +96,7 @@ nav ul li a.active{background:#0f3460;color:#fff;animation:blinkActive 1.5s infi
 .mission-box ul li{padding:4px 0;padding-right:20px;position:relative;font-size:.8rem;line-height:1.4;color:#0f172a;font-weight:500}
 .mission-box ul li::before{content:'✓';position:absolute;right:0;color:#e94560;font-weight:bold}
 
-/* Gallery - Mobile Optimized */
+/* Gallery - Mobile Optimized (مبسط: صور + أسهم فقط) */
 .gallery-container{position:relative;max-width:1100px;margin:0 auto;overflow:hidden;border-radius:20px;box-shadow:0 25px 60px rgba(15,52,96,.25);background:#0f3460;aspect-ratio:16/9;max-height:500px;border:3px solid rgba(255,255,255,.05)}
 .gallery-slider{position:relative;width:100%;height:100%}
 .gallery-slide{position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;transform:scale(1.08);transition:opacity 1.2s cubic-bezier(.4,0,.2,1),transform 1.5s cubic-bezier(.4,0,.2,1);z-index:1}
@@ -107,11 +107,8 @@ nav ul li a.active{background:#0f3460;color:#fff;animation:blinkActive 1.5s infi
 .gallery-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.15);backdrop-filter:blur(12px);color:#fff;border:1px solid rgba(255,255,255,.3);width:45px;height:45px;border-radius:50%;cursor:pointer;transition:all .3s;z-index:10;font-size:1.2rem;display:flex;align-items:center;justify-content:center;min-width:44px;min-height:44px}
 .gallery-btn:hover{background:#e94560;transform:translateY(-50%) scale(1.15)}
 .gallery-btn.prev{right:15px}.gallery-btn.next{left:15px}
-.gallery-dots{position:absolute;bottom:15px;left:50%;transform:translateX(-50%);display:flex;gap:10px;z-index:5}
-.dot{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.4);cursor:pointer;transition:all .3s;border:2px solid transparent;min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center}
-.dot.active{background:#e94560;width:28px;border-radius:20px;transform:scale(1.1)}
-.progress-bar{position:absolute;bottom:0;left:0;height:3px;background:linear-gradient(90deg,#e94560,#ff8c42,#e94560);width:0%;z-index:15;transition:width .05s linear}
-.slide-counter{position:absolute;top:15px;right:15px;background:rgba(0,0,0,.6);backdrop-filter:blur(10px);color:#fff;padding:6px 12px;border-radius:20px;font-size:.8rem;font-weight:700;z-index:5}
+/* ✅ تم إخفاء: الدوائر، شريط التقدم، عداد الصور */
+.gallery-dots,.progress-bar,.slide-counter{display:none!important}
 
 /* Stats - Responsive Cards */
 .stats-container{display:flex;justify-content:center;flex-wrap:wrap;gap:20px;max-width:1200px;margin:0 auto}
@@ -142,10 +139,7 @@ footer{background:linear-gradient(135deg,#0f2b3d,#0a1e2c);color:#fff;padding:25p
 
 /* Tablet (768px and below) */
 @media (max-width: 768px) {
-  /* Mobile Menu Toggle */
   .mobile-menu-btn { display: block; }
-  
-  /* Hide desktop nav, show mobile nav */
   nav ul {
     display: none;
     position: absolute;
@@ -169,28 +163,22 @@ footer{background:linear-gradient(135deg,#0f2b3d,#0a1e2c);color:#fff;padding:25p
     font-size: 1rem;
   }
   
-  /* Hero Section */
   .hero-section { height: 280px; }
-  
-  /* Cards */
   .cards-container { margin-top: -30px; gap: 12px; }
   .card { min-width: 140px; max-width: 180px; padding: 12px 8px; }
   .card-icon { font-size: 1.6rem; }
   .card h3 { font-size: .85rem; }
   .card p { font-size: .65rem; }
   
-  /* Gallery */
   .gallery-container { aspect-ratio: 4/3; max-height: 400px; border-radius: 16px; }
   .gallery-caption { font-size: 1rem; padding: 40px 15px 15px; }
   .gallery-btn { width: 40px; height: 40px; font-size: 1rem; }
   
-  /* Stats */
   .stats-container { gap: 15px; }
   .stat-card { min-width: 130px; padding: 15px 10px; }
   .stat-number { font-size: 1.8rem; }
   .stat-label { font-size: .85rem; }
   
-  /* Footer */
   .footer-content { flex-direction: column; text-align: center; gap: 20px; }
   .footer-section h3::after { right: 50%; transform: translateX(50%); }
   .social-icons { justify-content: center; }
@@ -199,39 +187,28 @@ footer{background:linear-gradient(135deg,#0f2b3d,#0a1e2c);color:#fff;padding:25p
 
 /* Mobile (480px and below) */
 @media (max-width: 480px) {
-  /* Header */
   .top-bar { padding: 6px 3%; }
   .logo-img { width: 40px; height: 40px; font-size: 18px; }
   .school-name h1 { font-size: 1rem; }
   .school-name span { font-size: .65rem; }
   
-  /* Hero */
   .hero-section { height: 220px; }
-  
-  /* Cards - Single Column */
   .cards-container { flex-direction: column; align-items: center; }
   .card { min-width: 100%; max-width: 320px; }
   
-  /* Vision/Mission */
   .vision-mission-container { flex-direction: column; }
   .vision-box, .mission-box { min-width: 100%; }
   
-  /* Gallery */
   .gallery-container { aspect-ratio: 1/1; max-height: 320px; }
   .gallery-caption { font-size: .95rem; }
   
-  /* Stats - 2 Columns */
   .stats-container { grid-template-columns: repeat(2, 1fr); }
   .stat-card { min-width: 100%; }
   
-  /* Float Buttons */
   .float-buttons { bottom: 10px; left: 10px; gap: 8px; }
   .float-btn { width: 45px; height: 45px; font-size: 1.2rem; }
-  
-  /* Back to Top */
   .back-to-top { bottom: 70px; right: 10px; width: 44px; height: 44px; }
   
-  /* News Ticker */
   .ticker-content { gap: 30px; padding-left: 70px; font-size: .85rem; }
   .ticker-label { font-size: .8rem; padding: 3px 10px; right: 10px; }
 }
@@ -384,9 +361,7 @@ footer{background:linear-gradient(135deg,#0f2b3d,#0a1e2c);color:#fff;padding:25p
       <div class="gallery-slider" id="gallerySlider"></div>
       <button class="gallery-btn prev" onclick="prevSlide()" aria-label="السابق"><i class="fas fa-chevron-right"></i></button>
       <button class="gallery-btn next" onclick="nextSlide()" aria-label="التالي"><i class="fas fa-chevron-left"></i></button>
-      <div class="gallery-dots" id="galleryDots"></div>
-      <div class="progress-bar" id="progressBar"></div>
-      <div class="slide-counter" id="slideCounter" aria-live="polite">1 / 1</div>
+      <!-- ✅ تم إخفاء: الدوائر، شريط التقدم، عداد الصور -->
     </div>
   </section>
   
@@ -403,10 +378,11 @@ footer{background:linear-gradient(135deg,#0f2b3d,#0a1e2c);color:#fff;padding:25p
         <div class="stat-number" data-target="64">0</div>
         <div class="stat-label">عدد المعلمين</div>
       </div>
+      <!-- ✅ تم التعديل: 85 عام من التميز من عام 1940 تاريخ عريق -->
       <div class="stat-card">
         <div class="stat-icon"><i class="fas fa-award"></i></div>
-        <div class="stat-number" data-target="63">0</div>
-        <div class="stat-label">عاماً من التميز</div>
+        <div class="stat-number" data-target="85">0</div>
+        <div class="stat-label">عام من التميز من عام 1940 تاريخ عريق</div>
       </div>
       <div class="stat-card">
         <div class="stat-icon"><i class="fas fa-door-open"></i></div>
@@ -480,7 +456,6 @@ document.addEventListener('DOMContentLoaded', () => {
       menuBtn.innerHTML = isExpanded ? '<i class="fas fa-bars"></i>' : '<i class="fas fa-times"></i>';
     });
     
-    // Close menu when clicking a link
     mainNav.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         mainNav.classList.remove('active');
@@ -499,6 +474,8 @@ const galleryImages = [
     { src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1774287992/%D8%B5%D9%88%D8%B1%D8%A9_%D9%85%D8%A8%D9%87%D8%AC%D8%A9_cybavn.jpg", caption: "🎉 فعاليات مدرسية" },
     { src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1774289447/%D9%83%D8%B12_cmtdqg.jpg", caption: "📚 فصول دراسية" },
     { src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775121899/599707136_1402265001910232_4332550595457639745_n_dtggos.jpg", caption: "🎉 رياض الاطفال" },
+    { src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775753375/WhatsApp_Image_2026-04-09_at_4.26.50_PM_as8fst.jpg", caption: "🎉 معلمي المدرسة" },
+    { src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775753375/WhatsApp_Image_2026-04-09_at_4.27.32_PM_o3asro.jpg", caption: "🎉 معلمي المدرسة" },
     { src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775121899/626612776_1442829671187098_6760085392200824628_n_ao3ufr.jpg", caption: "🎉 تكريمات" },
     { src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775121898/641284648_1463990135737718_2774566008817175686_n_hullee.jpg", caption: "🎉 معلمات رياض الاطفال" },
     { src: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775121893/599941393_1402264961910236_62486962156740551_n_lfo8mb.jpg", caption: "🎉 رياض الاطفال" },
@@ -512,59 +489,28 @@ const galleryImages = [
 ];
 
 // ============================================
-// Gallery Slider Logic
+// Gallery Slider Logic - مبسط
 // ============================================
-let currentSlideIndex = 0, autoSlideTimer, isPlaying = true, progressInterval, progressWidth = 0;
+let currentSlideIndex = 0, autoSlideTimer, isPlaying = true;
 
 function buildGallery() {
-    const slider = document.getElementById('gallerySlider'), dots = document.getElementById('galleryDots');
+    const slider = document.getElementById('gallerySlider');
     if (!slider) return;
     slider.innerHTML = '';
-    dots.innerHTML = '';
+    
     galleryImages.forEach((img, i) => {
-        slider.innerHTML += `<div class="gallery-slide ${i === 0 ? 'active' : ''}"><img src="${img.src}" alt="${img.caption}" loading="lazy" width="1200" height="675"><div class="gallery-caption">${img.caption}</div></div>`;
-        const dot = document.createElement('div');
-        dot.className = `dot ${i === 0 ? 'active' : ''}`;
-        dot.setAttribute('role', 'button');
-        dot.setAttribute('tabindex', '0');
-        dot.setAttribute('aria-label', `انتقل للصورة ${i + 1}`);
-        dot.onclick = () => goToSlide(i);
-        dot.onkeydown = (e) => { if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); goToSlide(i); } };
-        dots.appendChild(dot);
+        slider.innerHTML += `
+          <div class="gallery-slide ${i === 0 ? 'active' : ''}">
+            <img src="${img.src}" alt="${img.caption}" loading="lazy" width="1200" height="675">
+            <div class="gallery-caption">${img.caption}</div>
+          </div>`;
     });
-    updateCounter();
 }
 
 function updateSlider() {
-    document.querySelectorAll('.gallery-slide').forEach((s, i) => s.classList.toggle('active', i === currentSlideIndex));
-    document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === currentSlideIndex));
-    updateCounter();
-    resetProgress();
-}
-
-function updateCounter() {
-    const counter = document.getElementById('slideCounter');
-    if (counter) counter.textContent = `${currentSlideIndex + 1} / ${galleryImages.length}`;
-}
-
-function startProgress() {
-    const bar = document.getElementById('progressBar');
-    if (!bar) return;
-    progressWidth = 0;
-    progressInterval = setInterval(() => {
-        if (isPlaying) {
-            progressWidth += 0.5;
-            if (progressWidth >= 100) progressWidth = 0;
-            bar.style.width = `${progressWidth}%`;
-        }
-    }, 50);
-}
-
-function resetProgress() {
-    const bar = document.getElementById('progressBar');
-    if (bar) bar.style.width = '0%';
-    clearInterval(progressInterval);
-    startProgress();
+    document.querySelectorAll('.gallery-slide').forEach((s, i) => 
+      s.classList.toggle('active', i === currentSlideIndex)
+    );
 }
 
 function nextSlide() {
@@ -575,13 +521,6 @@ function nextSlide() {
 
 function prevSlide() {
     currentSlideIndex = (currentSlideIndex - 1 + galleryImages.length) % galleryImages.length;
-    updateSlider();
-    resetAuto();
-}
-
-function goToSlide(i) {
-    if (i === currentSlideIndex) return;
-    currentSlideIndex = i;
     updateSlider();
     resetAuto();
 }
@@ -613,7 +552,6 @@ function startCounters() {
                 setTimeout(update, 30);
             } else counter.innerText = target;
         };
-        // Start animation when element is in viewport
         const observer = new IntersectionObserver((entries) => {
             if (entries[0].isIntersecting) {
                 update();
@@ -636,7 +574,6 @@ window.addEventListener('scroll', () => {
     }
 }, { passive: true });
 
-// Keyboard accessibility for back-to-top
 document.querySelector('.back-to-top')?.addEventListener('keydown', (e) => {
     if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
@@ -656,10 +593,8 @@ document.querySelectorAll('.card[onclick]').forEach(card => {
     });
 });
 
-// Make card links work with keyboard
 window.nextSlide = nextSlide;
 window.prevSlide = prevSlide;
-window.goToSlide = goToSlide;
 
 // ============================================
 // Initialize on DOM Ready
@@ -667,10 +602,8 @@ window.goToSlide = goToSlide;
 document.addEventListener('DOMContentLoaded', () => {
     buildGallery();
     resetAuto();
-    startProgress();
     startCounters();
     
-    // Active navigation link
     document.querySelectorAll('nav ul li a').forEach(link => {
         const href = link.getAttribute('href');
         if (href === 'index.html' || (href === '#' && window.location.pathname.endsWith('index.html')) || (window.location.pathname === '/' && href === 'index.html')) {
@@ -678,19 +611,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     
-    // Service Worker Registration for PWA
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/sw.js').catch(err => console.log('SW registration failed:', err));
     }
 });
 
-// ============================================
-// Performance: Lazy Load Images (Fallback)
-// ============================================
+// Lazy Load Images Fallback
 if ('loading' in HTMLImageElement.prototype) {
-    // Native lazy loading supported
 } else {
-    // Fallback for older browsers
     const images = document.querySelectorAll('img[loading="lazy"]');
     if ('IntersectionObserver' in window) {
         const imgObserver = new IntersectionObserver((entries, observer) => {
