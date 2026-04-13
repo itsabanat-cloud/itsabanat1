@@ -9,18 +9,18 @@
 <title>عن المدرسة - مدرسة الشهيد عيد عطية</title>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="manifest" href="manifest.json">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 body{font-family:'Tajawal',sans-serif;background:#f0f2f5;color:#1e293b;line-height:1.5;overflow-x:hidden;font-size:16px}
 a{text-decoration:none;color:inherit;touch-action:manipulation}
-button,input,select,textarea{touch-action:manipulation;font-size:16px}
+
 /* Animations */
 @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 @keyframes tickerMove{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
 @keyframes glowPulse{0%{box-shadow:0 0 0 0 rgba(233,69,96,.4)}70%{box-shadow:0 0 0 15px rgba(233,69,96,0)}100%{box-shadow:0 0 0 0 rgba(233,69,96,0)}}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 @keyframes blinkActive{0%{background:#0f3460;color:#fff;box-shadow:0 0 0 0 rgba(15,52,96,.7)}50%{background:#e94560;color:#fff;box-shadow:0 0 0 8px rgba(233,69,96,.3)}100%{background:#0f3460;color:#fff;box-shadow:0 0 0 0 rgba(15,52,96,.7)}}
+
 /* News Ticker - Mobile Optimized */
 .news-ticker{background:linear-gradient(135deg,#0f3460,#1e3a5f);color:#fff;padding:8px 15px;position:relative;overflow:hidden;white-space:nowrap;border-bottom:3px solid #e94560;font-weight:600;direction:ltr}
 .ticker-wrapper{display:flex;align-items:center;gap:10px}
@@ -28,434 +28,456 @@ button,input,select,textarea{touch-action:manipulation;font-size:16px}
 .ticker-content{display:flex;width:max-content;animation:15s linear infinite tickerMove;font-weight:500;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.3);white-space:nowrap;gap:40px;padding-left:80px}
 .ticker-content span{display:inline-block}
 .ticker-content i{margin-right:6px;color:#ffd966}
+
 /* Back to Top */
-.back-to-top{position:fixed;bottom:80px;right:15px;background:linear-gradient(135deg,#e94560,#c72a48);color:#fff;width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s;z-index:999;box-shadow:0 4px 15px rgba(233,69,96,.4);font-size:1.2rem;animation:glowPulse 10s infinite;min-width:44px;min-height:44px}
+.back-to-top{position:fixed;bottom:80px;right:15px;background:linear-gradient(135deg,#e94560,#c72a48);color:#fff;width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s;z-index:999;box-shadow:0 4px 15px rgba(233,69,96,.4);font-size:1.2rem;animation:glowPulse 10s infinite}
 .back-to-top.show{opacity:1;visibility:visible}
-.back-to-top:hover{background:linear-gradient(135deg,#c72a48,#a01e3a);transform:translateY(-5px) scale(1.1)}
+
 /* Float Buttons */
 .float-buttons{position:fixed;bottom:15px;left:15px;display:flex;flex-direction:column;gap:10px;z-index:999}
-.float-btn{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.3rem;transition:all .3s;box-shadow:0 4px 12px rgba(0,0,0,.2);cursor:pointer;text-decoration:none;animation:2s ease-in-out infinite float;min-width:44px;min-height:44px}
+.float-btn{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.3rem;transition:all .3s;box-shadow:0 4px 12px rgba(0,0,0,.2);cursor:pointer;text-decoration:none;animation:2s ease-in-out infinite float}
 .float-btn:hover{transform:scale(1.1);animation:none}
-.btn-whatsapp{background:#25d366}.btn-whatsapp:hover{background:#128C7E}
-.btn-facebook{background:#1877f2;animation-delay:.10s}.btn-facebook:hover{background:#0c5bd1}
-.btn-call{background:#e94560;animation-delay:.10s}.btn-call:hover{background:#c72a48}
-.btn-youtube{background:#ff0000;animation-delay:.6s}.btn-youtube:hover{background:#cc0000}
+.btn-whatsapp{background:#25d366}.btn-facebook{background:#1877f2}.btn-call{background:#e94560}.btn-youtube{background:#ff0000}
+
 /* Header */
 header{background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.08);position:sticky;top:0;z-index:1000}
 .top-bar{display:flex;justify-content:space-between;align-items:center;padding:8px 4%;border-bottom:1px solid #e0e0e0;flex-wrap:wrap;gap:10px}
 .logo-container{display:flex;align-items:center;gap:8px}
-.logo-img{width:45px;height:45px;background:linear-gradient(135deg,#0f3460,#1e3a5f);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px;transition:transform .3s;animation:glowPulse 2s infinite;flex-shrink:0}
+.logo-img{width:45px;height:45px;background:linear-gradient(135deg,#0f3460,#1e3a5f);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px;transition:transform .3s;animation:glowPulse 2s infinite}
 .logo-img:hover{transform:rotate(10deg) scale(1.05)}
 .school-name h1{color:#0f3460;font-size:1.1rem;font-weight:800;margin-bottom:2px;line-height:1.3}
 .school-name span{font-size:.7rem;color:#c2410c;font-weight:600}
-/* Mobile Menu Button */
-.mobile-menu-btn{display:none;background:none;border:none;font-size:1.4rem;color:#0f3460;cursor:pointer;padding:8px;min-width:44px;min-height:44px;z-index:1001}
+
+/* Mobile Menu */
+.mobile-menu-btn{display:none;background:none;border:none;font-size:1.4rem;color:#0f3460;cursor:pointer;padding:8px}
+
 /* Navigation */
 nav ul{display:flex;list-style:none;gap:6px;flex-wrap:wrap;align-items:center}
-nav ul li a{font-weight:800;color:#0f3460;font-size:.9rem;padding:6px 12px;border-radius:30px;transition:all .3s;cursor:pointer;display:inline-block;position:relative;min-height:44px;display:flex;align-items:center}
+nav ul li a{font-weight:800;color:#0f3460;font-size:.9rem;padding:6px 12px;border-radius:30px;transition:all .3s;cursor:pointer;display:inline-block}
 nav ul li a:hover{background:#0f3460;color:#fff;transform:translateY(-2px)}
-nav ul li a.active{background:#0f3460;color:#fff;animation:blinkActive 1.5s infinite ease-in-out;box-shadow:0 0 12px rgba(233,69,96,.5)}
-.home-nav-btn{background:linear-gradient(135deg,#e94560,#c72a48);color:#fff!important;padding:6px 12px!important;border-radius:20px!important;box-shadow:0 3px 10px rgba(233,69,96,.3);margin-left:6px}
-.home-nav-btn:hover{background:linear-gradient(135deg,#c72a48,#a01e3a)!important}
+nav ul li a.active{background:#0f3460;color:#fff;animation:blinkActive 1.5s infinite ease-in-out}
+.home-nav-btn{background:linear-gradient(135deg,#e94560,#c72a48);color:#fff!important;padding:6px 12px!important;border-radius:20px!important;margin-left:6px}
+
 /* Footer */
 footer{background:linear-gradient(135deg,#0f2b3d,#0a1e2c);color:#fff;padding:25px 4% 15px;margin-top:40px}
-.footer-content{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:15px;padding-bottom:15px;border-bottom:1px solid rgba(255,255,255,.15);max-width:1200px;margin:0 auto}
+.footer-content{display:flex;justify-content:space-between;flex-wrap:wrap;gap:15px;max-width:1200px;margin:0 auto}
 .footer-section{flex:1;min-width:180px}
-.footer-section h3{color:#fff;font-size:.95rem;margin-bottom:10px;font-weight:700;position:relative;display:inline-block}
-.footer-section h3::after{content:'';position:absolute;bottom:-4px;right:0;width:35px;height:2px;background:#e94560}
-.contact-info p{margin:6px 0;font-size:.8rem;display:flex;align-items:center;gap:6px;color:#e2e8f0}
-.contact-info i{color:#e94560;font-size:.85rem;width:20px}
-.contact-info a{color:#e2e8f0;text-decoration:none}
-.contact-info a:hover{color:#fff;text-decoration:underline}
+.footer-section h3{font-size:.95rem;margin-bottom:10px;font-weight:700}
+.contact-info p{margin:6px 0;font-size:.8rem;display:flex;align-items:center;gap:6px}
 .social-icons{display:flex;gap:10px;margin-top:12px}
-.social-icons a{width:32px;height:32px;background:rgba(255,255,255,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.9rem;transition:all .3s;min-width:44px;min-height:44px}
-.social-icons a:hover{background:linear-gradient(135deg,#e94560,#c72a48);transform:translateY(-3px) scale(1.1)}
-.copyright{text-align:center;padding-top:15px;display:flex;align-items:center;justify-content:center;gap:6px;font-size:.7rem;color:#cbd5e1;flex-wrap:wrap}
-/* About Page Specific Styles */
+.social-icons a{width:32px;height:32px;background:rgba(255,255,255,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.9rem;transition:all .3s}
+.social-icons a:hover{background:linear-gradient(135deg,#e94560,#c72a48);transform:translateY(-3px)}
+.copyright{text-align:center;padding-top:15px;font-size:.7rem;color:#cbd5e1}
+
+/* About Page */
 .about-page-wrap{padding:30px 4%;min-height:70vh;max-width:1200px;margin:0 auto}
-/* Image Box - Mobile Optimized */
-.image-box{margin:10px 0 15px;text-align:center;padding:10px;border-radius:10px;background:#fff;border:1px solid #e2e8f0;transition:transform .3s}
-.image-box:hover{transform:scale(1.02)}
-.image-box img{max-width:100%;max-height:280px;border-radius:10px;display:block;margin:0 auto;object-fit:cover;box-shadow:0 2px 8px rgba(0,0,0,.1)}
-/* History Section */
-.history-title{font-size:1.6rem;color:#0f3460;margin:25px 0 18px;text-align:center;font-weight:800;position:relative;padding-bottom:12px}
-.history-title::after{content:'';display:block;width:80px;height:3px;background:linear-gradient(90deg,#0f3460,#e94560);margin:8px auto 0;border-radius:4px}
-/* ✅ تحسين تناسق ووضوح نص النبذة التاريخية */
-.history-text{
-  background:linear-gradient(135deg,#fff,#f8fafc);
-  padding:25px;
-  border-radius:16px;
-  border:1px solid #e2e8f0;
-  box-shadow:0 8px 20px rgba(0,0,0,.05);
-  margin-bottom:35px;
-  font-size:1.05rem;
-  line-height:1.9;
-  color:#0f172a;
-  text-align:justify;
-  font-weight:500;
-  direction:rtl;
-  unicode-bidi:embed;
-  word-spacing:0.04em;
-  letter-spacing:0.01em;
-}
-.history-text strong{color:#0f3460;font-weight:700}
-.history-text br{display:block;margin-bottom:10px;content:""}
+.image-box{margin:10px 0 15px;text-align:center;padding:10px;border-radius:10px;background:#fff;border:1px solid #e2e8f0}
+.image-box img{max-width:100%;max-height:400px;width:100%;border-radius:10px;display:block;margin:0 auto;object-fit:cover}
+.history-title{font-size:1.6rem;color:#0f3460;margin:25px 0 18px;text-align:center;font-weight:800}
 
-/* ✅ Leaders Section - Grid & Cards */
+/* Improved History Text - Clean & Organized */
+.history-text {
+    background: #fff;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.05);
+    margin-bottom: 35px;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #0f172a;
+    text-align: right;
+    font-weight: 500;
+    direction: rtl;
+}
+.history-text p {
+    margin-bottom: 12px;
+}
+.history-text strong {
+    color: #0f3460;
+    font-weight: 800;
+}
+.history-text .highlight {
+    color: #e94560;
+    font-weight: 700;
+}
+
+/* Leaders Section */
 .leaders-section{margin-top:40px}
-.leaders-title{font-size:1.6rem;color:#0f3460;margin-bottom:25px;text-align:center;font-weight:800;position:relative;padding-bottom:12px}
-.leaders-title::after{content:'';display:block;width:80px;height:3px;background:linear-gradient(90deg,#e94560,#0f3460);margin:8px auto 0;border-radius:4px}
-/* ✅ شبكة متجاوبة تلقائياً */
-.leaders-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:25px;margin-top:15px}
-/* ✅ بطاقة المدير */
-.leader-card{background:#fff;border-radius:16px;overflow:visible;box-shadow:0 10px 25px rgba(0,0,0,.1);transition:all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);text-align:center;border:2px solid transparent;background-clip:padding-box;position:relative;cursor:pointer}
-.leader-card::before{content:'';position:absolute;top:-2px;right:-2px;bottom:-2px;left:-2px;background:linear-gradient(135deg,#e94560,#ffb347,#0f3460);border-radius:18px;z-index:-1;opacity:0;transition:opacity 0.4s ease}
-.leader-card:hover::before{opacity:1}
-.leader-card:hover{transform:translateY(-8px);box-shadow:0 20px 35px rgba(0,0,0,.2)}
-/* ✅ صورة المدير: مربعة، إطار متدرج، تكبير عند التمرير، وضوح عالي */
-.leader-img{
-  width:100%;
-  aspect-ratio:1/1;
-  object-fit:cover;
-  border-radius:14px;
-  border:4px solid transparent;
-  background:linear-gradient(#ffffff,#ffffff) padding-box,
-             linear-gradient(135deg,#e94560,#ffb347,#0f3460) border-box;
-  transition:transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94), box-shadow 0.4s ease;
-  image-rendering:-webkit-optimize-contrast;
-  image-rendering:crisp-edges;
-  -ms-interpolation-mode:bicubic;
+.leaders-title{font-size:1.6rem;color:#0f3460;margin-bottom:25px;text-align:center;font-weight:800}
+.leaders-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));
+    gap:25px;
+    margin-top:20px;
+    padding:0 10px;
 }
-.leader-card:hover .leader-img{transform:scale(1.08);box-shadow:0 12px 28px rgba(15,52,96,0.25)}
 
-.leader-info{padding:15px 10px 18px;background:linear-gradient(135deg,#fff,#fef9f9)}
-/* Leader Info Lines - Organized Display */
-.leader-title-line{color:#e94560;font-size:.9rem;font-weight:700;margin-bottom:3px;display:block}
-.leader-name-line{color:#0f3460;font-size:1.05rem;font-weight:800;margin:6px 0;display:block;line-height:1.4}
-.leader-position-line{color:#64748b;font-size:.85rem;font-weight:600;margin-top:5px;display:block;padding:3px 10px;background:#f1f5f9;border-radius:18px;display:inline-block}
-.current-director .leader-position-line{background:linear-gradient(135deg,#10b981,#059669);color:#fff;font-weight:700}
-.leader-info h3{font-size:1rem;color:#0f3460;margin-bottom:5px;font-weight:800;display:none}
-.leader-info h3 i{color:#e94560;margin-left:6px}
-.leader-info .first-leader{color:#e94560;font-size:.9rem;display:inline-block;background:#fef2f2;padding:2px 12px;border-radius:20px;margin-bottom:6px;font-weight:700}
-.leader-info p{font-size:.8rem;color:#4b5563;font-weight:500;display:none}
-.badge{position:absolute;top:10px;left:10px;background:linear-gradient(135deg,#e94560,#c72a48);color:#fff;padding:4px 12px;border-radius:25px;font-size:.7rem;font-weight:800;z-index:2;box-shadow:0 4px 10px rgba(0,0,0,.2)}
+/* Leader Card */
+.leader-card{
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,.1);
+    transition:all 0.3s ease;
+    text-align:center;
+    cursor:pointer;
+    position:relative;
+}
+.leader-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+}
+.leader-img-container{
+    position:relative;
+    width:100%;
+    padding-top:100%;
+    overflow:hidden;
+    background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
+}
+.leader-img{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center top;
+    transition:transform 0.5s ease;
+    image-rendering:-webkit-optimize-contrast;
+}
+.leader-card:hover .leader-img{
+    transform:scale(1.08);
+}
+.current-badge{
+    position:absolute;
+    top:15px;
+    right:15px;
+    background:linear-gradient(135deg,#10b981,#059669);
+    color:#fff;
+    padding:6px 14px;
+    border-radius:25px;
+    font-size:.75rem;
+    font-weight:800;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+.first-badge{
+    position:absolute;
+    top:15px;
+    left:15px;
+    background:linear-gradient(135deg,#f59e0b,#d97706);
+    color:#fff;
+    padding:6px 12px;
+    border-radius:25px;
+    font-size:.7rem;
+    font-weight:800;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+.leader-info{
+    padding:18px 15px 20px;
+    background:#fff;
+}
+.leader-title{
+    color:#e94560;
+    font-size:.85rem;
+    font-weight:700;
+    margin-bottom:5px;
+    display:block;
+}
+.leader-name{
+    color:#0f3460;
+    font-size:1.1rem;
+    font-weight:800;
+    margin:8px 0;
+    line-height:1.4;
+}
+.leader-position{
+    color:#64748b;
+    font-size:.85rem;
+    font-weight:600;
+    padding:5px 12px;
+    background:#f1f5f9;
+    border-radius:20px;
+    display:inline-block;
+}
+.current-director .leader-position{
+    background:linear-gradient(135deg,#10b981,#059669);
+    color:#fff;
+}
+
 /* ============================================
-📱 MEDIA QUERIES - Mobile & Tablet Responsive
-============================================ */
-/* Tablet (768px and below) */
+   MEDIA QUERIES
+   ============================================ */
 @media (max-width: 768px) {
-.mobile-menu-btn { display: block; }
-nav ul {
-display: none;
-position: absolute;
-top: 100%;
-left: 0;
-right: 0;
-background: #fff;
-flex-direction: column;
-padding: 15px 4%;
-box-shadow: 0 5px 15px rgba(0,0,0,.1);
-z-index: 999;
-gap: 5px;
+    .mobile-menu-btn{display:block}
+    nav ul{
+        display:none;
+        position:absolute;
+        top:100%;
+        left:0;
+        right:0;
+        background:#fff;
+        flex-direction:column;
+        padding:15px;
+        box-shadow:0 5px 15px rgba(0,0,0,.1);
+        z-index:999;
+    }
+    nav ul.active{display:flex}
+    nav ul li{width:100%;text-align:center}
+    nav ul li a{width:100%;justify-content:center;padding:12px}
+    .leaders-grid{
+        grid-template-columns:repeat(auto-fill, minmax(250px, 1fr));
+        gap:20px;
+    }
+    .history-text {
+        padding: 20px;
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
 }
-nav ul.active { display: flex; }
-nav ul li { width: 100%; text-align: center; }
-nav ul li a {
-width: 100%;
-justify-content: center;
-padding: 12px;
-border-radius: 10px;
-font-size: 1rem;
-}
-.about-page-wrap { padding: 25px 3%; }
-.history-title, .leaders-title { font-size: 1.4rem; }
-.history-text { font-size: 1rem; padding: 20px; }
-/* ✅ صورتين في كل صف على التابلت */
-.leaders-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
-.leader-card { min-width: 140px; }
-.footer-content { flex-direction: column; text-align: center; gap: 20px; }
-.footer-section h3::after { right: 50%; transform: translateX(50%); }
-.social-icons { justify-content: center; }
-}
-/* Mobile (480px and below) */
 @media (max-width: 480px) {
-.top-bar { padding: 6px 3%; }
-.logo-img { width: 40px; height: 40px; font-size: 18px; }
-.school-name h1 { font-size: 1rem; }
-.school-name span { font-size: .65rem; }
-.about-page-wrap { padding: 20px 3%; }
-.image-box img { max-height: 220px; }
-.history-title, .leaders-title { font-size: 1.3rem; }
-/* ✅ تحسين وضوح وتنسيق النص على الموبايل */
-.history-text { font-size: 0.95rem; line-height: 1.85; padding: 18px; word-spacing: 0.03em; }
-/* ✅ صورة واحدة في كل صف على الموبايل */
-.leaders-grid { grid-template-columns: 1fr; gap: 20px; max-width: 320px; margin-left: auto; margin-right: auto; }
-.leader-card { min-width: 100%; }
-/* ✅ توسيط الصورة المربعة على الموبايل */
-.leader-img { max-width: 260px; margin: 0 auto; display: block; }
-.leader-name-line { font-size: 1rem; }
-.float-buttons { bottom: 10px; left: 10px; gap: 8px; }
-.float-btn { width: 45px; height: 45px; font-size: 1.2rem; }
-.back-to-top { bottom: 70px; right: 10px; width: 44px; height: 44px; }
-.ticker-content { gap: 30px; padding-left: 70px; font-size: .85rem; }
-.ticker-label { font-size: .8rem; padding: 3px 10px; right: 10px; }
+    .top-bar{padding:6px 3%}
+    .logo-img{width:40px;height:40px;font-size:18px}
+    .school-name h1{font-size:1rem}
+    .about-page-wrap{padding:20px 3%}
+    .history-title,.leaders-title{font-size:1.3rem}
+    .leaders-grid{
+        grid-template-columns:1fr;
+        gap:20px;
+        padding:0;
+    }
+    .leader-img-container{padding-top:100%}
+    .leader-name{font-size:1rem}
+    .history-text {
+        padding: 15px;
+        font-size: 0.9rem;
+        line-height: 1.65;
+    }
+    .history-text p {
+        margin-bottom: 10px;
+    }
+    .float-buttons{bottom:10px;left:10px;gap:8px}
+    .float-btn{width:45px;height:45px;font-size:1.2rem}
+    .back-to-top{bottom:70px;right:10px;width:44px;height:44px}
 }
-/* Small Mobile (360px and below) */
-@media (max-width: 360px) {
-.school-name h1 { font-size: .95rem; }
-.history-text { font-size: .9rem; }
-.leader-name-line { font-size: .95rem; }
-}
-/* High DPI / Retina */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-.logo-img, .float-btn, .leader-img { image-rendering: -webkit-optimize-contrast; }
-}
-/* Print Styles */
-@media print {
-.news-ticker, .float-buttons, .back-to-top, nav { display: none !important; }
-body { background: #fff; color: #000; }
-.leader-card { break-inside: avoid; }
-}
-/* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
-*, *::before, *::after {
-animation-duration: 0.01ms !important;
-animation-iteration-count: 1 !important;
-transition-duration: 0.01ms !important;
-}
+    *{animation-duration:0.01ms!important;transition-duration:0.01ms!important}
 }
 </style>
 </head>
 <body>
+
 <!-- News Ticker -->
 <div class="news-ticker">
-<div class="ticker-wrapper">
-<div class="ticker-label">🔴 أخبار عاجلة</div>
-<div class="ticker-content">
-<span><i class="fas fa-bell"></i> يرجى متابعة الصفحة الرسمية للمدرسة لأحدث التحديثات</span>
-<span><i class="fas fa-bell"></i> مدرسة الشهيد عيد عطية</span>
-<span><i class="fas fa-calendar-alt"></i> استمرار اعمال الامتحانات من يوم الاحد</span>
-<span><i class="fas fa-star"></i> ممنوع الغياب نهائيا</span>
-<span><i class="fas fa-bell"></i> مدرسة الشهيد عيد عطية</span>
-<span><i class="fas fa-chalkboard-teacher"></i> اجتماع أولياء الأمور: الخميس القادم الساعة 10 صباحاً</span>
-<span><i class="fas fa-bell"></i> مدرسة الشهيد عيد عطية</span>
-<span><i class="fas fa-trophy"></i> تدريب الحاسب الالي للتلاميذ تم تاجيله ليكون الخميس القادم 2 ابريل</span>
-<span><i class="fas fa-bell"></i> مدرسة الشهيد عيد عطية</span>
-<span><i class="fas fa-bell"></i> إجازة نصف العام: من 26 يناير حتى 6 فبراير</span>
-<span><i class="fas fa-bell"></i> مدرسة الشهيد عطية</span>
+  <div class="ticker-wrapper">
+    <div class="ticker-label">🔴 أخبار عاجلة</div>
+    <div class="ticker-content">
+      <span><i class="fas fa-bell"></i> يرجى متابعة الصفحة الرسمية للمدرسة لأحدث التحديثات</span>
+      <span><i class="fas fa-bell"></i> مدرسة الشهيد عيد عطية</span>
+      <span><i class="fas fa-calendar-alt"></i> استمرار اعمال الامتحانات من يوم الاحد</span>
+      <span><i class="fas fa-star"></i> ممنوع الغياب نهائيا</span>
+      <span><i class="fas fa-bell"></i> اجتماع أولياء الأمور: الخميس القادم الساعة 10 صباحاً</span>
+      <span><i class="fas fa-trophy"></i> تدريب الحاسب الالي للتلاميذ تم تاجيله ليكون الخميس القادم 2 ابريل</span>
+      <span><i class="fas fa-bell"></i> إجازة نصف العام: من 26 يناير حتى 6 فبراير</span>
+    </div>
+  </div>
 </div>
-</div>
-</div>
-<!-- Header with Mobile Menu -->
+
+<!-- Header -->
 <header>
-<div class="top-bar">
-<div class="logo-container">
-<div class="logo-img"><i class="fas fa-school"></i></div>
-<div class="school-name">
-<h1>مدرسة الشهيد عيد عطية (إطسا بنات سابقاً)</h1>
-<span>هدفنا اعداد تلميذ متميز ومبدع</span>
-</div>
-</div>
-<button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="القائمة" aria-expanded="false">
-<i class="fas fa-bars"></i>
-</button>
-<nav>
-<ul id="mainNav">
-<li><a href="index.html" class="home-nav-btn"><i class="fas fa-home"></i> الرئيسية</a></li>
-<li><a href="about.html">عن المدرسة</a></li>
-<li><a href="activities.html">الأنشطة</a></li>
-<li><a href="exams.html">نتائج وامتحانات</a></li>
-<li><a href="teachers.html">المعلمين</a></li>
-<li><a href="notifications.html">تنويهات هامة</a></li>
-<li><a href="stages.html">المراحل الدراسية</a></li>
-<li><a href="contact.html">التواصل</a></li>
-</ul>
-</nav>
-</div>
+  <div class="top-bar">
+    <div class="logo-container">
+      <div class="logo-img"><i class="fas fa-school"></i></div>
+      <div class="school-name">
+        <h1>مدرسة الشهيد عيد عطية (إطسا بنات سابقاً)</h1>
+        <span>هدفنا اعداد تلميذ متميز ومبدع</span>
+      </div>
+    </div>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="القائمة">
+      <i class="fas fa-bars"></i>
+    </button>
+    <nav>
+      <ul id="mainNav">
+        <li><a href="index.html" class="home-nav-btn"><i class="fas fa-home"></i> الرئيسية</a></li>
+        <li><a href="about.html" class="active">عن المدرسة</a></li>
+        <li><a href="activities.html">الأنشطة</a></li>
+        <li><a href="exams.html">نتائج وامتحانات</a></li>
+        <li><a href="teachers.html">المعلمين</a></li>
+        <li><a href="notifications.html">تنويهات هامة</a></li>
+        <li><a href="stages.html">المراحل الدراسية</a></li>
+        <li><a href="contact.html">التواصل</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>
+
 <!-- Main Content -->
 <main class="about-page-wrap">
-<div class="image-box">
-<img src="https://res.cloudinary.com/dar1qf8p7/image/upload/v1774288114/%D8%A7%D9%84%D9%85%D8%A8%D9%86%D9%89_mjhc6a.jpg"
-alt="مدرسة الشهيد عيد عطية"
-loading="lazy"
-width="800"
-height="300">
-</div>
-<h1 class="history-title">📜 نبذة تاريخية عن المدرسة</h1>
-<div class="history-text">
-📌اسم المدرسة: إطسا بنات الابتدائية (ثم تغيير الاسم  إلى الشهيد عيد عطية العناني
-احد شهداء الشرطة البواسل من مركز إطسا
-📌الوظيفة: رقيب أول شرطة (من قوة مركز شرطة إطسا)
-📌تاريخ الاستشهاد: 9 نوفمبر 2014
-📌سبب الوفاة: استشهد إثر إطلاق نار من عناصر إرهابية أثناء أداء عمله واستشهد ببطولة
-📌مكان الحادث: الطريق الدائري بمحافظة الفيوم اثناء قيادته لسيارة الشرطة التى تقل  مأمور مركز إطسا وتم اطلاق النار عليهما واستشهد وقتها متأثرا بجراحة
-<br><br>
-📌 تاريخ الإنشاء: عام <strong>1940</strong> وكانت عبارة عن دور واحد فقط، 5 فصول من الفصل الأول حتى الخامس الابتدائي، ومكتب واحد للإدارة (ناظر واداري).<br><br>
-📌 تم استخدام المدرسة عام <strong>1956</strong> كسكن للمهاجرين من أبناء السويس وبورسعيد إثر العدوان الثلاثي على مصر.<br><br>
-📌 كان يتم استخدام المدرسة بعد فترات العمل الرسمية للتلاميذ كفصول <strong>محو أمية</strong> بقيادة الأستاذ بكير والأستاذ إمام علي إمام، وهي من أقدم فصول محو الأمية بمدينة إطسا.<br><br>
-📌 بعد ما كانت المدرسة عبارة عن دور واحد، تم تطويرها وبناؤها عام <strong>1999</strong> حيث قام بافتتاحها محافظة الفيوم في عيد الفيوم القومي 1999، الدكتور سمير عبدالفتاح الخولي، في عهد الوزير حسين كامل بهاء الدين  وأصبحت <strong>خمسة أدوار</strong>.<br><br>
-📌 ثم في عام <strong>2017</strong> تم بناء جناح آخر عبارة عن <strong>5 أدوار</strong>.
-</div>
-<section class="leaders-section">
-<h2 class="leaders-title">🏛️ نُظّار ومديرو المدرسة السابقون</h2>
-<div class="leaders-grid" id="leadersGrid" role="list"></div>
-</section>
+  <div class="image-box">
+    <img src="https://res.cloudinary.com/dar1qf8p7/image/upload/v1774288114/%D8%A7%D9%84%D9%85%D8%A8%D9%86%D9%89_mjhc6a.jpg" 
+         alt="مدرسة الشهيد عيد عطية" 
+         loading="lazy"
+         style="width:100%; height:auto; max-height:450px; object-fit:cover;">
+  </div>
+  
+  <h1 class="history-title">📜 نبذة تاريخية عن المدرسة</h1>
+  <div class="history-text">
+    <p>📌 <strong>اسم المدرسة:</strong> إطسا بنات الابتدائية (ثم تغيير الاسم إلى الشهيد عيد عطية العناني احد شهداء الشرطة البواسل من مركز إطسا</p>
+    <p>📌 <strong>الوظيفة:</strong> رقيب أول شرطة (من قوة مركز شرطة إطسا)</p>
+    <p>📌 <strong>تاريخ الاستشهاد:</strong> 9 نوفمبر 2014</p>
+    <p>📌 <strong>سبب الوفاة:</strong> استشهد إثر إطلاق نار من عناصر إرهابية أثناء أداء عمله واستشهد ببطولة</p>
+    <p>📌 <strong>مكان الحادث:</strong> الطريق الدائري بمحافظة الفيوم اثناء قيادته لسيارة الشرطة التى تقل مأمور مركز إطسا وتم اطلاق النار عليهما واستشهد وقتها متأثرا بجراحة</p>
+    <p>📌 <strong>تاريخ الإنشاء:</strong> عام <strong>1940</strong> وكانت عبارة عن دور واحد فقط، 5 فصول من الفصل الأول حتى الخامس الابتدائي، ومكتب واحد للإدارة (ناظر واداري).</p>
+    <p>📌 تم استخدام المدرسة عام <strong>1956</strong> كسكن للمهاجرين من أبناء السويس وبورسعيد إثر العدوان الثلاثي على مصر.</p>
+    <p>📌 كان يتم استخدام المدرسة بعد فترات العمل الرسمية للتلاميذ كفصول <strong>محو أمية</strong> بقيادة الأستاذ بكير والأستاذ إمام علي إمام، وهي من أقدم فصول محو الأمية بمدينة إطسا.</p>
+    <p>📌 بعد ما كانت المدرسة عبارة عن دور واحد، تم تطويرها وبناؤها عام <strong>1999</strong> حيث قام بافتتاحها محافظة الفيوم في عيد الفيوم القومي 1999، الدكتور سمير عبدالفتاح الخولي، في عهد الوزير حسين كامل بهاء الدين وأصبحت <strong>خمسة أدوار</strong>.</p>
+    <p>📌 ثم في عام <strong>2017</strong> تم بناء جناح آخر عبارة عن <strong>5 أدوار</strong>.</p>
+  </div>
+  
+  <section class="leaders-section">
+    <h2 class="leaders-title">🏛️ نُظّار ومديرو المدرسة السابقون</h2>
+    <div class="leaders-grid" id="leadersGrid"></div>
+  </section>
 </main>
+
 <!-- Float Buttons -->
 <div class="float-buttons">
-<a href="https://wa.me/201008268284" target="_blank" class="float-btn btn-whatsapp" aria-label="واتساب"><i class="fab fa-whatsapp"></i></a>
-<a href="https://www.facebook.com/itsabanat" target="_blank" class="float-btn btn-facebook" aria-label="فيسبوك"><i class="fab fa-facebook-f"></i></a>
-<a href="https://www.youtube.com/channel/UCH2wYK3_EBCC01L8pLLhH6Q" target="_blank" class="float-btn btn-youtube" aria-label="يوتيوب"><i class="fab fa-youtube"></i></a>
-<a href="tel:01008268284" class="float-btn btn-call" aria-label="اتصال"><i class="fas fa-phone-alt"></i></a>
+  <a href="https://wa.me/201008268284" target="_blank" class="float-btn btn-whatsapp"><i class="fab fa-whatsapp"></i></a>
+  <a href="https://www.facebook.com/itsabanat" target="_blank" class="float-btn btn-facebook"><i class="fab fa-facebook-f"></i></a>
+  <a href="https://www.youtube.com/channel/UCH2wYK3_EBCC01L8pLLhH6Q" target="_blank" class="float-btn btn-youtube"><i class="fab fa-youtube"></i></a>
+  <a href="tel:01008268284" class="float-btn btn-call"><i class="fas fa-phone-alt"></i></a>
 </div>
+
 <!-- Back to Top -->
-<div class="back-to-top" onclick="scrollToTop()" role="button" tabindex="0" aria-label="العودة للأعلى"><i class="fas fa-arrow-up"></i></div>
+<div class="back-to-top" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></div>
+
 <!-- Footer -->
 <footer>
-<div class="footer-content">
-<div class="footer-section">
-<h3>معلومات الاتصال</h3>
-<div class="contact-info">
-<p><i class="fas fa-phone"></i> هاتف: <a href="tel:01008268284">01008268284</a></p>
-<p><i class="fab fa-whatsapp"></i> واتساب: <a href="https://wa.me/201008268284" target="_blank">01008268284</a></p>
-<p><i class="fas fa-map-marker-alt"></i> شارع المدارس - إطسا - الفيوم</p>
-</div>
-<div class="social-icons">
-<a href="https://www.facebook.com/itsabanat" target="_blank" aria-label="فيسبوك"><i class="fab fa-facebook-f"></i></a>
-<a href="https://wa.me/201008268284" target="_blank" aria-label="واتساب"><i class="fab fa-whatsapp"></i></a>
-<a href="https://www.youtube.com/channel/UCH2wYK3_EBCC01L8pLLhH6Q" target="_blank" aria-label="يوتيوب"><i class="fab fa-youtube"></i></a>
-</div>
-</div>
-<div class="footer-section">
-<h3>روابط سريعة</h3>
-<ul style="list-style:none;line-height:1.6">
-<li><a href="about.html">عن المدرسة</a></li>
-<li><a href="activities.html">الأنشطة</a></li>
-<li><a href="exams.html">النتائج</a></li>
-<li><a href="contact.html">التواصل</a></li>
-</ul>
-</div>
-<div class="footer-section">
-<h3>عن المدرسة</h3>
-<p style="color:#ccc;line-height:1.5;font-size:.85rem">مدرسة الشهيد عيد عطية (إطسا بنات سابقاً) - مؤسسة تعليمية تهدف إلى إعداد جيل متميز ومبدع.</p>
-</div>
-</div>
-<div class="copyright">
-<p>جميع الحقوق محفوظة © 2026</p>
-<p>Master Emad Elnaggar</p>
-</div>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>معلومات الاتصال</h3>
+      <div class="contact-info">
+        <p><i class="fas fa-phone"></i> هاتف: <a href="tel:01008268284">01008268284</a></p>
+        <p><i class="fab fa-whatsapp"></i> واتساب: <a href="https://wa.me/201008268284">01008268284</a></p>
+        <p><i class="fas fa-map-marker-alt"></i> شارع المدارس - إطسا - الفيوم</p>
+      </div>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/itsabanat" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://wa.me/201008268284" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.youtube.com/channel/UCH2wYK3_EBCC01L8pLLhH6Q" target="_blank"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="footer-section">
+      <h3>روابط سريعة</h3>
+      <ul style="list-style:none;line-height:1.6">
+        <li><a href="about.html">عن المدرسة</a></li>
+        <li><a href="activities.html">الأنشطة</a></li>
+        <li><a href="exams.html">النتائج</a></li>
+        <li><a href="contact.html">التواصل</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>عن المدرسة</h3>
+      <p style="color:#ccc;line-height:1.5;font-size:.85rem">مدرسة الشهيد عيد عطية - مؤسسة تعليمية تهدف إلى إعداد جيل متميز ومبدع.</p>
+    </div>
+  </div>
+  <div class="copyright">
+    <p>جميع الحقوق محفوظة © 2026 | Master Emad Elnaggar</p>
+  </div>
 </footer>
+
 <script>
-// ============================================
-// 📱 Mobile Menu Toggle
-// ============================================
+// Mobile Menu
 document.addEventListener('DOMContentLoaded', () => {
-const menuBtn = document.getElementById('mobileMenuBtn');
-const mainNav = document.getElementById('mainNav');
-if (menuBtn && mainNav) {
-menuBtn.addEventListener('click', () => {
-const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
-menuBtn.setAttribute('aria-expanded', !isExpanded);
-mainNav.classList.toggle('active');
-menuBtn.innerHTML = isExpanded ? '<i class="fas fa-bars"></i>' : '<i class="fas fa-times"></i>';
+  const menuBtn = document.getElementById('mobileMenuBtn');
+  const mainNav = document.getElementById('mainNav');
+  
+  if(menuBtn && mainNav){
+    menuBtn.addEventListener('click', () => {
+      mainNav.classList.toggle('active');
+      menuBtn.innerHTML = mainNav.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+    });
+  }
 });
-mainNav.querySelectorAll('a').forEach(link => {
-link.addEventListener('click', () => {
-mainNav.classList.remove('active');
-menuBtn.setAttribute('aria-expanded', 'false');
-menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-});
-});
-}
-});
-// ============================================
+
 // Leaders Data
-// ============================================
 const leadersList = [
-{ name: "جنفيان محمد عشماوي حواس", first: true, gender: "female", image: "https://example.com/images/genavian.jpg" },
-{ name: "ربيع المليجي", gender: "male", image: "https://example.com/images/rabie.jpg" },
-{ name: "أحمد إبراهيم دهشان", gender: "male", image: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775583323/%D8%A7%D8%AD%D9%85%D8%AF_%D8%AF%D9%87%D8%B4%D8%A7%D9%86_hi07vs.jpg" },
-{ name: "أحمد بهنساوي", gender: "male", image: "" },
-{ name: "يوسف مصباح", gender: "male", image: "" },
-{ name: "علي حلمي", gender: "male", image: "" },
-{ name: "عيد جبيلي", gender: "male", image: "" },
-{ name: "ربيع معوض", gender: "male", image: "" },
-{ name: "ليلى علي الشيخ طلبة طحاوي", gender: "female", image: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775583323/%D9%84%D9%8A%D9%84%D9%8911_qqjamt.png" },
-{ name: "علي ابو الحارث عبدالحميد", gender: "male", image: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775592006/%D8%A7%D8%A8%D9%88_%D8%A7%D9%84%D8%AD%D8%A7%D8%B1%D8%AB_%D8%A7%D9%84%D8%A7%D9%81%D8%B6%D9%84_yqodi8.png" },
-{ name: "ناديه", gender: "female", image: "" },
-{ name: "سعيد عبدالفتاح", gender: "male", image: "" },
-{ name: "سيد محمد بدير", gender: "male", image: "" },
-{ name: "بسيمة رجب", gender: "female", image: "" },
-{ name: "رمضان محمود", gender: "male", image: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1776105348/%D8%B1%D9%85%D8%B6%D8%A7%D9%86_%D9%85%D8%AD%D9%85%D9%88%D8%AF_jvxj19.jpg" },
-{ name: "إيمان عبدالرحمن", gender: "female", image: "" },
-{ name: "ناصر العيسوي", gender: "male", image: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775583323/%D9%86%D8%A7%D8%B5%D8%B1_hssgkz.png" },
-{ name: "تامر جمال كمال", gender: "male", image: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775583323/%D8%AA%D8%A7%D9%85%D8%B1_tqqh8e.jpg" },
-{ name: "خالد توفيق عويس", gender: "male", image: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775583324/%D8%AE%D8%A7%D9%84%D8%AF11_r1vxcs.png", isCurrent: true }
+  { name: "جنفيان محمد عشماوي حواس", first: true, gender: "female", image: "" },
+  { name: "ربيع المليجي", gender: "male", image: "" },
+  { name: "أحمد إبراهيم دهشان", gender: "male", image: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775583323/%D8%A7%D8%AD%D9%85%D8%AF_%D8%AF%D9%87%D8%B4%D8%A7%D9%86_hi07vs.jpg" },
+  { name: "أحمد بهنساوي", gender: "male", image: "" },
+  { name: "يوسف مصباح", gender: "male", image: "" },
+  { name: "علي حلمي", gender: "male", image: "" },
+  { name: "عيد جبيلي", gender: "male", image: "" },
+  { name: "ربيع معوض", gender: "male", image: "" },
+  { name: "ليلى علي الشيخ طلبة طحاوي", gender: "female", image: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775583323/%D9%84%D9%8A%D9%84%D9%8911_qqjamt.png" },
+  { name: "علي ابو الحارث عبدالحميد", gender: "male", image: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775592006/%D8%A7%D8%A8%D9%88_%D8%A7%D9%84%D8%AD%D8%A7%D8%B1%D8%AB_%D8%A7%D9%84%D8%A7%D9%81%D8%B6%D9%84_yqodi8.png" },
+  { name: "ناديه", gender: "female", image: "" },
+  { name: "سعيد عبدالفتاح", gender: "male", image: "" },
+  { name: "سيد محمد بدير", gender: "male", image: "" },
+  { name: "بسيمة رجب", gender: "female", image: "" },
+  { name: "رمضان محمود", gender: "male", image: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1776105348/%D8%B1%D9%85%D8%B6%D8%A7%D9%86_%D9%85%D8%AD%D9%85%D9%88%D8%AF_jvxj19.jpg" },
+  { name: "إيمان عبدالرحمن", gender: "female", image: "" },
+  { name: "ناصر العيسوي", gender: "male", image: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775583323/%D9%86%D8%A7%D8%B5%D8%B1_hssgkz.png" },
+  { name: "تامر جمال كمال", gender: "male", image: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775583323/%D8%AA%D8%A7%D9%85%D8%B1_tqqh8e.jpg" },
+  { name: "خالد توفيق عويس", gender: "male", image: "https://res.cloudinary.com/dar1qf8p7/image/upload/v1775583324/%D8%AE%D8%A7%D9%84%D8%AF11_r1vxcs.png", isCurrent: true }
 ];
+
 const maleAvatar = "https://cdn-icons-png.flaticon.com/512/3135/3135715.png";
 const femaleAvatar = "https://cdn-icons-png.flaticon.com/512/4140/4140047.png";
-// ============================================
-// Build Leaders Grid - Mobile Optimized
-// ============================================
+
+// Build Leaders Grid
 function buildLeadersGrid() {
-const grid = document.getElementById('leadersGrid');
-if (!grid) return;
-grid.innerHTML = '';
-leadersList.forEach((leader, index) => {
-const card = document.createElement('div');
-card.className = 'leader-card';
-card.setAttribute('role', 'listitem');
-const isCurrentDirector = leader.isCurrent === true;
-if (isCurrentDirector) card.classList.add('current-director');
-const imgSrc = leader.image && leader.image.trim() !== ''
-? leader.image
-: (leader.gender === 'female' ? femaleAvatar : maleAvatar);
-const firstBadge = leader.first ? '<div class="badge">🏆 أول ناظرة</div>' : '';
-const firstNameHighlight = leader.first ? '<div class="first-leader"><i class="fas fa-star"></i> أول ناظرة في تاريخ المدرسة</div>' : '';
-const titlePrefix = leader.gender === 'female' ? 'الأستاذة الفاضلة' : 'الأستاذ الفاضل';
-const positionText = isCurrentDirector ? 'مدير المدرسة الحالي' : 'مدير المدرسة الأسبق';
-card.innerHTML = `
-${firstBadge}
-<img class="leader-img" src="${imgSrc}" alt="${leader.name}" loading="lazy" width="220" height="190" onerror="this.src='${leader.gender === 'female' ? femaleAvatar : maleAvatar}'">
-<div class="leader-info">
-${firstNameHighlight}
-<span class="leader-title-line">${titlePrefix}</span>
-<span class="leader-name-line">${leader.name}</span>
-<span class="leader-position-line">${positionText}</span>
-</div>
-`;
-grid.appendChild(card);
-});
+  const grid = document.getElementById('leadersGrid');
+  if(!grid) return;
+  grid.innerHTML = '';
+  
+  leadersList.forEach((leader) => {
+    const card = document.createElement('div');
+    card.className = 'leader-card';
+    if(leader.isCurrent) card.classList.add('current-director');
+    
+    const imgSrc = leader.image && leader.image.trim() !== '' 
+      ? leader.image 
+      : (leader.gender === 'female' ? femaleAvatar : maleAvatar);
+    
+    const titlePrefix = leader.gender === 'female' ? 'الأستاذة الفاضلة' : 'الأستاذ الفاضل';
+    const positionText = leader.isCurrent ? 'مدير المدرسة الحالي' : 'مدير المدرسة الأسبق';
+    
+    card.innerHTML = `
+      <div class="leader-img-container">
+        <img class="leader-img" src="${imgSrc}" alt="${leader.name}" loading="lazy" onerror="this.src='${leader.gender === 'female' ? femaleAvatar : maleAvatar}'">
+        ${leader.isCurrent ? '<div class="current-badge"><i class="fas fa-check-circle"></i> المدير الحالي</div>' : ''}
+        ${leader.first ? '<div class="first-badge"><i class="fas fa-star"></i> أول ناظرة</div>' : ''}
+      </div>
+      <div class="leader-info">
+        <span class="leader-title">${titlePrefix}</span>
+        <span class="leader-name">${leader.name}</span>
+        <span class="leader-position">${positionText}</span>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
 }
-// ============================================
+
 // Scroll to Top
-// ============================================
-function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
 window.addEventListener('scroll', () => {
-const btn = document.querySelector('.back-to-top');
-if (btn) {
-window.scrollY > 300 ? btn.classList.add('show') : btn.classList.remove('show');
-}
-}, { passive: true });
-document.querySelector('.back-to-top')?.addEventListener('keydown', (e) => {
-if (e.key === 'Enter' || e.key === ' ') {
-e.preventDefault();
-scrollToTop();
-}
+  const btn = document.querySelector('.back-to-top');
+  if(btn) window.scrollY > 300 ? btn.classList.add('show') : btn.classList.remove('show');
 });
-// ============================================
+
 // Initialize
-// ============================================
 document.addEventListener('DOMContentLoaded', () => {
-buildLeadersGrid();
-document.querySelectorAll('nav ul li a').forEach(link => {
-if (link.getAttribute('href') === 'about.html') link.classList.add('active');
-});
-// PWA Service Worker
-if ('serviceWorker' in navigator) {
-navigator.serviceWorker.register('/sw.js').catch(err => console.log('SW registration failed:', err));
-}
+  buildLeadersGrid();
 });
 </script>
 </body>
