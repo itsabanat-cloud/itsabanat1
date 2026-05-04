@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+<meta name="description" content="الأمن والسلامة في مدرسة الشهيد عيد عطية - تعليمات الكوارث، مكافحة الحرائق، الإسعافات الأولية، خطط الإخلاء">
+<meta name="theme-color" content="#0f3460">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>الأمن والسلامة - مدرسة الشهيد عيد عطية</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{font-family:'Tajawal',sans-serif;background:#f0f2f5;color:#1e293b;line-height:1.5;overflow-x:hidden;font-size:16px}
+a{text-decoration:none;color:inherit;touch-action:manipulation}
+
+/* Animations */
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes tickerMove{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
+@keyframes glowPulse{0%{box-shadow:0 0 0 0 rgba(233,69,96,.4)}70%{box-shadow:0 0 0 15px rgba(233,69,96,0)}100%{box-shadow:0 0 0 0 rgba(233,69,96,0)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes blinkActive{0%{background:#0f3460;color:#fff;box-shadow:0 0 0 0 rgba(15,52,96,.7)}50%{background:#e94560;color:#fff;box-shadow:0 0 0 8px rgba(233,69,96,.3)}100%{background:#0f3460;color:#fff;box-shadow:0 0 0 0 rgba(15,52,96,.7)}}
+@keyframes pulseRed{0%{box-shadow:0 0 0 0 rgba(220,38,38,.4)}70%{box-shadow:0 0 0 10px rgba(220,38,38,0)}100%{box-shadow:0 0 0 0 rgba(220,38,38,0)}}
+
+/* News Ticker */
+.news-ticker{background:linear-gradient(135deg,#0f3460,#1e3a5f);color:#fff;padding:8px 15px;position:relative;overflow:hidden;white-space:nowrap;border-bottom:3px solid #e94560;font-weight:600;direction:ltr}
+.ticker-wrapper{display:flex;align-items:center;gap:10px}
+.ticker-label{background:linear-gradient(135deg,#e94560,#c72a48);color:#fff;padding:4px 12px;border-radius:20px;font-size:.85rem;font-weight:800;flex-shrink:0;box-shadow:0 2px 10px rgba(233,69,96,.5);animation:glowPulse 10s infinite;position:absolute;right:15px;top:50%;transform:translateY(-50%);z-index:10}
+.ticker-content{display:flex;width:max-content;animation:15s linear infinite tickerMove;font-weight:500;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.3);white-space:nowrap;gap:40px;padding-left:80px}
+.ticker-content span{display:inline-block}
+.ticker-content i{margin-right:6px;color:#ffd966}
+
+/* Back to Top */
+.back-to-top{position:fixed;bottom:80px;right:15px;background:linear-gradient(135deg,#e94560,#c72a48);color:#fff;width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s;z-index:999;box-shadow:0 4px 15px rgba(233,69,96,.4);font-size:1.2rem;animation:glowPulse 10s infinite;min-width:44px;min-height:44px}
+.back-to-top.show{opacity:1;visibility:visible}
+.back-to-top:hover{background:linear-gradient(135deg,#c72a48,#a01e3a);transform:translateY(-5px) scale(1.1)}
+
+/* Float Buttons */
+.float-buttons{position:fixed;bottom:15px;left:15px;display:flex;flex-direction:column;gap:10px;z-index:999}
+.float-btn{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.3rem;transition:all .3s;box-shadow:0 4px 12px rgba(0,0,0,.2);cursor:pointer;text-decoration:none;animation:2s ease-in-out infinite float;min-width:44px;min-height:44px}
+.float-btn:hover{transform:scale(1.1);animation:none}
+.btn-whatsapp{background:#25d366}.btn-whatsapp:hover{background:#128C7E}
+.btn-facebook{background:#1877f2;animation-delay:.10s}.btn-facebook:hover{background:#0c5bd1}
+.btn-call{background:#e94560;animation-delay:.10s}.btn-call:hover{background:#c72a48}
+.btn-youtube{background:#ff0000;animation-delay:.6s}.btn-youtube:hover{background:#cc0000}
+
+/* Header */
+header{background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.08);position:sticky;top:0;z-index:1000}
+.top-bar{display:flex;justify-content:space-between;align-items:center;padding:8px 4%;border-bottom:1px solid #e0e0e0;flex-wrap:wrap;gap:10px}
+.logo-container{display:flex;align-items:center;gap:8px}
+.logo-img{width:45px;height:45px;background:linear-gradient(135deg,#0f3460,#1e3a5f);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px;transition:transform .3s;animation:glowPulse 2s infinite;flex-shrink:0}
+.logo-img:hover{transform:rotate(10deg) scale(1.05)}
+.school-name h1{color:#0f3460;font-size:1.1rem;font-weight:800;margin-bottom:2px;line-height:1.3}
+.school-name span{font-size:.7rem;color:#c2410c;font-weight:600}
+
+/* Mobile Menu Button */
+.mobile-menu-btn{display:none;background:none;border:none;font-size:1.4rem;color:#0f3460;cursor:pointer;padding:8px;min-width:44px;min-height:44px;z-index:1001}
+
+/* Navigation */
+nav ul{display:flex;list-style:none;gap:6px;flex-wrap:wrap;align-items:center}
+nav ul li a{font-weight:800;color:#0f3460;font-size:.9rem;padding:6px 12px;border-radius:30px;transition:all .3s;cursor:pointer;display:inline-block;position:relative;min-height:44px;display:flex;align-items:center}
+nav ul li a:hover{background:#0f3460;color:#fff;transform:translateY(-2px)}
+nav ul li a.active{background:#0f3460;color:#fff;animation:blinkActive 1.5s infinite ease-in-out;box-shadow:0 0 12px rgba(233,69,96,.5)}
+.home-nav-btn{background:linear-gradient(135deg,#e94560,#c72a48);color:#fff!important;padding:6px 12px!important;border-radius:20px!important;box-shadow:0 3px 10px rgba(233,69,96,.3);margin-left:6px}
+.home-nav-btn:hover{background:linear-gradient(135deg,#c72a48,#a01e3a)!important}
+
+/* Footer */
+footer{background:linear-gradient(135deg,#0f2b3d,#0a1e2c);color:#fff;padding:25px 4% 15px;margin-top:40px}
+.footer-content{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:15px;padding-bottom:15px;border-bottom:1px solid rgba(255,255,255,.15);max-width:1200px;margin:0 auto}
+.footer-section{flex:1;min-width:180px}
+.footer-section h3{color:#fff;font-size:.95rem;margin-bottom:10px;font-weight:700;position:relative;display:inline-block}
+.footer-section h3::after{content:'';position:absolute;bottom:-4px;right:0;width:35px;height:2px;background:#e94560}
+.contact-info p{margin:6px 0;font-size:.8rem;display:flex;align-items:center;gap:6px;color:#e2e8f0}
+.contact-info i{color:#e94560;font-size:.85rem;width:20px}
+.contact-info a{color:#e2e8f0;text-decoration:none}
+.contact-info a:hover{color:#fff;text-decoration:underline}
+.social-icons{display:flex;gap:10px;margin-top:12px}
+.social-icons a{width:32px;height:32px;background:rgba(255,255,255,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.9rem;transition:all .3s;min-width:44px;min-height:44px}
+.social-icons a:hover{background:linear-gradient(135deg,#e94560,#c72a48);transform:translateY(-3px) scale(1.1)}
+.copyright{text-align:center;padding-top:15px;display:flex;align-items:center;justify-content:center;gap:6px;font-size:.7rem;color:#cbd5e1;flex-wrap:wrap}
+
+/* Safety Page Styles */
+.safety-page{padding:30px 4%;max-width:1300px;margin:0 auto}
+.page-title{text-align:center;color:#0f3460;font-size:1.8rem;margin-bottom:10px;font-weight:800;display:flex;align-items:center;justify-content:center;gap:12px}
+.page-title i{color:#e94560;font-size:2rem}
+.page-subtitle{text-align:center;color:#64748b;margin-bottom:35px;font-size:1rem}
+
+/* Emergency Numbers Section */
+.emergency-section{background:linear-gradient(135deg,#1e293b,#0f172a);border-radius:24px;padding:25px;margin-bottom:40px}
+.emergency-title{text-align:center;color:#fff;font-size:1.4rem;margin-bottom:20px;font-weight:800}
+.emergency-title i{color:#e94560;margin-left:10px}
+.emergency-grid{display:flex;justify-content:center;flex-wrap:wrap;gap:20px}
+.emergency-card{background:rgba(255,255,255,.1);backdrop-filter:blur(10px);border-radius:20px;padding:15px 25px;text-align:center;min-width:130px;transition:all .3s;border:1px solid rgba(255,255,255,.2)}
+.emergency-card:hover{transform:translateY(-5px);background:rgba(255,255,255,.2)}
+.emergency-card i{font-size:2rem;color:#e94560;margin-bottom:8px;display:block}
+.emergency-card .number{font-size:1.8rem;font-weight:800;color:#fff;direction:ltr;display:inline-block}
+.emergency-card .service{color:#ffd966;font-size:.9rem;margin-top:5px;display:block}
+.school-emergency{background:#e94560;border-color:#fff}
+.school-emergency i{color:#fff}
+
+/* Safety Cards Grid */
+.safety-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:25px;margin-bottom:40px}
+.safety-card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 10px 25px rgba(0,0,0,.08);transition:all .3s;border:1px solid #eef2ff}
+.safety-card:hover{transform:translateY(-5px);box-shadow:0 20px 35px rgba(0,0,0,.12)}
+.safety-card-header{background:linear-gradient(135deg,#0f3460,#1e3a5f);padding:18px;color:#fff}
+.safety-card-header i{font-size:1.8rem;margin-left:10px;vertical-align:middle}
+.safety-card-header h3{display:inline-block;font-size:1.2rem;font-weight:800}
+.safety-card-body{padding:20px}
+.safety-card-body ul{list-style:none;padding-right:0}
+.safety-card-body li{padding:8px 0;padding-right:25px;position:relative;font-size:.9rem;line-height:1.5;color:#334155;border-bottom:1px dashed #e2e8f0}
+.safety-card-body li:last-child{border-bottom:none}
+.safety-card-body li::before{content:'🔹';position:absolute;right:0;color:#e94560}
+.safety-card-body p{margin-bottom:12px;font-size:.9rem;color:#475569;line-height:1.6}
+
+/* Video Section */
+.video-section{background:#fff;border-radius:24px;padding:25px;margin-bottom:40px;box-shadow:0 10px 25px rgba(0,0,0,.08);text-align:center}
+.video-title{color:#0f3460;font-size:1.3rem;margin-bottom:15px;font-weight:800}
+.video-title i{margin-left:10px;color:#e94560}
+.video-container{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:16px;box-shadow:0 8px 20px rgba(0,0,0,.15);background:#000}
+.video-container iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
+.video-note{margin-top:12px;color:#64748b;font-size:.85rem}
+
+/* Safety Officer Section */
+.officer-section{background:linear-gradient(135deg,#fefce8,#fef3c7);border-radius:24px;padding:25px;margin-bottom:30px;border-right:5px solid #e94560}
+.officer-container{display:flex;align-items:center;gap:30px;flex-wrap:wrap}
+.officer-image{flex:0 0 160px;text-align:center}
+.officer-image img{width:100%;max-width:150px;height:150px;object-fit:cover;border-radius:50%;border:4px solid #e94560;box-shadow:0 10px 20px rgba(0,0,0,.15);background:#fff}
+.officer-image h4{margin-top:10px;color:#0f3460;font-size:.9rem}
+.officer-info{flex:1}
+.officer-info h3{color:#0f3460;font-size:1.3rem;margin-bottom:10px;font-weight:800}
+.officer-info h3 i{color:#e94560;margin-left:8px}
+.officer-info p{margin:8px 0;color:#475569;line-height:1.6}
+.officer-info .badge{display:inline-block;background:#e94560;color:#fff;padding:5px 15px;border-radius:30px;font-size:.8rem;margin-top:10px}
+
+/* Additional Info Cards */
+.extra-info{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:25px;margin-bottom:30px}
+.info-card{background:#fff;border-radius:20px;padding:20px;text-align:center;box-shadow:0 5px 15px rgba(0,0,0,.05);border:1px solid #eef2ff;transition:all .3s}
+.info-card:hover{transform:translateY(-3px)}
+.info-card i{font-size:2rem;color:#e94560;margin-bottom:12px}
+.info-card h4{color:#0f3460;margin-bottom:10px;font-size:1rem}
+.info-card p{color:#64748b;font-size:.85rem;line-height:1.5}
+
+/* Responsive */
+@media (max-width: 768px){
+  .mobile-menu-btn{display:block}
+  nav ul{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:15px;box-shadow:0 5px 15px rgba(0,0,0,.1);z-index:999}
+  nav ul.active{display:flex}
+  nav ul li{width:100%;text-align:center}
+  nav ul li a{width:100%;justify-content:center;padding:12px}
+  .safety-grid{grid-template-columns:1fr}
+  .emergency-card .number{font-size:1.4rem}
+  .page-title{font-size:1.4rem}
+  .officer-container{flex-direction:column;text-align:center}
+  .officer-info{text-align:center}
+  .footer-content{flex-direction:column;text-align:center;gap:20px}
+  .footer-section h3::after{right:50%;transform:translateX(50%)}
+  .social-icons{justify-content:center}
+}
+@media (max-width: 480px){
+  .top-bar{padding:6px 3%}
+  .logo-img{width:40px;height:40px;font-size:18px}
+  .school-name h1{font-size:1rem}
+  .safety-page{padding:20px 3%}
+  .emergency-grid{gap:12px}
+  .emergency-card{padding:10px 15px;min-width:100px}
+  .emergency-card .number{font-size:1.2rem}
+  .float-buttons{bottom:10px;left:10px;gap:8px}
+  .float-btn{width:45px;height:45px;font-size:1.2rem}
+  .back-to-top{bottom:70px;right:10px;width:44px;height:44px}
+  .ticker-content{gap:30px;padding-left:70px;font-size:.85rem}
+  .ticker-label{font-size:.8rem;padding:3px 10px;right:10px}
+}
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:0.01ms!important;transition-duration:0.01ms!important}
+}
+</style>
+</head>
+<body>
+
+<!-- News Ticker -->
+<div class="news-ticker">
+  <div class="ticker-wrapper">
+    <div class="ticker-label">🔴 أمن وسلامة</div>
+    <div class="ticker-content">
+      <span><i class="fas fa-shield-alt"></i> السلامة أولاً - كن مستعداً للطوارئ</span>
+      <span><i class="fas fa-bell"></i> مدرسة الشهيد عيد عطية</span>
+      <span><i class="fas fa-fire-extinguisher"></i> إخلاء المدرسة يتم وفق خطة مدروسة</span>
+      <span><i class="fas fa-bell"></i> أرقام الطوارئ: إسعاف 123 - شرطة 122 - مطافي 180</span>
+      <span><i class="fas fa-hand-holding-heart"></i> تعلم الإسعافات الأولية تنقذ الأرواح</span>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header>
+  <div class="top-bar">
+    <div class="logo-container">
+      <div class="logo-img"><i class="fas fa-school"></i></div>
+      <div class="school-name">
+        <h1>مدرسة الشهيد عيد عطية (إطسا بنات سابقاً)</h1>
+        <span>هدفنا اعداد تلميذ متميز ومبدع</span>
+      </div>
+    </div>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="القائمة">
+      <i class="fas fa-bars"></i>
+    </button>
+    <nav>
+      <ul id="mainNav">
+        <li><a href="index.html" class="home-nav-btn"><i class="fas fa-home"></i> الرئيسية</a></li>
+        <li><a href="about.html">عن المدرسة</a></li>
+        <li><a href="activities.html">الأنشطة</a></li>
+        <li><a href="exams.html">نتائج وامتحانات</a></li>
+        <li><a href="teachers.html">المعلمين</a></li>
+        <li><a href="notifications.html">تنويهات هامة</a></li>
+        <li><a href="stages.html">المراحل الدراسية</a></li>
+        <li><a href="contact.html">التواصل</a></li>
+        <li><a href="safety.html" class="active">الأمن والسلامة</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Main Safety Page -->
+<main class="safety-page">
+  <h1 class="page-title"><i class="fas fa-shield-alt"></i> الأمن والسلامة</h1>
+  <p class="page-subtitle">تعليمات وإجراءات الحماية والطوارئ - اعرف كيف تحمي نفسك والآخرين</p>
+
+  <!-- Emergency Numbers -->
+  <div class="emergency-section">
+    <h2 class="emergency-title"><i class="fas fa-phone-alt"></i> أرقام الطوارئ</h2>
+    <div class="emergency-grid">
+      <div class="emergency-card"><i class="fas fa-ambulance"></i><span class="number">123</span><span class="service">الإسعاف</span></div>
+      <div class="emergency-card"><i class="fas fa-shield-haltered"></i><span class="number">122</span><span class="service">النجدة / الشرطة</span></div>
+      <div class="emergency-card"><i class="fas fa-fire-extinguisher"></i><span class="number">180</span><span class="service">المطافي</span></div>
+      <div class="emergency-card school-emergency"><i class="fas fa-school"></i><span class="number">01008268284</span><span class="service">إدارة المدرسة</span></div>
+    </div>
+  </div>
+
+  <!-- Main Safety Topics Grid -->
+  <div class="safety-grid">
+    <div class="safety-card">
+      <div class="safety-card-header"><i class="fas fa-fire-extinguisher"></i><h3>🧯 مكافحة الحرائق</h3></div>
+      <div class="safety-card-body">
+        <ul><li>تتوفر طفايات حريق في جميع الأدوار والممرات</li><li>تعليمات استخدام طفاية الحريق: اسحب المسمار، وجه الخرطوم، اضغط المقبض</li><li>في حالة نشوب حريق: أبلغ فوراً (180) واتبع خطة الإخلاء</li><li>عدم استخدام المصاعد أثناء الحريق - استخدم السلالم فقط</li><li>إغلاق مصادر الغاز والكهرباء عند المغادرة</li><li>تدريبات دورية على استخدام معدات الإطفاء للعاملين</li><li>الحفاظ على مخارج الطوارئ مفتوحة وغير مكدسة</li></ul>
+      </div>
+    </div>
+    <div class="safety-card">
+      <div class="safety-card-header"><i class="fas fa-hand-holding-heart"></i><h3>🚑 الإسعافات الأولية</h3></div>
+      <div class="safety-card-body">
+        <ul><li><strong>الجروح:</strong> نظف الجرح بالماء والصابون، عقمه، غطّه بشاش معقم</li><li><strong>الحروق:</strong> ضع المنطقة تحت ماء بارد جارٍ لمدة 10-15 دقيقة، لا تستخدم الثلج مباشرة</li><li><strong>الاختناق:</strong> تطبيق مناورة هيمليك (ضغط سريع على البطن)</li><li><strong>فقدان الوعي:</strong> فتح مجرى الهواء، فحص التنفس، طلب الإسعاف (123)</li><li><strong>الكسور:</strong> تثبيت الطرف دون تحريك، استخدام جبيرة مؤقتة</li><li><strong>صندوق الإسعافات متوفر في كل فصل وعيادة المدرسة</strong></li></ul>
+      </div>
+    </div>
+    <div class="safety-card">
+      <div class="safety-card-header"><i class="fas fa-person-walking-arrow-right"></i><h3>📋 خطط الإخلاء</h3></div>
+      <div class="safety-card-body">
+        <ul><li>مخارج الطوارئ محددة بوضوح في كل طابق باللون الأخضر</li><li>نقاط التجمع: الملعب الخارجي للمدرسة</li><li>عند سماع جرس الإنذار: التوقف عن الدراسة، الخروج بهدوء دون جري</li><li>ممنوع الركض أو الدفع أو العودة لجلب الأغراض</li><li>يغادر الجميع في صفوف منظمة حسب توجيهات المعلمين</li><li>التأكد من إخلاء ذوي الاحتياجات الخاصة أولاً</li><li>تدريب عملي على الإخلاء مرة كل فصل دراسي</li></ul>
+      </div>
+    </div>
+    <div class="safety-card">
+      <div class="safety-card-header"><i class="fas fa-video"></i><h3>📹 المراقبة والتأمين</h3></div>
+      <div class="safety-card-body">
+        <ul><li>نظام كاميرات مراقبة يغطي جميع مرافق المدرسة</li><li>حراس أمن مدربون عند بوابات الدخول والخروج</li><li>سجل الزيارات إلزامي لكل زائر مع إثبات شخصية</li><li>تسجيل دخول وخروج الطلاب إلكترونياً</li><li>التنسيق مع قسم شرطة إطسا لتأمين محيط المدرسة</li><li>أسوار المدرسة مؤمنة بالكامل ضد التسلق</li><li>فحص دوري لأنظمة الإنذار والكاميرات</li></ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Video Section - YouTube -->
+  <div class="video-section">
+    <h2 class="video-title"><i class="fab fa-youtube"></i> فيديو توضيحي: خطة الإخلاء والطوارئ</h2>
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID_PLACEHOLDER" title="خطة الإخلاء والطوارئ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <p class="video-note"><i class="fas fa-info-circle"></i> يرجى مشاهدة الفيديو لشرح تفصيلي لخطة الإخلاء وإجراءات الطوارئ</p>
+  </div>
+
+  <!-- Safety Officer Section - محمد رمضان سرحان -->
+  <div class="officer-section">
+    <div class="officer-container">
+      <div class="officer-image">
+        <img src="https://res.cloudinary.com/dar1qf8p7/image/upload/v1774515711/%D8%B3%D8%B1%D8%AD%D8%A7%D9%86_cylybl.jpg" alt="أ. محمد رمضان سرحان">
+        <h4><i class="fas fa-shield-alt"></i> مسئول الأمن والسلامة</h4>
+      </div>
+      <div class="officer-info">
+        <h3><i class="fas fa-user-tie"></i> أ. محمد رمضان سرحان</h3>
+        <p><i class="fas fa-check-circle" style="color:#10b981;"></i> خبرة تزيد عن 17 عاماً في مجال الأمن والسلامة المدرسية</p>
+        <p><i class="fas fa-certificate"></i> معلم أول أ - اللغة الإنجليزية، حاصل على دبلوم الأمن الصناعي والسلامة المهنية</p>
+        <p><i class="fas fa-phone"></i> للتواصل المباشر: 01009092550 (خلال ساعات العمل الرسمية)</p>
+        <p><i class="fas fa-envelope"></i> mohamed.ramadan@itsaschool.edu.eg</p>
+        <span class="badge"><i class="fas fa-star"></i> متوفر لمتابعة شكاوى وإجراءات السلامة</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Additional Info Cards -->
+  <div class="extra-info">
+    <div class="info-card"><i class="fas fa-chalkboard-user"></i><h4>تعليمات للطلاب</h4><p>لا تركض في الممرات<br>لا تعبث بمطفآت الحريق<br>التزم بالتعليمات أثناء التمارين العملية</p></div>
+    <div class="info-card"><i class="fas fa-briefcase"></i><h4>تعليمات للمعلمين</h4><p>مرافقة الطلاب أثناء الإخلاء<br>التأكد من إغلاق الفصول<br>الإبلاغ عن أي خلل فني</p></div>
+    <div class="info-card"><i class="fas fa-people-arrows"></i><h4>لذوي الاحتياجات الخاصة</h4><p>مصاعد مخصصة للطوارئ<br>أماكن محددة في خط الإخلاء<br>مرافقون متخصصون</p></div>
+    <div class="info-card"><i class="fas fa-calendar-alt"></i><h4>التدريبات السنوية</h4><p>إخلاء: أكتوبر وفبراير<br>إطفاء: نوفمبر ومارس<br>إسعافات أولية: شهر مايو</p></div>
+  </div>
+</main>
+
+<!-- Float Buttons -->
+<div class="float-buttons">
+  <a href="https://wa.me/201008268284" target="_blank" class="float-btn btn-whatsapp"><i class="fab fa-whatsapp"></i></a>
+  <a href="https://www.facebook.com/itsabanat" target="_blank" class="float-btn btn-facebook"><i class="fab fa-facebook-f"></i></a>
+  <a href="https://www.youtube.com/channel/UCH2wYK3_EBCC01L8pLLhH6Q" target="_blank" class="float-btn btn-youtube"><i class="fab fa-youtube"></i></a>
+  <a href="tel:01008268284" class="float-btn btn-call"><i class="fas fa-phone-alt"></i></a>
+</div>
+
+<!-- Back to Top -->
+<div class="back-to-top" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></div>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>معلومات الاتصال</h3>
+      <div class="contact-info">
+        <p><i class="fas fa-phone"></i> هاتف: <a href="tel:01008268284">01008268284</a></p>
+        <p><i class="fab fa-whatsapp"></i> واتساب: <a href="https://wa.me/201008268284" target="_blank">01008268284</a></p>
+        <p><i class="fas fa-map-marker-alt"></i> شارع المدارس - إطسا - الفيوم</p>
+      </div>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/itsabanat" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://wa.me/201008268284" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.youtube.com/channel/UCH2wYK3_EBCC01L8pLLhH6Q" target="_blank"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="footer-section">
+      <h3>روابط سريعة</h3>
+      <ul style="list-style:none;line-height:1.6">
+        <li><a href="about.html">عن المدرسة</a></li>
+        <li><a href="activities.html">الأنشطة</a></li>
+        <li><a href="exams.html">النتائج</a></li>
+        <li><a href="contact.html">التواصل</a></li>
+        <li><a href="safety.html">الأمن والسلامة</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>عن المدرسة</h3>
+      <p style="color:#ccc;line-height:1.5;font-size:.85rem">مدرسة الشهيد عيد عطية (إطسا بنات سابقاً) - مؤسسة تعليمية تهدف إلى إعداد جيل متميز ومبدع. نحرص على توفير بيئة آمنة للجميع.</p>
+    </div>
+  </div>
+  <div class="copyright">
+    <p>جميع الحقوق محفوظة © 2026</p>
+    <p>Master Emad Elnaggar</p>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const menuBtn = document.getElementById('mobileMenuBtn');
+  const mainNav = document.getElementById('mainNav');
+  if(menuBtn && mainNav){
+    menuBtn.addEventListener('click', () => {
+      mainNav.classList.toggle('active');
+      menuBtn.innerHTML = mainNav.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+    });
+    mainNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mainNav.classList.remove('active');
+        menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+      });
+    });
+  }
+  document.querySelectorAll('nav ul li a').forEach(link => {
+    if(link.getAttribute('href') === 'safety.html') link.classList.add('active');
+  });
+});
+function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+window.addEventListener('scroll', () => {
+  const btn = document.querySelector('.back-to-top');
+  if(btn) window.scrollY > 300 ? btn.classList.add('show') : btn.classList.remove('show');
+});
+</script>
+</body>
+</html>
