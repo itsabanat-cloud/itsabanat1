@@ -3,13 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-<meta name="description" content="جداول الامتحانات ونتائج الطلاب في مدرسة الشهيد عيد عطية">
+<meta name="description" content="نتائج الطلاب في مدرسة الشهيد عيد عطية - استعلام برقم الجلوس">
 <meta name="theme-color" content="#0f3460">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<title>نتائج وامتحانات - مدرسة الشهيد عيد عطية</title>
+<title>نتائج الطلاب - مدرسة الشهيد عيد عطية</title>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="manifest" href="manifest.json">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 body{font-family:'Tajawal',sans-serif;background:#f0f2f5;color:#1e293b;line-height:1.5;overflow-x:hidden;font-size:16px}
@@ -23,7 +22,7 @@ button,input,select,textarea{touch-action:manipulation;font-size:16px}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 @keyframes blinkActive{0%{background:#0f3460;color:#fff;box-shadow:0 0 0 0 rgba(15,52,96,.7)}50%{background:#e94560;color:#fff;box-shadow:0 0 0 8px rgba(233,69,96,.3)}100%{background:#0f3460;color:#fff;box-shadow:0 0 0 0 rgba(15,52,96,.7)}}
 
-/* News Ticker - Mobile Optimized */
+/* News Ticker */
 .news-ticker{background:linear-gradient(135deg,#0f3460,#1e3a5f);color:#fff;padding:8px 15px;position:relative;overflow:hidden;white-space:nowrap;border-bottom:3px solid #e94560;font-weight:600;direction:ltr}
 .ticker-wrapper{display:flex;align-items:center;gap:10px}
 .ticker-label{background:linear-gradient(135deg,#e94560,#c72a48);color:#fff;padding:4px 12px;border-radius:20px;font-size:.85rem;font-weight:800;flex-shrink:0;box-shadow:0 2px 10px rgba(233,69,96,.5);animation:glowPulse 10s infinite;position:absolute;right:15px;top:50%;transform:translateY(-50%);z-index:10}
@@ -94,18 +93,6 @@ footer{background:linear-gradient(135deg,#0f2b3d,#0a1e2c);color:#fff;padding:25p
 .info-card ul li:last-child{border-bottom:none}
 .info-card ul li i{width:24px;color:#e94560;font-size:1rem;flex-shrink:0}
 
-/* Schedule Title & Grid */
-.schedule-title{font-size:1.4rem;color:#0f3460;text-align:center;margin:30px 0 20px;font-weight:800;position:relative}
-.schedule-title:after{content:'';display:block;width:60px;height:3px;background:linear-gradient(90deg,#e94560,#0f3460);margin:8px auto 0;border-radius:3px}
-.schedule-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:40px}
-.schedule-card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,.08);transition:all .3s;border:1px solid #eef2ff;text-align:center}
-.schedule-card:hover{transform:translateY(-6px);box-shadow:0 15px 30px rgba(0,0,0,.12)}
-.schedule-card .grade-header{background:linear-gradient(135deg,#0f3460,#1e3a5f);color:#fff;padding:14px 10px;font-size:1.1rem;font-weight:800;line-height:1.3}
-.schedule-card .grade-body{padding:16px 12px}
-.schedule-card .grade-body p{margin-bottom:12px;color:#4b5563;font-size:.9rem}
-.schedule-card .btn-table{background:#e94560;color:#fff;border:none;padding:8px 18px;border-radius:30px;cursor:pointer;font-family:'Tajawal',sans-serif;font-weight:600;transition:all .3s;display:inline-block;font-size:.9rem;min-height:44px;display:inline-flex;align-items:center;justify-content:center}
-.schedule-card .btn-table:hover{background:#c72a48;transform:scale(1.03)}
-
 /* Result Section & Search */
 .result-section{background:linear-gradient(135deg,#fff,#f8fafc);border-radius:20px;padding:25px 20px;margin-top:25px;border:1px solid #e2e8f0;box-shadow:0 10px 25px rgba(0,0,0,.05)}
 .result-title{font-size:1.3rem;color:#0f3460;margin-bottom:12px;text-align:center;font-weight:800}
@@ -117,11 +104,47 @@ footer{background:linear-gradient(135deg,#0f2b3d,#0a1e2c);color:#fff;padding:25p
 .search-box button:hover{background:#c72a48;transform:scale(1.02)}
 .result-placeholder{margin-top:20px;text-align:center;padding:18px;background:#f1f5f9;border-radius:14px;color:#64748b;font-weight:500;font-size:.9rem;line-height:1.5}
 
-/* ============================================
-   📱 MEDIA QUERIES - Mobile & Tablet Responsive
-   ============================================ */
+/* Result Card Styles */
+.result-card{background:#fff;border-radius:20px;padding:25px;box-shadow:0 10px 30px rgba(0,0,0,.1);animation:fadeInUp 0.5s ease}
+.result-header{background:linear-gradient(135deg,#0f3460,#1e3a5f);color:#fff;border-radius:15px;padding:20px;margin-bottom:20px;text-align:center}
+.result-header h2{font-size:1.5rem;margin-bottom:10px}
+.result-header p{margin:5px 0;opacity:0.9}
+.result-badge{display:inline-block;padding:8px 20px;border-radius:30px;font-weight:800;margin-top:10px}
+.badge-pass{background:#10b981;color:#fff}
+.badge-fail{background:#ef4444;color:#fff}
+.success-message{background:linear-gradient(135deg,#10b981,#059669);color:#fff;padding:15px;border-radius:12px;text-align:center;margin-bottom:20px}
+.fail-message{background:linear-gradient(135deg,#ef4444,#dc2626);color:#fff;padding:15px;border-radius:12px;text-align:center;margin-bottom:20px}
+.subjects-table{width:100%;border-collapse:collapse;margin:15px 0}
+.subjects-table th{background:#0f3460;color:#fff;padding:12px;text-align:center}
+.subjects-table td{padding:10px;text-align:center;border-bottom:1px solid #e2e8f0}
+.subjects-table tr:hover{background:#f8fafc}
+.degree-pass{color:#10b981;font-weight:700}
+.degree-fail{color:#ef4444;font-weight:700}
+.degree-azraq{color:#3b82f6;font-weight:700}
+.degree-asfar{color:#eab308;font-weight:700}
+.degree-akhdar{color:#10b981;font-weight:700}
+.degree-ahmar{color:#ef4444;font-weight:700}
+.summary-box{background:#f8fafc;border-radius:12px;padding:15px;margin-top:15px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.summary-item{flex:1;text-align:center;padding:10px;background:#fff;border-radius:10px;box-shadow:0 2px 5px rgba(0,0,0,.05)}
+.summary-item label{font-weight:600;color:#0f3460;display:block;margin-bottom:5px}
+.summary-item span{font-size:1.2rem;font-weight:800}
+.congrats-footer{margin-top:20px;text-align:center;padding:15px;background:linear-gradient(135deg,#fef9e6,#fff3cd);border-radius:12px}
+.congrats-footer p{margin:5px 0}
+.teacher-signature{font-size:0.9rem;color:#e94560;font-weight:700}
+.print-btn{background:#0f3460;color:#fff;border:none;padding:8px 20px;border-radius:30px;cursor:pointer;font-family:'Tajawal',sans-serif;margin-top:15px;display:inline-flex;align-items:center;gap:8px}
+.print-btn:hover{background:#1e3a5f}
 
-/* Tablet (768px and below) */
+/* Schedule Grid */
+.schedule-title{font-size:1.4rem;color:#0f3460;text-align:center;margin:30px 0 20px;font-weight:800;position:relative}
+.schedule-title:after{content:'';display:block;width:60px;height:3px;background:linear-gradient(90deg,#e94560,#0f3460);margin:8px auto 0;border-radius:3px}
+.schedule-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:40px}
+.schedule-card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,.08);transition:all .3s;border:1px solid #eef2ff;text-align:center}
+.schedule-card:hover{transform:translateY(-6px);box-shadow:0 15px 30px rgba(0,0,0,.12)}
+.schedule-card .grade-header{background:linear-gradient(135deg,#0f3460,#1e3a5f);color:#fff;padding:14px 10px;font-size:1.1rem;font-weight:800;line-height:1.3}
+.schedule-card .grade-body{padding:16px 12px}
+.schedule-card .btn-table{background:#e94560;color:#fff;border:none;padding:8px 18px;border-radius:30px;cursor:pointer;font-family:'Tajawal',sans-serif;font-weight:600;transition:all .3s;display:inline-block;font-size:.9rem;min-height:44px;display:inline-flex;align-items:center;justify-content:center}
+
+/* Media Queries */
 @media (max-width: 768px) {
   .mobile-menu-btn { display: block; }
   nav ul {
@@ -139,71 +162,35 @@ footer{background:linear-gradient(135deg,#0f2b3d,#0a1e2c);color:#fff;padding:25p
   }
   nav ul.active { display: flex; }
   nav ul li { width: 100%; text-align: center; }
-  nav ul li a {
-    width: 100%;
-    justify-content: center;
-    padding: 12px;
-    border-radius: 10px;
-    font-size: 1rem;
-  }
-  
-  .exams-wrap { padding: 25px 3%; }
-  .page-main-title { font-size: 1.5rem; }
+  nav ul li a { width: 100%; justify-content: center; padding: 12px; border-radius: 10px; font-size: 1rem; }
   .schedule-grid { grid-template-columns: repeat(2, 1fr); }
   .info-section { grid-template-columns: 1fr; }
-  
   .footer-content { flex-direction: column; text-align: center; gap: 20px; }
   .footer-section h3::after { right: 50%; transform: translateX(50%); }
   .social-icons { justify-content: center; }
+  .summary-box { flex-direction: column; }
 }
 
-/* Mobile (480px and below) */
 @media (max-width: 480px) {
   .top-bar { padding: 6px 3%; }
   .logo-img { width: 40px; height: 40px; font-size: 18px; }
   .school-name h1 { font-size: 1rem; }
-  .school-name span { font-size: .65rem; }
-  
-  .exams-wrap { padding: 20px 3%; }
   .schedule-grid { grid-template-columns: 1fr; }
   .search-box { flex-direction: column; }
   .search-box input, .search-box button { width: 100%; }
-  .result-placeholder { font-size: .85rem; }
-  
   .float-buttons { bottom: 10px; left: 10px; gap: 8px; }
   .float-btn { width: 45px; height: 45px; font-size: 1.2rem; }
   .back-to-top { bottom: 70px; right: 10px; width: 44px; height: 44px; }
-  
-  .ticker-content { gap: 30px; padding-left: 70px; font-size: .85rem; }
-  .ticker-label { font-size: .8rem; padding: 3px 10px; right: 10px; }
+  .result-header h2 { font-size: 1.2rem; }
+  .subjects-table th, .subjects-table td { font-size: 0.8rem; padding: 6px; }
 }
 
-/* Small Mobile (360px and below) */
-@media (max-width: 360px) {
-  .school-name h1 { font-size: .95rem; }
-  .schedule-card .grade-header { font-size: 1rem; padding: 12px 8px; }
-  .result-title { font-size: 1.15rem; }
-}
-
-/* High DPI / Retina */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .logo-img, .float-btn, .schedule-card .grade-header { image-rendering: -webkit-optimize-contrast; }
-}
-
-/* Print Styles */
 @media print {
-  .news-ticker, .float-buttons, .back-to-top, nav, .search-box { display: none !important; }
-  body { background: #fff; color: #000; }
-  .schedule-card, .info-card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
-}
-
-/* Reduced Motion */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
+  .news-ticker, .float-buttons, .back-to-top, nav, .search-box, .info-section, .schedule-title, .schedule-grid, .print-btn, .social-icons { display: none !important; }
+  body { background: #fff; }
+  .result-card { box-shadow: none; padding: 0; }
+  .result-header { background: #0f3460; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .badge-pass, .badge-fail, .success-message, .fail-message { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 }
 </style>
 </head>
@@ -218,18 +205,14 @@ footer{background:linear-gradient(135deg,#0f2b3d,#0a1e2c);color:#fff;padding:25p
       <span><i class="fas fa-bell"></i> مدرسة الشهيد عيد عطية</span>
       <span><i class="fas fa-calendar-alt"></i> استمرار اعمال الامتحانات من يوم الاحد</span>
       <span><i class="fas fa-star"></i> ممنوع الغياب نهائيا</span>
-      <span><i class="fas fa-bell"></i> مدرسة الشهيد عيد عطية</span>
       <span><i class="fas fa-chalkboard-teacher"></i> اجتماع أولياء الأمور: الخميس القادم الساعة 10 صباحاً</span>
-      <span><i class="fas fa-bell"></i> مدرسة الشهيد عيد عطية</span>
       <span><i class="fas fa-trophy"></i> تدريب الحاسب الالي للتلاميذ تم تاجيله ليكون الخميس القادم 2 ابريل</span>
-      <span><i class="fas fa-bell"></i> مدرسة الشهيد عيد عطية</span>
       <span><i class="fas fa-bell"></i> إجازة نصف العام: من 26 يناير حتى 6 فبراير</span>
-      <span><i class="fas fa-bell"></i> مدرسة الشهيد عيد عطية</span>
     </div>
   </div>
 </div>
 
-<!-- Header with Mobile Menu -->
+<!-- Header -->
 <header>
   <div class="top-bar">
     <div class="logo-container">
@@ -247,12 +230,12 @@ footer{background:linear-gradient(135deg,#0f2b3d,#0a1e2c);color:#fff;padding:25p
         <li><a href="index.html" class="home-nav-btn"><i class="fas fa-home"></i> الرئيسية</a></li>
         <li><a href="about.html">عن المدرسة</a></li>
         <li><a href="activities.html">الأنشطة</a></li>
-        <li><a href="exams.html">نتائج وامتحانات</a></li>
+        <li><a href="exams.html" class="active">نتائج وامتحانات</a></li>
         <li><a href="teachers.html">المعلمين</a></li>
         <li><a href="notifications.html">تنويهات هامة</a></li>
         <li><a href="stages.html">المراحل الدراسية</a></li>
         <li><a href="contact.html">التواصل</a></li>
-         <li><a href="safety.html"><i class="fas fa-shield-alt"></i> الأمن والسلامة</a></li>
+        <li><a href="safety.html"><i class="fas fa-shield-alt"></i> الأمن والسلامة</a></li>
       </ul>
     </nav>
   </div>
@@ -289,12 +272,12 @@ footer{background:linear-gradient(135deg,#0f2b3d,#0a1e2c);color:#fff;padding:25p
 
   <div class="result-section">
     <h2 class="result-title"><i class="fas fa-chart-line"></i> نتيجة الامتحان</h2>
-    <div class="result-desc">نقدم لكم خدمة الاستعلام عن نتائج جميع المراحل التعليمية بسهولة وسرعة باستخدام رقم الجلوس. تابعونا لمعرفة آخر أخبار التعليم ومواعيد ظهور النتائج أولاً بأول.</div>
+    <div class="result-desc">نقدم لكم خدمة الاستعلام عن نتائج جميع المراحل التعليمية بسهولة وسرعة باستخدام رقم الجلوس</div>
     <div class="search-box">
       <input type="text" id="seatNumber" placeholder="أدخل رقم الجلوس ..." inputmode="numeric">
       <button onclick="searchResult()" aria-label="بحث عن النتيجة">استعلام <i class="fas fa-search"></i></button>
     </div>
-    <div id="resultDisplay" class="result-placeholder" role="status" aria-live="polite">📌 سيتم نشر النتيجة هنا بعد اعتمادها. أدخل رقم الجلوس للاستعلام.</div>
+    <div id="resultDisplay" class="result-placeholder" role="status" aria-live="polite">📌 أدخل رقم الجلوس للاستعلام عن النتيجة</div>
   </div>
 </main>
 
@@ -347,7 +330,193 @@ footer{background:linear-gradient(135deg,#0f2b3d,#0a1e2c);color:#fff;padding:25p
 
 <script>
 // ============================================
-// 📱 Mobile Menu Toggle
+// STUDENTS DATABASE (Extracted from Excel)
+// ============================================
+const studentsDatabase = [
+  // ==================== الصف الثالث ====================
+  { seatNumber: "1", name: "ابراهيم محمد شعراوى ابراهيم", grade: "الصف الثالث الابتدائي", nationalId: "31611042300214", subjects: { "توكاتسو": "اجتاز", "العاب": "اجتاز", "انجليزي": "ازرق", "تربية دينية": "اجتاز", "متعدد": "اخضر", "رياضيات": "ازرق", "لغة عربية": "اخضر" }, result: "ناجح", resultText: "ناجح ومنقول للصف الرابع" },
+  { seatNumber: "2", name: "احمد ايمن حامد عبدالستار", grade: "الصف الثالث الابتدائي", nationalId: "21612152300839", subjects: { "توكاتسو": "اجتاز", "العاب": "اجتاز", "انجليزي": "ازرق", "تربية دينية": "اجتاز", "متعدد": "اخضر", "رياضيات": "اخضر", "لغة عربية": "اخضر" }, result: "ناجح", resultText: "ناجح ومنقول للصف الرابع" },
+  { seatNumber: "4", name: "احمد طه علي عيسي", grade: "الصف الثالث الابتدائي", nationalId: "31706122302995", subjects: { "توكاتسو": "اجتاز", "العاب": "اجتاز", "انجليزي": "ازرق", "تربية دينية": "اجتاز", "متعدد": "ازرق", "رياضيات": "ازرق", "لغة عربية": "ازرق" }, result: "ناجح", resultText: "ناجح ومنقول للصف الرابع" },
+  { seatNumber: "5", name: "احمد عبدالرحمن جبيلي عبدالله", grade: "الصف الثالث الابتدائي", nationalId: "31706272301733", subjects: { "توكاتسو": "اجتاز", "العاب": "اجتاز", "انجليزي": "اخضر", "تربية دينية": "اجتاز", "متعدد": "اخضر", "رياضيات": "ازرق", "لغة عربية": "ازرق" }, result: "ناجح", resultText: "ناجح ومنقول للصف الرابع" },
+  { seatNumber: "6", name: "احمد لطفى محسن لطفى", grade: "الصف الثالث الابتدائي", nationalId: "31709252304816", subjects: { "توكاتسو": "اجتاز", "العاب": "اجتاز", "انجليزي": "اخضر", "تربية دينية": "اجتاز", "متعدد": "اخضر", "رياضيات": "اخضر", "لغة عربية": "اخضر" }, result: "ناجح", resultText: "ناجح ومنقول للصف الرابع" },
+  { seatNumber: "8", name: "احمد محمد احمد محمد جوده", grade: "الصف الثالث الابتدائي", nationalId: "31709082300616", subjects: { "توكاتسو": "اجتاز", "العاب": "اجتاز", "انجليزي": "اخضر", "تربية دينية": "اجتاز", "متعدد": "اصفر", "رياضيات": "اخضر", "لغة عربية": "اخضر" }, result: "ناجح", resultText: "ناجح ومنقول للصف الرابع" },
+  { seatNumber: "3", name: "احمد سيد احمد السيد", grade: "الصف الثالث الابتدائي", nationalId: "31611112300179", subjects: { "توكاتسو": "", "العاب": "غ", "انجليزي": "اصفر", "تربية دينية": "", "متعدد": "احمر", "رياضيات": "احمر", "لغة عربية": "احمر" }, result: "دور ثاني", resultText: "دور ثاني" },
+  { seatNumber: "7", name: "احمد محمد ابراهيم عوض الله", grade: "الصف الثالث الابتدائي", nationalId: "31612302300414", subjects: { "توكاتسو": "اجتاز", "العاب": "اجتاز", "انجليزي": "احمر", "تربية دينية": "اجتاز", "متعدد": "احمر", "رياضيات": "احمر", "لغة عربية": "احمر" }, result: "دور ثاني", resultText: "دور ثاني" },
+  // ==================== الصف الرابع ====================
+  { seatNumber: "238", name: "احمد ابراهيم السيد عبدالعال", grade: "الصف الرابع الابتدائي", nationalId: "31603162300037", subjects: { "توكاتسو": "اجتاز", "تربية دينية": "اخضر", "تكنولجيا": "اخضر", "العاب": "اجتاز", "فنية": "اجتاز", "موسيقى": "اجتاز", "مهارات": "اجتاز", "لغة انجليزية": "اخضر", "دراسات اجتماعية": "ازرق", "العلوم": "اخضر", "رياضيات": "ازرق", "لغة عربية": "ازرق" }, result: "ناجح", resultText: "ناجح ومنقول للصف الخامس" },
+  { seatNumber: "239", name: "احمد جمعه اسماعيل جمه", grade: "الصف الرابع الابتدائي", nationalId: "31511252302312", subjects: { "توكاتسو": "اجتاز", "تربية دينية": "اخضر", "تكنولجيا": "اخضر", "العاب": "اجتاز", "فنية": "اجتاز", "موسيقى": "اجتاز", "مهارات": "اجتاز", "لغة انجليزية": "اخضر", "دراسات اجتماعية": "اخضر", "العلوم": "اخضر", "رياضيات": "اخضر", "لغة عربية": "ازرق" }, result: "ناجح", resultText: "ناجح ومنقول للصف الخامس" },
+  { seatNumber: "240", name: "احمد سمير عباس السيد", grade: "الصف الرابع الابتدائي", nationalId: "31602152300156", subjects: { "توكاتسو": "اجتاز", "تربية دينية": "ازرق", "تكنولجيا": "اخضر", "العاب": "اجتاز", "فنية": "اجتاز", "موسيقى": "اجتاز", "مهارات": "اجتاز", "لغة انجليزية": "ازرق", "دراسات اجتماعية": "ازرق", "العلوم": "اخضر", "رياضيات": "ازرق", "لغة عربية": "ازرق" }, result: "ناجح", resultText: "ناجح ومنقول للصف الخامس" },
+  { seatNumber: "253", name: "ادم محمد اسماعيل شهاب", grade: "الصف الرابع الابتدائي", nationalId: "31610012301651", subjects: { "توكاتسو": "اجتاز", "تربية دينية": "احمر", "تكنولجيا": "اصفر", "العاب": "اجتاز", "فنية": "اجتاز", "موسيقى": "اجتاز", "مهارات": "اجتاز", "لغة انجليزية": "اصفر", "دراسات اجتماعية": "اصفر", "العلوم": "اصفر", "رياضيات": "اصفر", "لغة عربية": "اصفر" }, result: "دور ثاني", resultText: "له دور ثاني" },
+  // ==================== الصف الخامس ====================
+  { seatNumber: "452", name: "ابراهيم اسماعيل ابراهيم حبيب", grade: "الصف الخامس الابتدائي", nationalId: "31508162302711", subjects: { "توكاتسو": "اجتاز", "تربية دينية": "اخضر", "تكنولجيا": "ازرق", "العاب": "اجتاز", "فنية": "اجتاز", "موسيقى": "اجتاز", "مهارات": "اجتاز", "لغة انجليزية": "اخضر", "دراسات اجتماعية": "ازرق", "العلوم": "ازرق", "رياضيات": "اخضر", "لغة عربية": "اخضر" }, result: "ناجح", resultText: "ناجح ومنقول للصف السادس" },
+  { seatNumber: "453", name: "احمد اشرف رمضان عبدالله", grade: "الصف الخامس الابتدائي", nationalId: "31410072300175", subjects: { "توكاتسو": "اجتاز", "تربية دينية": "اخضر", "تكنولجيا": "اخضر", "العاب": "اجتاز", "فنية": "اجتاز", "موسيقى": "اجتاز", "مهارات": "اجتاز", "لغة انجليزية": "اخضر", "دراسات اجتماعية": "اصفر", "العلوم": "اخضر", "رياضيات": "اخضر", "لغة عربية": "اخضر" }, result: "ناجح", resultText: "ناجح ومنقول للصف السادس" },
+  { seatNumber: "471", name: "ادم محمد على تمام", grade: "الصف الخامس الابتدائي", nationalId: "31412012301256", subjects: { "توكاتسو": "لم يجتز", "تربية دينية": "احمر", "تكنولجيا": "غ", "العاب": "لم يجتز", "فنية": "لم يجتز", "موسيقى": "لم يجتز", "مهارات": "لم يجتز", "لغة انجليزية": "احمر", "دراسات اجتماعية": "احمر", "العلوم": "اصفر", "رياضيات": "احمر", "لغة عربية": "اصفر" }, result: "دور ثاني", resultText: "له دور ثاني" },
+  // ==================== الصف السادس ====================
+  { seatNumber: "706", name: "احمد جمال حسنى عبدالهادى", grade: "الصف السادس الابتدائي", nationalId: "31409222301754", subjects: { "توكاتسو": "اجتاز", "تربية دينية": "اخضر", "تكنولجيا": "اخضر", "العاب": "اجتاز", "فنية": "اجتاز", "موسيقى": "اجتاز", "مهارات": "اجتاز", "لغة انجليزية": "اصفر", "دراسات اجتماعية": "اصفر", "العلوم": "اصفر", "رياضيات": "اصفر", "لغة عربية": "اصفر" }, result: "ناجح", resultText: "ناجح ومنقول للصف الأول الاعدادي" },
+  { seatNumber: "707", name: "احمد حماده جمعه عوض", grade: "الصف السادس الابتدائي", nationalId: "31310272303352", subjects: { "توكاتسو": "اجتاز", "تربية دينية": "ازرق", "تكنولجيا": "اخضر", "العاب": "اجتاز", "فنية": "اجتاز", "موسيقى": "اجتاز", "مهارات": "اجتاز", "لغة انجليزية": "اصفر", "دراسات اجتماعية": "اصفر", "العلوم": "اصفر", "رياضيات": "اصفر", "لغة عربية": "اخضر" }, result: "ناجح", resultText: "ناجح ومنقول للصف الأول الاعدادي" },
+  { seatNumber: "708", name: "احمد رضا احمد عبدالعزيز", grade: "الصف السادس الابتدائي", nationalId: "31408172302251", subjects: { "توكاتسو": "اجتاز", "تربية دينية": "اخضر", "تكنولجيا": "اخضر", "العاب": "اجتاز", "فنية": "اجتاز", "موسيقى": "اجتاز", "مهارات": "اجتاز", "لغة انجليزية": "اصفر", "دراسات اجتماعية": "اصفر", "العلوم": "اصفر", "رياضيات": "اصفر", "لغة عربية": "اصفر" }, result: "ناجح", resultText: "ناجح ومنقول للصف الأول الاعدادي" },
+  { seatNumber: "713", name: "احمد عيد جمال عبدالستار", grade: "الصف السادس الابتدائي", nationalId: "31205212301454", result: "دور ثاني", resultText: "له دور ثاني" },
+];
+
+// ============================================
+// Helper Functions
+// ============================================
+function getDegreeClass(degree) {
+  const d = degree.toString().trim();
+  if (d === "اخضر") return "degree-akhdar";
+  if (d === "ازرق") return "degree-azraq";
+  if (d === "اصفر") return "degree-asfar";
+  if (d === "احمر") return "degree-ahmar";
+  if (d === "اجتاز") return "degree-pass";
+  if (d === "لم يجتز") return "degree-fail";
+  return "";
+}
+
+function getDegreeDisplay(degree) {
+  const d = degree.toString().trim();
+  if (d === "اخضر") return "✅ ممتاز";
+  if (d === "ازرق") return "📘 جيد جداً";
+  if (d === "اصفر") return "⚠️ جيد";
+  if (d === "احمر") return "❌ ضعيف";
+  if (d === "اجتاز") return "✅ اجتاز";
+  if (d === "لم يجتز") return "❌ لم يجتز";
+  if (d === "غ" || d === "") return "—";
+  return d;
+}
+
+// ============================================
+// Schedule Grid
+// ============================================
+const grades = [
+  { grade: "الصف الأول الابتدائي", file: "جدول_اول_ابتدائي.pdf" },
+  { grade: "الصف الثاني الابتدائي", file: "جدول_ثاني_ابتدائي.pdf" },
+  { grade: "الصف الثالث الابتدائي", file: "جدول_ثالث_ابتدائي.pdf" },
+  { grade: "الصف الرابع الابتدائي", file: "جدول_رابع_ابتدائي.pdf" },
+  { grade: "الصف الخامس الابتدائي", file: "جدول_خامس_ابتدائي.pdf" },
+  { grade: "الصف السادس الابتدائي", file: "جدول_سادس_ابتدائي.pdf" }
+];
+
+function buildScheduleGrid() {
+  const grid = document.getElementById('scheduleGrid');
+  if (!grid) return;
+  grid.innerHTML = '';
+  grades.forEach(g => {
+    const card = document.createElement('div');
+    card.className = 'schedule-card';
+    card.innerHTML = `
+      <div class="grade-header">${g.grade}</div>
+      <div class="grade-body">
+        <p><i class="fas fa-calendar-week"></i> جدول الامتحانات الرسمي</p>
+        <button class="btn-table" onclick="openSchedule('${g.file}')">📄 عرض الجدول</button>
+      </div>`;
+    grid.appendChild(card);
+  });
+}
+
+function openSchedule(filename) { 
+  alert(`سيتم فتح جدول ${filename} قريباً إن شاء الله`);
+}
+
+// ============================================
+// Main Search Function
+// ============================================
+function searchResult() {
+  const seat = document.getElementById('seatNumber').value.trim();
+  const resultDiv = document.getElementById('resultDisplay');
+  
+  if (!seat) {
+    resultDiv.innerHTML = '⚠️ الرجاء إدخال رقم الجلوس للاستعلام.';
+    resultDiv.style.background = '#fff3f3';
+    return;
+  }
+  
+  resultDiv.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري البحث عن رقم الجلوس: <strong>' + seat + '</strong> ...';
+  resultDiv.style.background = '#fef9e6';
+  
+  setTimeout(() => {
+    const student = studentsDatabase.find(s => s.seatNumber === seat);
+    
+    if (!student) {
+      resultDiv.innerHTML = `
+        <div style="text-align:center; padding:20px;">
+          <i class="fas fa-search" style="font-size:48px; color:#e94560; margin-bottom:15px; display:block;"></i>
+          <strong>❌ عذراً، لم يتم العثور على رقم الجلوس ${seat}</strong><br>
+          يرجى التأكد من الرقم والتواصل مع إدارة المدرسة.
+        </div>`;
+      resultDiv.style.background = '#fff3f3';
+      return;
+    }
+    
+    // Check if student has subjects or just result
+    const hasSubjects = student.subjects && Object.keys(student.subjects).length > 0;
+    const isPass = student.result === "ناجح";
+    const isFail = student.result === "دور ثاني";
+    
+    let subjectsHtml = '';
+    if (hasSubjects) {
+      subjectsHtml = `
+        <table class="subjects-table">
+          <thead>
+            <tr><th>المادة</th><th>الدرجة / التقدير</th></tr>
+          </thead>
+          <tbody>`;
+      for (const [subject, degree] of Object.entries(student.subjects)) {
+        if (degree && degree !== "" && degree !== "غ") {
+          subjectsHtml += `<tr><td>${subject}</td><td class="${getDegreeClass(degree)}">${getDegreeDisplay(degree)}</td></tr>`;
+        }
+      }
+      subjectsHtml += `</tbody></table>`;
+    } else {
+      subjectsHtml = `<p style="text-align:center; padding:15px;">${student.resultText || student.result}</p>`;
+    }
+    
+    const successMessageHtml = isPass ? `
+      <div class="success-message">
+        <i class="fas fa-trophy" style="font-size:24px; margin-bottom:10px; display:block;"></i>
+        <strong>🎉 الف مبروك النجاح 🎉</strong><br>
+        مدرسة الشهيد عيد عطية تهنئكم بالنجاح
+      </div>
+    ` : (isFail ? `
+      <div class="fail-message">
+        <i class="fas fa-book-open" style="font-size:24px; margin-bottom:10px; display:block;"></i>
+        <strong>📚 بالتوفيق المرة القادمة بالدور الثاني 📚</strong><br>
+        مدرسة الشهيد عيد عطية تتمنى لكم النجاح قادم
+      </div>
+    ` : '');
+    
+    resultDiv.innerHTML = `
+      <div class="result-card">
+        <div class="result-header">
+          <h2><i class="fas fa-user-graduate"></i> ${student.name}</h2>
+          <p><i class="fas fa-id-card"></i> رقم الجلوس: ${student.seatNumber} | ${student.grade}</p>
+          <p><i class="fas fa-qrcode"></i> الرقم القومي: ${student.nationalId || "—"}</p>
+          <div class="result-badge ${isPass ? 'badge-pass' : 'badge-fail'}">
+            ${isPass ? '✅ ناجح' : '⚠️ دور ثاني'}
+          </div>
+        </div>
+        
+        ${successMessageHtml}
+        
+        ${hasSubjects ? '<h3 style="margin:15px 0 10px; color:#0f3460;"><i class="fas fa-chart-simple"></i> درجات المواد</h3>' : ''}
+        ${subjectsHtml}
+        
+        <div style="margin-top:20px;">
+          <button class="print-btn" onclick="window.print()"><i class="fas fa-print"></i> طباعة النتيجة</button>
+        </div>
+        
+        <div class="congrats-footer">
+          <p><i class="fas fa-star" style="color:#e94560;"></i> الف مبروك النجاح <i class="fas fa-star" style="color:#e94560;"></i></p>
+          <p>مدرسة الشهيد عيد عطية تهنئكم بالنجاح</p>
+          <p class="teacher-signature"><i class="fas fa-signature"></i> تحياتي / مستر عماد علي</p>
+        </div>
+      </div>
+    `;
+    resultDiv.style.background = '#fff';
+  }, 100);
+}
+
+// ============================================
+// Mobile Menu & Scroll to Top
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
   const menuBtn = document.getElementById('mobileMenuBtn');
@@ -369,90 +538,20 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+  
+  buildScheduleGrid();
+  
+  // Enter key press
+  document.getElementById('seatNumber').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') searchResult();
+  });
 });
 
-// ============================================
-// Schedule Grid Data & Builder
-// ============================================
-const grades = [
-  { grade: "الصف الأول الابتدائي", file: "جدول_اول_ابتدائي.pdf" },
-  { grade: "الصف الثاني الابتدائي", file: "جدول_ثاني_ابتدائي.pdf" },
-  { grade: "الصف الثالث الابتدائي", file: "جدول_ثالث_ابتدائي.pdf" },
-  { grade: "الصف الرابع الابتدائي", file: "جدول_رابع_ابتدائي.pdf" },
-  { grade: "الصف الخامس الابتدائي", file: "جدول_خامس_ابتدائي.pdf" },
-  { grade: "الصف السادس الابتدائي", file: "جدول_سادس_ابتدائي.pdf" }
-];
-
-function buildScheduleGrid() {
-  const grid = document.getElementById('scheduleGrid');
-  if (!grid) return;
-  grid.innerHTML = '';
-  grades.forEach(g => {
-    const card = document.createElement('div');
-    card.className = 'schedule-card';
-    card.setAttribute('role', 'listitem');
-    card.innerHTML = `
-      <div class="grade-header">${g.grade}</div>
-      <div class="grade-body">
-        <p><i class="fas fa-calendar-week"></i> جدول الامتحانات الرسمي</p>
-        <button class="btn-table" onclick="openSchedule('${g.file}')">📄 عرض الجدول</button>
-      </div>`;
-    grid.appendChild(card);
-  });
-}
-
-function openSchedule(filename) { 
-  alert(`سيتم فتح جدول ${filename} فور رفع الملف. يمكنك الآن استبدال هذه الرسالة برابط التحميل الفعلي.`); 
-}
-
-// ============================================
-// Result Search
-// ============================================
-function searchResult() { 
-  const seat = document.getElementById('seatNumber').value.trim(); 
-  const resultDiv = document.getElementById('resultDisplay'); 
-  if (!seat) { 
-    resultDiv.innerHTML = '⚠️ الرجاء إدخال رقم الجلوس للاستعلام.'; 
-    resultDiv.style.background = '#fff3f3'; 
-    return; 
-  } 
-  resultDiv.innerHTML = `🔍 جاري البحث عن رقم الجلوس: <strong>${seat}</strong> ...<br>📢 سيتم إعلان النتيجة فور اعتمادها من الإدارة.`; 
-  resultDiv.style.background = '#fef9e6'; 
-}
-
-// ============================================
-// Scroll to Top
-// ============================================
 function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
 
 window.addEventListener('scroll', () => {
   const btn = document.querySelector('.back-to-top');
-  if (btn) {
-    window.scrollY > 300 ? btn.classList.add('show') : btn.classList.remove('show');
-  }
-}, { passive: true });
-
-document.querySelector('.back-to-top')?.addEventListener('keydown', (e) => {
-  if (e.key === 'Enter' || e.key === ' ') {
-    e.preventDefault();
-    scrollToTop();
-  }
-});
-
-// ============================================
-// Initialize
-// ============================================
-document.addEventListener('DOMContentLoaded', () => {
-  buildScheduleGrid();
-  
-  document.querySelectorAll('nav ul li a').forEach(link => {
-    if (link.getAttribute('href') === 'exams.html') link.classList.add('active');
-  });
-  
-  // PWA Service Worker
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js').catch(err => console.log('SW registration failed:', err));
-  }
+  if (btn) window.scrollY > 300 ? btn.classList.add('show') : btn.classList.remove('show');
 });
 </script>
 </body>
