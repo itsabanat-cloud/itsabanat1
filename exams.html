@@ -410,7 +410,7 @@ function searchResult() {
   resultDiv.style.background = '#fef9e6';
   
   setTimeout(() => {
-    const student = studentsDatabase.find(s => s.seatNumber === seat);
+    const student = studentsDatabase.find(     s => String(s.seatNumber).trim() === String(seat).trim() );
     
     if (!student) {
       resultDiv.innerHTML = `
